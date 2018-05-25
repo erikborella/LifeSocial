@@ -1,0 +1,13 @@
+[
+	{
+		"user" : "admin",
+		"password" : "06661230123",
+	  
+		"dados" : {
+	    	"nome" : "Admin",
+	    	"sobrenome" : "Adfoda",
+	    	"idade": "18",
+	    	"diasVividos": "0"
+	  	}
+	}
+]
