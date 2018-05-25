@@ -62,11 +62,5 @@ typings/
 *.lock
 
 # data remove databese mongo
-data\
 data/
-data\*
-data/*
-*.wt
-*.turtle
-*.0000000001
-*.wt
+
