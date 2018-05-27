@@ -62,5 +62,14 @@ typings/
 *.lock
 
 # data remove databese mongo
-data/
+data/*
 
+data/_mdb_catalog.wt
+data/WiredTiger.turtle
+data/WiredTiger.wt
+data/WiredTiger.turtle
+data/WiredTiger.wt
+data/_mdb_catalog.wt
+data/collection-6--3663087083282073864.wt
+data/index-8--3663087083282073864.wt
+data/sizeStorer.wt
