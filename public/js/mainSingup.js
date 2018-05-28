@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 	//Global vars
 
+	console.log("Putzzzs");
+	
+
 	var check = false;
 	var userName;
 
