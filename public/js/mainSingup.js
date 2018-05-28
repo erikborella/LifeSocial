@@ -1,10 +1,6 @@
 $(document).ready(function() {
-
-	console.log("aee");
-
+	
 	//Global vars
-
-	console.log("Putzzzs");
 	
 
 	var check = false;
