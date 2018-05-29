@@ -80,6 +80,7 @@ $(document).ready(function() {
 			else {
 
 				var userExist = false;
+				var emailExist = false;
 
 				for (var i = 0; i < userName.length; i++) {
 					if (userName[i].user == name) {
@@ -91,7 +92,17 @@ $(document).ready(function() {
 					}
 				}
 
-				if (!userExist) {
+				for (var i = 0; i < userName.length; i++) {
+					if (userName[i].dados.email == email) {
+						iziToast.error({
+							title: "Esse endereço de email ja existe",
+							position: "topRight"
+						});
+						emailExist = true;
+					}
+				}
+
+				if (!userExist && !emailExist) {
 					iziToast.success({
 						title: "Cadastro realizado com sucesso",
 						position: "topRight"
@@ -107,7 +118,7 @@ $(document).ready(function() {
 							email: dataUsers[4].value
 						},
 
-						function(data, status) {
+						(data, status) => {
 							$("#logininput").val("").removeClass("validate valid invalid");
 							$("#surnameinput").val("").removeClass("validate valid invalid");
 							$("#senhainput").val("").removeClass("validate valid invalid");
@@ -189,6 +200,27 @@ $(document).ready(function() {
 			});
 		}, 10);
 	});
+
+	$("#email").change(function() {
+		setTimeout(() => {
+			var exist = false;
+			$.get("/getUserdata", (data, status) => {
+				for (var i = 0; i < data.length; i++) {
+					if ($("#email").val() == data[i].dados.email) {
+						$("#email").removeClass("valid");
+						$("#email").addClass("invalid");
+						$("#emailError").attr("data-error", "Esse endereço de email já existe");
+						exist = true;
+					}
+				}
+				if (!exist) {
+					$("#email").removeClass("invalid");
+					$("#email").addClass("valid");
+					$("#emailError").attr("data-error", "Email invalido");
+				}
+			});
+		}, 10);
+	})
 
 
 	//Functions
