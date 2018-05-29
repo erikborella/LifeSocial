@@ -5,6 +5,7 @@
  */
 
 global.db = require('../db');
+global.mailSender = require('../mailSender');
 var app = require('../app');
 var debug = require('debug')('ftest:server');
 var http = require('http');

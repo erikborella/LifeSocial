@@ -38,7 +38,17 @@ router.get('/getUserdata', function(req, res) {
 		if(e) {return console.log(e);}
 		res.send(docs);
 	})
-})
+});
+
+router.post('/findPassword', (req, res) => {
+	var email = req.body.email;
+	var password = req.body.password;
+
+	global.mailSender.sendMail(email, password);
+
+	res.send("");
+	
+});
 
 
 

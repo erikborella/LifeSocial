@@ -38,11 +38,11 @@ $(document).ready(function() {
 				}
 
 				if (!acessou) {
-					alert("Desculpe, tente se cadastrar");
 					iziToast.error({
-						title: "Desculpe, tente se cadastrar",
+						title: "Dados incorretos",
 						position: "topRight"
 					});
+					$("#lostPassword").show();
 				}	
 			}
 		});	
