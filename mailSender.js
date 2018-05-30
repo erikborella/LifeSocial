@@ -8,12 +8,12 @@ var transport = nodemailer.createTransport({
     }
 });
 
-function sendMail(user, password) {
+function sendMail(user, username, password) {
     var email = {
         from: "Life Social",
         to: user,
         subject: "Recuperação de senha",
-        html: 'A sua senha é :'+password
+        html: 'Seu user: '+username+'<br>Sua senha: '+password
     }
     transport.sendMail(email, (err, info) => {
         if(err) throw err;

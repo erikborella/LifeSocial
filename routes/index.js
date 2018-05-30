@@ -42,11 +42,31 @@ router.get('/getUserdata', function(req, res) {
 
 router.post('/findPassword', (req, res) => {
 	var email = req.body.email;
-	var password = req.body.password;
 
-	global.mailSender.sendMail(email, password);
+	global.db.findAll((e, docs) => {
+		if (e) {return console.log(e);}
 
-	res.send("");
+		var exist = false;
+		var index;
+
+		for (var i = 0; i < docs.length; i++) {
+			if (docs[i].dados.email == email) {
+				exist = true
+				index = i;
+			};
+		}
+
+		if (!exist) {
+			res.send("false");
+		}
+		else {
+			var username = docs[index].user;
+			var password = docs[index].password;
+			global.mailSender.sendMail(email, username, password);
+			res.send("true");
+		}
+
+	})
 	
 });
 

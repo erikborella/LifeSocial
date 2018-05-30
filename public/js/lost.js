@@ -1,44 +1,22 @@
 $(document).ready(() => {
     
     $("#lostPassword").click(() => {
-        $.get("/getUserdata", (data, status) => {
-            var userName = data;
-            var index;
-            var email = $("#emailInput").val();
-            
-            var userExist = false;
-            for (var i = 0; i < userName.length; i++) {
-                if (userName[i].dados.email == email) {
-                    userExist = true;
-                    index = i;
-                }
-            }
+        var email = $("#emailInput").val();
 
-            if (!userExist) {
+        $.post('/findPassword', {"email": email}, (data, status) => {
+            if (data == "false") {
                 iziToast.error({
-                    title: "Endereço de email não encontrado",
+                    title: "Email não encontrado",
                     position: "topRight"
                 });
             }
-            else {
-                $.post("/findPassword",
-                {
-                    email: userName[index].dados.email,
-                    password: userName[index].password
-                }, (data, status) => {
-                    iziToast.success({
-                        title: "Email enviado com sucesso",
-                        position: "topRight"
-                    });
-
-                    $("#backLogin").show();
-                    
+            else if (data == "true") {
+                iziToast.success({
+                    title: "Email enviado com sucesso",
+                    position: "topRight"
                 })
             }
+            
         })
     })
-
-
-
-
 })
