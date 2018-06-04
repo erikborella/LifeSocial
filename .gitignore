@@ -74,3 +74,7 @@ data/collection-6--3663087083282073864.wt
 data/index-8--3663087083282073864.wt
 data/sizeStorer.wt
 startServer.bat
+*.wt
+*.wt
+data/WiredTiger
+*.bson
