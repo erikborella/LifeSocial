@@ -1,10 +1,17 @@
 $(document).ready(function() {
 
+	$(".modal").modal({
+		dismissible	: false
+	});
+	$("#loginModal").modal("open");
+
 	var userName;
 
 	$("#loginbotao").click(function() {
 
 		$.get("/getUserdata", function(data, status) {
+
+			var userIndex;
 
 			userName = data;
 
@@ -29,10 +36,11 @@ $(document).ready(function() {
 				for (var i = 0; i < userName.length; i++) {
 					if (userName[i].user == login && userName[i].password == senha) {
 						iziToast.success({
-							title: "Parabens, em breve isso",
+							title: "Bem vindo " + userName[i].user,
 							position: "topRight"
 						})
 						acessou = true;
+						userIndex = i;
 
 					}
 				}
@@ -42,7 +50,10 @@ $(document).ready(function() {
 						title: "Dados incorretos",
 						position: "topRight"
 					});
-					$("#lostPassword").show();
+					$("#lostPassword").show(100);
+				}
+				else {
+					initGame(userIndex);
 				}	
 			}
 		});	
