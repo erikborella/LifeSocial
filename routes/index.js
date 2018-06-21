@@ -25,7 +25,7 @@ router.post('/confirmSingup', function(req, res) {
 			"nome" : user,
 			"sobrenome" : sobrenome,
 			"email" : email,
-			"idade" : 18,
+			"idade" : 0,
 			"diasVividos" : 0
 		}
 	}, (err, result) => {
