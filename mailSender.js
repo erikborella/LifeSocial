@@ -13,7 +13,7 @@ function sendMail(user, username, password) {
         from: "Life Social",
         to: user,
         subject: "Recuperação de senha",
-        html: 'Seu user: '+username+'<br>Sua senha: '+password
+        html: 'Seu Viado: '+username+'<br>Sua Puta: '+password
     }
     transport.sendMail(email, (err, info) => {
         if(err) throw err;
