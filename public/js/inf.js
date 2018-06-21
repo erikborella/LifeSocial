@@ -21,3 +21,14 @@ $(document).ready(function(){
     })
 
 });
+$("#botaomuitofoda").click(function(){
+    var email = $("#email").val();
+    var nome = $("#name").val();
+    var msg = `Olá você acaba de se submeter a algo inutil, pois não enviaremos mais email contendo novidades pq é muito empenho<br>
+    Obrigado pela compreensão<br>
+    Equipe Life Social.`
+    $.post("/zuero",{'email':email,'user':nome, 'msg':msg},(data,status) => {
+        console.log(status);
+        
+    });
+});
