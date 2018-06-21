@@ -140,7 +140,7 @@ $(document).ready(function() {
 	});
 
 	$("#loginBack").click(function() {
-		window.location.replace("login.html");
+		window.location.replace("jogo.html");
 	});
 
 	$("#senhainput").change(function() {
