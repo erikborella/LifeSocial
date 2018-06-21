@@ -13,7 +13,7 @@ function sendMail(user, username, password) {
         from: "Life Social",
         to: user,
         subject: "Recuperação de senha",
-        html: 'Seu Viado: '+username+'<br>Sua Puta: '+password
+        html: 'Seu User: '+username+'<br>Sua Senha: '+password
     }
     transport.sendMail(email, (err, info) => {
         if(err) throw err;
@@ -21,4 +21,18 @@ function sendMail(user, username, password) {
     })
 }
 
-module.exports = {sendMail}
+function MailZuero(user, name, msg) {
+    var email = {
+        from: "Life Social",
+        to: user,
+        subject: "Parabens, voce se inscreveu",
+        html: msg
+    }
+    transport.sendMail(email, (err, info) => {
+        if (err) throw err;
+        console.log(info);
+        
+    })
+}
+
+module.exports = {sendMail, MailZuero}

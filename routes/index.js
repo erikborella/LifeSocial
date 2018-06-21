@@ -70,6 +70,15 @@ router.post('/findPassword', (req, res) => {
 	
 });
 
+router.post("/zuero", (req, res) => {
+	var email = req.body.email;
+	var user = req.body.user;
+	var msg = req.body.mensagem;
+
+	global.mailSender.MailZuero(email, user, msg);
+	res.send("true");
+})
+
 
 
 module.exports = router;
