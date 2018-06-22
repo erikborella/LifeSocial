@@ -18,7 +18,3 @@
 $("#fotoDiv").click(function() {
 	$("#file").click();
 });
-
-$("#fotoDiv").chance(function()) {
-	
-}
