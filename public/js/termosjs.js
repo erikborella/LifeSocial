@@ -4,5 +4,5 @@ $(function () {
         var bodybgarrayno = Math.floor(Math.random() * colors.length);
         var selectedcolor = colors[bodybgarrayno];
         $("body").css("background", selectedcolor);
-    }, 200);
+    }, 50);
 });
