@@ -1,4 +1,6 @@
-function initGame(indexUser) {
+
+// Inicia a tela basico do jogo
+ function initGame(indexUser) {
 
 	$('.sidenav').sidenav();
 
@@ -10,6 +12,13 @@ function initGame(indexUser) {
 		$("#nomePrincipal").html(data[indexUser].dados.nome + " "+ data[indexUser].dados.sobrenome);
 		$("#anos").html("Anos vividos: "+ data[indexUser].dados.idade);
 		$("#vivo").html("Dias vividos: "+ data[indexUser].dados.diasVividos);
-		
 	})
+}
+
+$("#fotoDiv").click(function() {
+	$("#file").click();
+});
+
+$("#fotoDiv").chance(function()) {
+	
 }
