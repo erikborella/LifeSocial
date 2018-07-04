@@ -42,25 +42,30 @@ $("#option").click(function() {
 	stopDay();
 })
 
-
 function passDay() {
 	INTERVAL =  setInterval(() => {
 		diasVividos++;
+		// Contador de anos
 		if (diasVividos % 365 == 0) {
 			idade++;
 		}
-
-		if ($("#fomeBar").css("width") <= 0 ) {
-			saudebarL = 0;
+		// Barra de fome
+		if (fomebarL < 0 ) {
+			fomebarL = 0;
 		}
 		else {
 			$("#fomeBar").css("width", fomebarL-- +"%");
 		}
+		// Barra de comida
+		if (saudebarL < 0) {
+			saudebarL = 0;
+		}
+		else {
+			saudebarL = saudebarL - 0.5;
+			$("#saudeBar").css("width", saudebarL+"%");
+		}
 
-		saudebarL = saudebarL - 0.5;
-
-
-		$("#saudeBar").css("width", saudebarL+"%");
+		
 
 		
 
