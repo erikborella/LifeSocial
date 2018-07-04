@@ -51,10 +51,7 @@ function passDay() {
 
 		refreshData();
 
-
-
-
-	}, 50);
+	}, 1000);
 }
 
 function stopDay() {
@@ -62,8 +59,8 @@ function stopDay() {
 }
 
 function refreshData() {
-		$("#anos").html("Anos vividos: "+ idade);
-		$("#vivo").html("Dias vividos: "+ diasVividos);
-		$("#money").html("Dinheiro: " + money);
+	$("#anos").html("Anos vividos: "+ idade);
+	$("#vivo").html("Dias vividos: "+ diasVividos);
+	$("#money").html("Dinheiro: " + money);
 }
 
