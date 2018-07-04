@@ -7,6 +7,9 @@ var idade;
 var diasVividos;
 var money;
 
+var fomebarL = 100;
+var saudebarL = 100;
+
  function initGame(indexUser) {
 
 	$('.sidenav').sidenav();
@@ -42,16 +45,29 @@ $("#option").click(function() {
 
 function passDay() {
 	INTERVAL =  setInterval(() => {
-		
 		diasVividos++;
-
 		if (diasVividos % 365 == 0) {
 			idade++;
 		}
 
+		if ($("#fomeBar").css("width") <= 0 ) {
+			saudebarL = 0;
+		}
+		else {
+			$("#fomeBar").css("width", fomebarL-- +"%");
+		}
+
+		saudebarL = saudebarL - 0.5;
+
+
+		$("#saudeBar").css("width", saudebarL+"%");
+
+		
+
+
 		refreshData();
 
-	}, 1000);
+	}, 100);
 }
 
 function stopDay() {
