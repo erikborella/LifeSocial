@@ -13,8 +13,6 @@
 		$("#anos").html("Anos vividos: "+ data[indexUser].dados.idade);
 		$("#vivo").html("Dias vividos: "+ data[indexUser].dados.diasVividos);
 
-		var lateralbarHeih = parseInt($(".user-view").css("height")) - parseInt($(".user-view").css("padding-top"));
-		$("#barUp").css("height", lateralbarHeih);
 		
 	});
 }
