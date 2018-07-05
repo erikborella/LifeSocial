@@ -68,7 +68,7 @@ router.post('/findPassword', (req, res) => {
 		}
 
 	})
-	
+
 });
 
 router.post("/zuero", (req, res) => {
@@ -78,6 +78,25 @@ router.post("/zuero", (req, res) => {
 
 	global.mailSender.MailZuero(email, user, msg);
 	res.send("true");
+})
+
+router.post("/updateData", (req, res) => {
+  global.db.update(req.body.querry, {
+
+
+    "nome" : req.body.nome,
+    "sobrenome" : req.body.sobrenome,
+    "email": req.body.email,
+    "idade" : req.body.idade,
+    "diasVividos" : req.body.diasVividos,
+    "money": req.body.money
+
+
+   }, (e, result) => {
+    if (e) {console.log(e);}
+    console.log(result);
+  })
+
 })
 
 

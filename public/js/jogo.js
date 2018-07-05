@@ -7,11 +7,15 @@ var idade;
 var diasVividos;
 var money;
 
+var indexUser;
+
 var fomebarL = 100;
 var saudebarL = 100;
 
- function initGame(indexUser) {
+ function initGame(indexxer) {
 
+  indexUser = indexxer;
+  
 	$('.sidenav').sidenav();
 
 	$("#loginModal").modal("close");
@@ -40,6 +44,26 @@ $("#fotoDiv").click(function() {
 
 $("#option").click(function() {
 	stopDay();
+  $.post("/updateData", {"idade" : idade, "diasVividos": diasVividos, "money": money, "querry" : name}, (data, status) => {
+    console.log(status);
+  })
+
+  $.get("/getUserdata", (data, status) => {
+    $.post("/updateData", {
+      "querry" : data[indexUser].user,
+      "nome" : data[indexUser].dados.nome,
+      "sobrenome" : data[indexUser].dados.sobrenome,
+      "email" : data[indexUser].dados.email,
+      "idade" : idade,
+      "diasVividos": diasVividos,
+      "money" : money
+    }, (data2, status) => {
+      console.log(status);
+    })
+  });
+
+
+
 })
 
 function passDay() {
