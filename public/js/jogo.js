@@ -65,9 +65,9 @@ function passDay() {
 			$("#saudeBar").css("width", saudebarL+"%");
 		}
 
-		
 
-		
+
+
 
 
 		refreshData();
@@ -84,4 +84,3 @@ function refreshData() {
 	$("#vivo").html("Dias vividos: "+ diasVividos);
 	$("#money").html("Dinheiro: " + money);
 }
-
