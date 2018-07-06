@@ -3,6 +3,8 @@
 
 var INTERVAL;
 
+var name;
+
 var idade;
 var diasVividos;
 var money;
@@ -24,9 +26,11 @@ var saudebarL = 100;
 
 	$.get("/getUserdata", (data, status) => {
 
-		idade = data[indexUser].dados.idade;
-		diasVividos = data[indexUser].dados.diasVividos;
-		money = data[indexUser].dados.money;
+		idade = data[indexUser].gameValues.idade;
+		diasVividos = data[indexUser].gameValues.diasVividos;
+		money = data[indexUser].gameValues.money;
+
+		name = data[indexUser].dados.nome;
 
 		$("#nomePrincipal").html(data[indexUser].dados.nome + " "+ data[indexUser].dados.sobrenome);
 		$("#anos").html("Anos vividos: "+ idade);
@@ -44,27 +48,21 @@ $("#fotoDiv").click(function() {
 
 $("#option").click(function() {
 	stopDay();
-  $.post("/updateData", {"idade" : idade, "diasVividos": diasVividos, "money": money, "querry" : name}, (data, status) => {
-    console.log(status);
-  })
+	var mdf = {
+		"idade" : idade,
+		"diasVividos": diasVividos, 
+		"money": money, 
+		"querry" : name
+	}
 
-  $.get("/getUserdata", (data, status) => {
-    $.post("/updateData", {
-      "querry" : data[indexUser].user,
-      "nome" : data[indexUser].dados.nome,
-      "sobrenome" : data[indexUser].dados.sobrenome,
-      "email" : data[indexUser].dados.email,
-      "idade" : idade,
-      "diasVividos": diasVividos,
-      "money" : money
-    }, (data2, status) => {
-      console.log(status);
-    })
-  });
+	$.post("/updateData", mdf, (data, status) => {
+		console.log(status);
+	})
+	
+});
 
 
 
-})
 
 function passDay() {
 	INTERVAL =  setInterval(() => {

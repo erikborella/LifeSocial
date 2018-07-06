@@ -6,10 +6,10 @@ $(document).ready(function(){
         var record = 0;
 
         for(var i = 0; i < lista.length; i++){
-            diasvivos += lista[i].dados.diasVividos;
-            idadetotal += lista[i].dados.idade;
-             if(lista[i].dados.diasVividos > record){
-                record = lista[i].dados.diasVividos;
+            diasvivos += lista[i].gameValues.diasVividos;
+            idadetotal += lista[i].gameValues.idade;
+             if(lista[i].gameValues.diasVividos > record){
+                record = lista[i].gameValues.diasVividos;
              }
 
         }

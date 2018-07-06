@@ -24,7 +24,9 @@ router.post('/confirmSingup', function(req, res) {
 		"dados" : {
 			"nome" : user,
 			"sobrenome" : sobrenome,
-			"email" : email,
+			"email" : email
+		},
+		"gameValues" : {
 			"idade" : 0,
 			"diasVividos" : 0,
 			"money" : 10
@@ -81,22 +83,21 @@ router.post("/zuero", (req, res) => {
 })
 
 router.post("/updateData", (req, res) => {
-  global.db.update(req.body.querry, {
 
+	
+	var queryy = req.body.querry;
 
-    "nome" : req.body.nome,
-    "sobrenome" : req.body.sobrenome,
-    "email": req.body.email,
-    "idade" : req.body.idade,
-    "diasVividos" : req.body.diasVividos,
-    "money": req.body.money
+	var data = {
+		"idade" : req.body.idade,
+		"diasVividos" : req.body.diasVividos,
+		"money" : req.body.money
+	};
 
-
-   }, (e, result) => {
-    if (e) {console.log(e);}
-    console.log(result);
-  })
-
+	global.db.update(queryy, data, (e, data) => {
+		if (e) console.log(e);
+	})
+	
+	
 })
 
 

@@ -1,7 +1,7 @@
 var mongoClient = require("mongodb").MongoClient;
 mongoClient.connect("mongodb://localhost/Ftest")
             .then(conn => global.conn = conn.db("Ftest"))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
 
 function findAll(callback){
     global.conn.collection("userData").find({}).toArray(callback);
@@ -15,21 +15,21 @@ function update(querry, data, callback) {
   var adress = {"user" : querry};
 
 
-  var upd = {$set : {
-    "dados": {
-      "nome" : data.nome,
-      "sobrenome" : data.sobrenome,
-      "email": data.email,
-      "idade": data.idade,
-      "diasVividos": data.diasVividos,
-      "money": data.money
+  var upd = {
+    $set : {
+      "gameValues" : {
+        "idade": data.idade,
+        "diasVividos": data.diasVividos,
+        "money": data.money
+      }
+      
     }
-  }}
+  };
 
-  console.log(upd);
+  console.log(querry);
 
 
-  // global.conn.collection("userData").updateOne(adress, upd, callback);
+  global.conn.collection("userData").updateOne(adress, upd, callback);
 }
 
 module.exports = { findAll, insert, update }
