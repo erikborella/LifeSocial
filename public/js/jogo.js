@@ -2,6 +2,7 @@
 // Inicia a tela basico do jogo
 
 var INTERVAL;
+var SAVER;
 
 var name;
 
@@ -11,10 +12,15 @@ var money;
 
 var indexUser;
 
-var fomebarL = 100;
-var saudebarL = 100;
+var fomebarL;
+var saudebarL;
 
- function initGame(indexxer) {
+$("#fotoDiv").click(function() {
+	$("#file").click();
+});
+
+
+function initGame(indexxer) {
 
   indexUser = indexxer;
   
@@ -30,6 +36,9 @@ var saudebarL = 100;
 		diasVividos = data[indexUser].gameValues.diasVividos;
 		money = data[indexUser].gameValues.money;
 
+		fomebarL = data[indexUser].gameValues.fomebarL;
+		saudebarL = data[indexUser].gameValues.saudebarL;
+
 		name = data[indexUser].dados.nome;
 
 		$("#nomePrincipal").html(data[indexUser].dados.nome + " "+ data[indexUser].dados.sobrenome);
@@ -38,33 +47,18 @@ var saudebarL = 100;
 		$("#money").html("Dinheiro: " + money);
 
 		passDay();
+		saveCounter();
 
 	});
 }
 
-$("#fotoDiv").click(function() {
-	$("#file").click();
-});
-
-$("#option").click(function() {
-	stopDay();
-	var mdf = {
-		"idade" : idade,
-		"diasVividos": diasVividos, 
-		"money": money, 
-		"querry" : name
+function passDay() {
+	function refreshData() {
+		$("#anos").html("Anos vividos: "+ idade);
+		$("#vivo").html("Dias vividos: "+ diasVividos);
+		$("#money").html("Dinheiro: " + money);
 	}
 
-	$.post("/updateData", mdf, (data, status) => {
-		console.log(status);
-	})
-	
-});
-
-
-
-
-function passDay() {
 	INTERVAL =  setInterval(() => {
 		diasVividos++;
 		// Contador de anos
@@ -87,22 +81,36 @@ function passDay() {
 			$("#saudeBar").css("width", saudebarL+"%");
 		}
 
-
-
-
-
-
 		refreshData();
 
 	}, 100);
+}
+
+function saveCounter() {
+	SAVER = setInterval(() => {
+		saveAll();
+	}, 10000)
+}
+
+function saveAll() {
+	var mdf = {
+		"idade" : idade,
+		"diasVividos": diasVividos, 
+		"money": money, 
+		"fomebarL": fomebarL,
+		"saudebarL": saudebarL,
+		"querry" : name
+	}
+
+	$.post("/updateData", mdf, (data, status) => {
+		console.log(status);
+	});
 }
 
 function stopDay() {
 	clearInterval(INTERVAL);
 }
 
-function refreshData() {
-	$("#anos").html("Anos vividos: "+ idade);
-	$("#vivo").html("Dias vividos: "+ diasVividos);
-	$("#money").html("Dinheiro: " + money);
+function stopSaver() {
+	clearInterval(SAVER);
 }

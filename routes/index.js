@@ -29,7 +29,11 @@ router.post('/confirmSingup', function(req, res) {
 		"gameValues" : {
 			"idade" : 0,
 			"diasVividos" : 0,
-			"money" : 10
+			"money" : 10,
+			"fomebarL": 100,
+			"saudebarL": 100,
+			"honestidadeBarL": 0,
+			"desonestidadeBarL": 0
 		}
 	}, (err, result) => {
 		if (err) { return console.log(err);}
@@ -90,7 +94,9 @@ router.post("/updateData", (req, res) => {
 	var data = {
 		"idade" : req.body.idade,
 		"diasVividos" : req.body.diasVividos,
-		"money" : req.body.money
+		"money" : req.body.money,
+		"fomebarL": req.body.fomebarL,
+		"saudebarL": req.body.saudebarL
 	};
 
 	global.db.update(queryy, data, (e, data) => {

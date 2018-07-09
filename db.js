@@ -20,7 +20,9 @@ function update(querry, data, callback) {
       "gameValues" : {
         "idade": data.idade,
         "diasVividos": data.diasVividos,
-        "money": data.money
+        "money": data.money,
+        "fomebarL": data.fomebarL,
+        "saudebarL": data.saudebarL
       }
       
     }
