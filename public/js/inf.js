@@ -6,13 +6,16 @@ $(document).ready(function(){
         var record = 0;
 
         for(var i = 0; i < lista.length; i++){
-            diasvivos += lista[i].gameValues.diasVividos;
+            diasvivos += parseInt(lista[i].gameValues.diasVividos);
             idadetotal += lista[i].gameValues.idade;
              if(lista[i].gameValues.diasVividos > record){
                 record = lista[i].gameValues.diasVividos;
              }
 
         }
+
+        console.log(diasvivos);
+        
         $("#totaljg").attr("data-to",jogadores);
         $("#totaldias").attr("data-to",diasvivos);
         $("#totalidade").attr("data-to",idadetotal);
