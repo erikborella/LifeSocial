@@ -25,6 +25,8 @@ $(document).keypress((key) => {
 
 
 function login() {
+
+	inLogin = false;
 	
 	$.get("/getUserdata", function(data, status) {
 
