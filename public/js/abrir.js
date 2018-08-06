@@ -7,7 +7,7 @@ function esconderInicio() {
     $("#lixo").hide();
     $("#fastfood").hide();
     $("#hotdog").hide();
-    $("#casa").hide();
+    $("#casacomer").hide();
     $("#restaurante").hide();
     $("#chef").hide();
 
@@ -59,5 +59,132 @@ function esconderEscola() {
     $("#socioeco").hide();
     $("#socioind").hide();
 }
+function esconderMercado() {
+    $("#mercado").hide();
+    
+    $("#supermercado").hide();
+    $("#casa").hide();
+    $("#carro").hide();
+    $("#utencilios").hide();
+    
+    $("#ccomida").hide();
+    $("#cremedio").hide();
+
+    $("#quitinete").hide();
+    $("#apartamento").hide();
+    $("#casapq").hide();
+    $("#casamd").hide();
+    $("#casagd").hide();
+    $("#mansao").hide();
+
+    $("#antigo").hide();
+    $("#seminovo").hide();
+    $("#popular").hide();
+    $("#esportivo").hide();
+    $("#altaclasse").hide();
+
+    $("#mobilia").hide();
+    $("#cubo").hide();
+    $("#computador").hide();
+    $("#livros").hide();
+    $("#escrivaninha").hide();
+    $("#tv").hide();
+}
+function esconderTudo() {
+    esconderInicio();
+    esconderTrabalho();
+    esconderEscola();
+    esconderMercado();
+}
+$(document).ready(function(){ 
+    esconderTudo();
+});
+$("#iniciob").click(function() {
+    esconderTrabalho();
+    esconderEscola();
+    esconderMercado();
+    $("#inicio").show(500);   
+  });
+  $("#trabb").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    $("#trab").show(500);   
+  });
+  $("#schoolb").click(function() {
+    esconderTrabalho();
+    esconderInicio();
+    esconderMercado();
+    $("#school").show(500);   
+  });
+  $("#mercadob").click(function() {
+    esconderTrabalho();
+    esconderEscola();
+    esconderInicio();
+    $("#mercado").show(500);   
+  });
+  $("#comidab").click(function() {
+    esconderTrabalho();
+    esconderEscola();
+    esconderMercado();
+    $("#saude").hide(500);
+    $("#comida").show(500);   
+  });
+  $("#saudeb").click(function() {
+    esconderTrabalho();
+    esconderEscola();
+    esconderMercado();
+    $("#comida").hide(500);
+    $("#saude").show(500);   
+  });
+  $("#lixob").click(function() {
+    $("#hotdog").hide(); 
+    $("#fastfood").hide();
+    $("#casacomer").hide();
+    $("#restaurante").hide();  
+    $("#chef").hide(); 
+    $("#lixo").show(500); 
+  });
+  $("#fastfoodb").click(function() {  
+    $("#hotdog").hide(); 
+    $("#lixo").hide();   
+    $("#casacomer").hide();
+    $("#restaurante").hide(); 
+    $("#chef").hide();  
+    $("#fastfood").show(500);    
+  });
+  $("#hotdogb").click(function() {
+    $("#lixo").hide(); 
+    $("#casacomer").hide();
+    $("#fastfood").hide();
+    $("#restaurante").hide();
+    $("#chef").hide();   
+    $("#hotdog").show(500);   
+  });
+  $("#ccasab").click(function() {
+    $("#hotdog").hide(); 
+    $("#lixo").hide(); 
+    $("#fastfood").hide();
+    $("#restaurante").hide(); 
+    $("#chef").hide();  
+    $("#casacomer").show(500);   
+  });
+  $("#restauranteb").click(function() {
+    $("#hotdog").hide(); 
+    $("#lixo").hide(); 
+    $("#casacomer").hide();
+    $("#fastfood").hide();
+    $("#chef").hide(); 
+    $("#restaurante").show(500);   
+  });
+  $("#chefb").click(function() {
+    $("#hotdog").hide(); 
+    $("#lixo").hide(); 
+    $("#casacomer").hide();
+    $("#fastfood").hide();
+    $("#restaurante").hide(); 
+    $("#chef").show(500);   
+  });
+
 
 
