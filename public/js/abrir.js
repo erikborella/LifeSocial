@@ -185,6 +185,55 @@ $("#iniciob").click(function() {
     $("#restaurante").hide(); 
     $("#chef").show(500);   
   });
+  $("#rlixob").click(function() {
+    $("#casarem").hide(); 
+    $("#apronto").hide(); 
+    $("#clinica").hide();
+    $("#medic").hide();
+    $("#hospital").hide(); 
+    $("#lixorem").show(500);   
+  });
+  $("#rcasab").click(function() {
+    $("#lixorem").hide(); 
+    $("#apronto").hide(); 
+    $("#clinica").hide();
+    $("#medic").hide();
+    $("#hospital").hide(); 
+    $("#casarem").show(500);   
+  });
+  $("#prontosocorrob").click(function() {
+    $("#casarem").hide(); 
+    $("#lixorem").hide(); 
+    $("#clinica").hide();
+    $("#medic").hide();
+    $("#hospital").hide(); 
+    $("#apronto").show(500);   
+  });
+  $("#clinicab").click(function() {
+    $("#lixorem").hide(); 
+    $("#apronto").hide(); 
+    $("#casarem").hide();
+    $("#medic").hide();
+    $("#hospital").hide(); 
+    $("#clinica").show(500);   
+  });
+  $("#medicab").click(function() {
+    $("#lixorem").hide(); 
+    $("#apronto").hide(); 
+    $("#clinica").hide();
+    $("#casarem").hide();
+    $("#hospital").hide(); 
+    $("#medic").show(500);   
+  });
+  $("#hospitalb").click(function() {
+    $("#lixorem").hide(); 
+    $("#apronto").hide(); 
+    $("#clinica").hide();
+    $("#medic").hide();
+    $("#casarem").hide(); 
+    $("#hospital").show(500);   
+  });
+
 
 
 
