@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="css/jogocss.css">
   <link rel="stylesheet" type="text/css" href="css/iziToast.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Life</title>
   <link rel="icon" href="img/logo2.png">
   <meta charset="utf-8">
 
@@ -46,10 +47,10 @@
 					</a>
 				</div>
 				<div>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">home</i><strong>Inicio</strong></a>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">work</i><strong>Trabalho</strong></a>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">school</i><strong>Escola</strong></a>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">local_grocery_store</i><strong>Mercado</strong></a>
+					<p><a style="width: 100%;" id="iniciob" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">home</i><strong>Inicio</strong></a>
+					<p><a style="width: 100%;" id="trabb" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">work</i><strong>Trabalho</strong></a>
+					<p><a style="width: 100%;" id="schoolb" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">school</i><strong>Escola</strong></a>
+					<p><a style="width: 100%;" id="mercadob" class="z-depth-0 black-text white waves-effect btn-large"><i class="material-icons left">local_grocery_store</i><strong>Mercado</strong></a>
 					<p><a style="width: 100%;" class="dropdown-trigger btn z-depth-0 black-text white waves-effect btn-large" data-target="opcoes" id="option"><i class="material-icons left">settings</i><strong>Opçoes</strong></a>
 				</div>
 			</li>
@@ -71,7 +72,7 @@
 	
 	<div class="row">
 	<!-- Inicio -->
-		<div id="inicio" style="display: none;">
+		<div id="inicio" >
 
 			<div class="blue darken-4" style="height: 234px; padding-top: 70px;">
 				<div class="row">
@@ -90,8 +91,8 @@
 
 			<!-- Inicio -->
 			<div class="col s3" style="border-right: 1px solid grey;">
-				<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comida</strong></a></p>
-				<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Saúde</strong></a></p>
+				<p><a style="width: 100%;" id="comidab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comida</strong></a></p>
+				<p><a style="width: 100%;" id="saudeb"class="z-depth-0 black-text white waves-effect btn-large"><strong>Saúde</strong></a></p>
 				<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
@@ -101,21 +102,21 @@
 				<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>	
 			</div>
 			<!-- Comida opções -->
-			<div id="comida" style="display: none;">
+			<div id="comida">
 				<div class="col s3" style="border-right: 1px solid grey;">
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer lixo</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer fastfood</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer hotdog</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer em casa</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Restaurante</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Chef privado</strong></a></p>
+					<p><a style="width: 100%;" id="lixob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer lixo</strong></a></p>
+					<p><a style="width: 100%;" id="fastfoodb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer fastfood</strong></a></p>
+					<p><a style="width: 100%;" id="hotdogb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer hotdog</strong></a></p>
+					<p><a style="width: 100%;" id="ccasab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comer em casa</strong></a></p>
+					<p><a style="width: 100%;" id="restauranteb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Restaurante</strong></a></p>
+					<p><a style="width: 100%;" id="chefb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Chef privado</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
 
 				<!-- lixo -->
-				<div id="lixo" style="display: none;">
+				<div id="lixo">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -123,7 +124,7 @@
 				<!--  -->
 
 				<!-- fastfood -->
-				<div id="fastfood" style="display: none;">
+				<div id="fastfood">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -131,7 +132,7 @@
 				<!--  -->
 
 				<!-- hotdog -->
-				<div id="hotdog" style="display: none;">
+				<div id="hotdog">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -139,7 +140,7 @@
 				<!--  -->
 
 				<!-- casa -->
-				<div id="casa" style="display: none;">
+				<div id="casacomer">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -147,7 +148,7 @@
 				<!--  -->
 
 				<!-- restaurante -->
-				<div id="restaurante" style="display: none;">
+				<div id="restaurante">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -155,7 +156,7 @@
 				<!--  -->
 
 				<!-- chef privado -->
-				<div id="chef" style="display: none;">
+				<div id="chef">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -164,7 +165,7 @@
 
 			</div>
 			<!-- Saude opções -->
-			<div id="saude" style="display: none;" >
+			<div id="saude">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Remédio do lixo</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Remédio de casa</strong></a></p>
@@ -177,7 +178,7 @@
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
 				<!-- lixo remédio-->
-				<div id="lixorem" style="display: none;">
+				<div id="lixorem">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -185,7 +186,7 @@
 				<!--  -->
 
 				<!-- remedio casa -->
-				<div id="casarem" style="display: none;">
+				<div id="casarem">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -193,7 +194,7 @@
 				<!--  -->
 
 				<!-- pronto socorro -->
-				<div id="apronto" style="display: none;">
+				<div id="apronto">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -201,7 +202,7 @@
 				<!--  -->
 
 				<!-- clinica -->
-				<div id="clinica" style="display: none;">
+				<div id="clinica">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -209,7 +210,7 @@
 				<!--  -->
 
 				<!-- medica -->
-				<div id="medic" style="display: none;">
+				<div id="medic">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -217,7 +218,7 @@
 				<!--  -->
 
 				<!-- hospital -->
-				<div id="hospital" style="display: none;">
+				<div id="hospital">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -229,7 +230,7 @@
 
 	<!-- Trabalho -->
 	
-		<div id="trab" style="display: none;">
+		<div id="trab">
 				
 			<div class="blue darken-4" style="height: 234px; padding-top: 70px;">
 				<div class="row">
@@ -259,7 +260,7 @@
 				<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>	
 			</div>
 			<!-- desonesto opções -->
-			<div id="desonesto" style="display: none;">
+			<div id="desonesto">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Roubar dinheiro</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Roubar joias</strong></a></p>
@@ -272,7 +273,7 @@
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
 				<!-- dinheiro -->
-				<div id="rdinheiro" style="display: none;">
+				<div id="rdinheiro">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -280,7 +281,7 @@
 				<!--  -->
 
 				<!-- joias -->
-				<div id="rjoias" style="display: none;">
+				<div id="rjoias">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -288,7 +289,7 @@
 				<!--  -->
 
 				<!-- roupas -->
-				<div id="rroupas" style="display: none;">
+				<div id="rroupas">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -296,7 +297,7 @@
 				<!--  -->
 
 				<!-- celular -->
-				<div id="rcelular" style="display: none;">
+				<div id="rcelular">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -304,7 +305,7 @@
 				<!--  -->
 
 				<!-- assaltar banco -->
-				<div id="banco" style="display: none;">
+				<div id="banco">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -312,7 +313,7 @@
 				<!--  -->
 
 				<!-- politico kkkj -->
-				<div id="politico" style="display: none;">
+				<div id="politico">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -322,7 +323,7 @@
 
 			</div>
 			<!-- honesto opções -->
-			<div id="honesto" style="display: none;">
+			<div id="honesto">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Caridade</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>S.Comunitário</strong></a></p>
@@ -335,7 +336,7 @@
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
 				<!-- caridade -->
-				<div id="caridade" style="display: none;">
+				<div id="caridade">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -343,7 +344,7 @@
 				<!--  -->
 
 				<!-- comunitario -->
-				<div id="comunitario" style="display: none;">
+				<div id="comunitario">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -351,7 +352,7 @@
 				<!--  -->
 
 				<!-- empacotador -->
-				<div id="empacotador" style="display: none;">
+				<div id="empacotador">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -359,7 +360,7 @@
 				<!--  -->
 
 				<!-- professor -->
-				<div id="professor" style="display: none;">
+				<div id="professor">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -367,7 +368,7 @@
 				<!--  -->
 
 				<!-- programador -->
-				<div id="programador" style="display: none;">
+				<div id="programador">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -375,7 +376,7 @@
 				<!--  -->
 
 				<!-- sociologo -->
-				<div id="sociologo" style="display: none;">
+				<div id="sociologo">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -386,7 +387,7 @@
 
 	<!-- Escola -->
 		
-		<div id="school" style="display: none;">
+		<div id="school">
 				
 				<div class="blue darken-4" style="height: 234px; padding-top: 70px;">
 					<div class="row">
@@ -411,7 +412,7 @@
 				</div>
 
 				<!-- Faculdade opções -->
-				<div id="faculdade" style="display: none;">
+				<div id="faculdade">
 					<div class="col s3" style="border-right: 1px solid grey;">
 						<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Sociologia</strong></a></p>
 						<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
@@ -422,7 +423,7 @@
 						<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					</div>
 					<!-- sociologia -->
-				<div id="sociologia" style="display: none;">
+				<div id="sociologia">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -430,7 +431,7 @@
 				<!--  -->
 				</div>
 				<!-- mestrado opções -->
-				<div id="mestrado" style="display: none;">
+				<div id="mestrado"></div>
 					<div class="col s3" style="border-right: 1px solid grey;">
 						<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Exclusão Social</strong></a></p>
 						<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Filantropia</strong></a></p>
@@ -443,7 +444,7 @@
 						<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					</div>
 					<!-- exclusão social -->
-				<div id="exclusao" style="display: none;">
+				<div id="exclusao">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -451,7 +452,7 @@
 				<!--  -->
 
 				<!-- filantropo -->
-				<div id="filan" style="display: none;">
+				<div id="filan">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -459,7 +460,7 @@
 				<!--  -->
 				
 				<!-- politica publicas -->
-				<div id="publicpolitic" style="display: none;">
+				<div id="publicpolitic">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -467,7 +468,7 @@
 				<!--  -->
 				
 				<!-- educação social -->
-				<div id="edusocial" style="display: none;">
+				<div id="edusocial">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -475,7 +476,7 @@
 				<!--  -->
 				
 				<!-- ambiente social -->
-				<div id="ambientesocial" style="display: none;">
+				<div id="ambientesocial">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
@@ -484,7 +485,7 @@
 
 				</div>
 				<!-- Doutorado opções -->
-				<div id="doutorado" style="display: none;">
+				<div id="doutorado">
 					<div class="col s3" style="border-right: 1px solid grey;">
 						<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>PhD Sociologia</strong></a></p>
 						<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Sócio Técnico</strong></a></p>
@@ -497,44 +498,44 @@
 						<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					</div>
 					<!-- phd -->
-				<div id="phd" style="display: none;">
+				<div id="phd">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
 				</div>
 				<!--  -->
 				<!-- tecnico -->
-				<div id="sociotec" style="display: none;">
+				<div id="sociotec">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
 				</div>
 				<!--  -->
 				<!-- ciencias sociais -->
-				<div id="cienciassociais" style="display: none;">
+				<div id="cienciassociais">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
 				</div>
 				<!--  -->
 				<!-- socio eco -->
-				<div id="socioeco" style="display: none;">
+				<div id="socioeco">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
 				</div>
 				<!--  -->
 				<!-- socio ind -->
-				<div id="socioind" style="display: none;">
+				<div id="socioind">
 					<div class="col s6">
 						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
 					</div>
 				</div>
 				<!--  -->
 				</div>
-		</div>
+		
 	<!-- Mercado-->
-		<div id="mercado" style="display: none;">
+		<div id="mercado">
 				
 			<div class="blue darken-4" style="height: 234px; padding-top: 70px;">
 				<div class="row">
@@ -557,7 +558,7 @@
 				<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>	
 			</div>
 			<!-- Supermercado opções -->
-			<div id="supermercado" style="display: none;">
+			<div id="supermercado">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comida</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Remédio</strong></a></p>
@@ -569,12 +570,25 @@
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
-				<div class="col s6">
-	
+				<!-- Comida -->
+				<div id="ccomida">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
 				</div>
+				<!--  -->
+				
+				<!-- remedio -->
+				<div id="cremedio">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
 			</div>
+
 			<!-- Casa opções -->
-			<div id="casa" style="display: none;">
+			<div id="casa">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Quitinete</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Apartamento</strong></a></p>
@@ -586,29 +600,100 @@
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
-				<div class="col s6">
-			
+				<!-- quitinete -->
+				<div id="quitinete">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
 				</div>
+				<!--  -->
+				<!-- ap -->
+				<div id="apartamento">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%">
+					</div>
+				</div>
+				<!--  -->
+				<!-- casa pequena -->
+				<div id="casapq">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- casa média -->
+				<div id="casamd">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- casa grande -->
+				<div id="casagd">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- Mansão -->
+				<div id="mansao">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
 			</div>
 			<!-- Carro opções -->
-			<div id="carro" style="display: none;">
+			<div id="carro">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Antigo</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Semi-novo</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Novo</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Mustang</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Ferrari</strong></a></p>
-					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Porsche</strong></a></p>
+					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Popular</strong></a></p>
+					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Esportivo</strong></a></p>
+					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Alta classe</strong></a></p>
+					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					</div>
-				<div class="col s6">
-		
+				<!-- antigo -->
+				<div id="antigo">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
 				</div>
+				<!--  -->
+				<!-- seminovo -->
+				<div id="seminovo">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- popular -->
+				<div id="popular">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- esportivo -->
+				<div id="esportivo">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- alta classe -->
+				<div id="altaclasse">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
 			</div>
 			<!-- Utencílios opções -->
-			<div id="desonesto" style="display: none;">
+			<div id="utencilios">
 				<div class="col s3" style="border-right: 1px solid grey;">
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Mobilia</strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white waves-effect btn-large"><strong>Cubo Mágico</strong></a></p>
@@ -620,11 +705,51 @@
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 					<p><a style="width: 100%;" class="z-depth-0 black-text white btn-small"><strong></strong></a></p>
 				</div>
-				<div class="col s6">
-		
+				<!-- Mobilia -->
+				<div id="mobilia">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
 				</div>
+				<!--  -->
+				<!-- cubo mágico -->
+				<div id="cubo">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- computador -->
+				<div id="computador">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- livros -->
+				<div id="livros">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- escrivaninha -->
+				<div id="escrivaninha">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
+				<!-- tv -->
+				<div id="tv">
+					<div class="col s6">
+						<img src="gifs/          .gif" style="height: 400px; width: 400px; margin-top: 7.5%; margin-left:7.5%; ">
+					</div>
+				</div>
+				<!--  -->
 			</div>
 		</div>
+	</div>
 	<!-- ? -->
 	</div>
 
@@ -671,7 +796,7 @@
 			<div class="center-align">
 				<a class="waves-effect waves-light btn indigo" id="loginbotao">Login</a>
 				<a class="waves-effect waves-light btn indigo" id="singupbotao" href="singup.html">Singup</a>
-				<a class="waves-effect waves-light btn indigo" id="lostPassword" href="lost.html" style="display: none">Perdeu a senha?</a>
+				<a class="waves-effect waves-light btn indigo" id="lostPassword" href="lost.html" >Perdeu a senha?</a>
 			</div>
 
 		</div>
