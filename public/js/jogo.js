@@ -19,6 +19,25 @@ $("#fotoDiv").click(function() {
 	$("#file").click();
 });
 
+$("#sairBtn").click(function() {
+	iziToast.show({
+		title : "Tem certeza?",
+		position: "center",
+		theme: "dark",
+		displayMode: 0,
+		overlay: true,
+		timeout: 9999999999,
+		buttons: [
+			['<button>Sim</button>', (instace, toast) => {
+				instace.hide({transitionOut: 'fadeOutUp'}, toast);
+				stopDay();
+				stopSaver();
+				INTERVAL = null;
+			}]
+		]
+	});
+});
+
 
 function initGame(indexxer) {
 
@@ -83,7 +102,7 @@ function passDay() {
 
 		refreshData();
 
-	}, 100);
+	}, 10000);
 }
 
 function saveCounter() {
