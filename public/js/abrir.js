@@ -105,39 +105,39 @@ $("#iniciob").click(function() {
     esconderMercado();
     $("#inicio").show(500);   
   });
-  $("#trabb").click(function() {
+$("#trabb").click(function() {
     esconderInicio();
     esconderEscola();
     esconderMercado();
     $("#trab").show(500);   
   });
-  $("#schoolb").click(function() {
+$("#schoolb").click(function() {
     esconderTrabalho();
     esconderInicio();
     esconderMercado();
     $("#school").show(500);   
   });
-  $("#mercadob").click(function() {
+$("#mercadob").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderInicio();
     $("#mercado").show(500);   
   });
-  $("#comidab").click(function() {
+$("#comidab").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
     $("#saude").hide(500);
     $("#comida").show(500);   
   });
-  $("#saudeb").click(function() {
+$("#saudeb").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
     $("#comida").hide(500);
     $("#saude").show(500);   
   });
-  $("#lixob").click(function() {
+$("#lixob").click(function() {
     $("#hotdog").hide(); 
     $("#fastfood").hide();
     $("#casacomer").hide();
@@ -145,7 +145,7 @@ $("#iniciob").click(function() {
     $("#chef").hide(); 
     $("#lixo").show(500); 
   });
-  $("#fastfoodb").click(function() {  
+$("#fastfoodb").click(function() {  
     $("#hotdog").hide(); 
     $("#lixo").hide();   
     $("#casacomer").hide();
@@ -153,7 +153,7 @@ $("#iniciob").click(function() {
     $("#chef").hide();  
     $("#fastfood").show(500);    
   });
-  $("#hotdogb").click(function() {
+$("#hotdogb").click(function() {
     $("#lixo").hide(); 
     $("#casacomer").hide();
     $("#fastfood").hide();
@@ -161,7 +161,7 @@ $("#iniciob").click(function() {
     $("#chef").hide();   
     $("#hotdog").show(500);   
   });
-  $("#ccasab").click(function() {
+$("#ccasab").click(function() {
     $("#hotdog").hide(); 
     $("#lixo").hide(); 
     $("#fastfood").hide();
@@ -169,7 +169,7 @@ $("#iniciob").click(function() {
     $("#chef").hide();  
     $("#casacomer").show(500);   
   });
-  $("#restauranteb").click(function() {
+$("#restauranteb").click(function() {
     $("#hotdog").hide(); 
     $("#lixo").hide(); 
     $("#casacomer").hide();
@@ -177,7 +177,7 @@ $("#iniciob").click(function() {
     $("#chef").hide(); 
     $("#restaurante").show(500);   
   });
-  $("#chefb").click(function() {
+$("#chefb").click(function() {
     $("#hotdog").hide(); 
     $("#lixo").hide(); 
     $("#casacomer").hide();
@@ -185,7 +185,7 @@ $("#iniciob").click(function() {
     $("#restaurante").hide(); 
     $("#chef").show(500);   
   });
-  $("#rlixob").click(function() {
+$("#rlixob").click(function() {
     $("#casarem").hide(); 
     $("#apronto").hide(); 
     $("#clinica").hide();
@@ -193,7 +193,7 @@ $("#iniciob").click(function() {
     $("#hospital").hide(); 
     $("#lixorem").show(500);   
   });
-  $("#rcasab").click(function() {
+$("#rcasab").click(function() {
     $("#lixorem").hide(); 
     $("#apronto").hide(); 
     $("#clinica").hide();
@@ -201,7 +201,7 @@ $("#iniciob").click(function() {
     $("#hospital").hide(); 
     $("#casarem").show(500);   
   });
-  $("#prontosocorrob").click(function() {
+$("#prontosocorrob").click(function() {
     $("#casarem").hide(); 
     $("#lixorem").hide(); 
     $("#clinica").hide();
@@ -209,7 +209,7 @@ $("#iniciob").click(function() {
     $("#hospital").hide(); 
     $("#apronto").show(500);   
   });
-  $("#clinicab").click(function() {
+$("#clinicab").click(function() {
     $("#lixorem").hide(); 
     $("#apronto").hide(); 
     $("#casarem").hide();
@@ -217,7 +217,7 @@ $("#iniciob").click(function() {
     $("#hospital").hide(); 
     $("#clinica").show(500);   
   });
-  $("#medicab").click(function() {
+$("#medicab").click(function() {
     $("#lixorem").hide(); 
     $("#apronto").hide(); 
     $("#clinica").hide();
@@ -225,7 +225,7 @@ $("#iniciob").click(function() {
     $("#hospital").hide(); 
     $("#medic").show(500);   
   });
-  $("#hospitalb").click(function() {
+$("#hospitalb").click(function() {
     $("#lixorem").hide(); 
     $("#apronto").hide(); 
     $("#clinica").hide();
@@ -233,7 +233,65 @@ $("#iniciob").click(function() {
     $("#casarem").hide(); 
     $("#hospital").show(500);   
   });
-
-
-
-
+$("#honestob").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    $("#desonesto").hide(500);
+    $("#honesto").show(500);   
+  });
+$("#desonestob").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    $("#honesto").hide(500);
+    $("#desonesto").show(500);   
+  });
+$("#rdinheirob").click(function() {
+    $("#rjoias").hide(); 
+    $("#rroupas").hide(); 
+    $("#rcelular").hide();
+    $("#banco").hide();
+    $("#politico").hide(); 
+    $("#rdinheiro").show(500);   
+  });
+$("#rjoiasb").click(function() {
+    $("#rdinheiro").hide(); 
+    $("#rroupas").hide(); 
+    $("#rcelular").hide();
+    $("#banco").hide();
+    $("#politico").hide(); 
+    $("#rjoias").show(500);   
+  });
+$("#rroupasb").click(function() {
+    $("#rjoias").hide(); 
+    $("#rdinheiros").hide(); 
+    $("#rcelular").hide();
+    $("#banco").hide();
+    $("#politico").hide(); 
+    $("#rroupas").show(500);   
+  });
+$("#rcelularb").click(function() {
+    $("#rjoias").hide(); 
+    $("#rdinheiros").hide(); 
+    $("#rroupas").hide();
+    $("#banco").hide();
+    $("#politico").hide(); 
+    $("#rcelular").show(500);   
+});
+$("#bancob").click(function() {
+    $("#rjoias").hide(); 
+    $("#rdinheiros").hide(); 
+    $("#rroupas").hide();
+    $("#rcelular").hide();
+    $("#politico").hide(); 
+    $("#banco").show(500);   
+});
+$("#politicob").click(function() {
+    $("#rjoias").hide(); 
+    $("#rdinheiros").hide(); 
+    $("#rroupas").hide();
+    $("#rcelular").hide();
+    $("#banco").hide(); 
+    $("#politico").show(500);   
+});
