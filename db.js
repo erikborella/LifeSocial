@@ -28,8 +28,6 @@ function update(querry, data, callback) {
     }
   };
 
-  console.log(querry);
-
 
   global.conn.collection("userData").updateOne(adress, upd, callback);
 }
