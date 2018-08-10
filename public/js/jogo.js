@@ -63,6 +63,39 @@ $("#sairBtn").click(function() {
 	});
 });
 
+$("#recomecarBtn").click(function() {
+	iziToast.show({
+		title : "Tem certeza?",
+		position: "center",
+		theme: "dark",
+		displayMode: 0,
+		overlay: true,
+		timeout: 9999999999,
+		buttons: [
+			['<button>Sim</button>', (instace, toast) => {
+				instace.hide({transitionOut: 'fadeOutUp'}, toast);
+				
+				// Pog/2 para sesetar tudo
+				INTERVAL = 0;
+				SAVER = 0;
+				idade = 0;
+				diasVividos = 0;
+				money = 0;
+				indexUser = 0;
+				fomebarL = 100;
+				saudebarL = 100;
+				
+				saveAll();
+
+			}],
+			['<button>Não</button>', (instace, toast) => {
+				instace.hide({transitionOut: 'fadeOutUp'}, toast);
+			}]
+		],
+		
+	});
+});
+
 
 //função que inicia o usuario
 function initGame(indexxer) {
