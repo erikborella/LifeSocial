@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input id="inputC" placeholder="senha">
+        <input id="inputC2" placeholder="mensagem">
+        <button onclick="testC()">Testar</button>
+        <input id="resultC">
+        <br><br><br>
+
+        <input id="inputD" placeholder="senha">
+        <input id="inputD2" placeholder="valor">
+
+        <button onclick="testD()">Testar</button>
+        <input id="resultD">
+
+    </body>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+
+        function testC() {
+
+            var senhaI = $("#inputC").val();
+            var men = $("#inputC2").val();
+
+            $.post("/testCry", {"senha": senhaI, "men": men}, (data, status) => {
+                $("#resultC").val(data);
+            });
+            
+        }
+        function testD() {
+            
+            var senhaI = $("#inputD").val();
+            var men = $("#inputD2").val();
+
+            $.ajax({
+                type: "POST",
+                url: "testdCry",
+                data: {
+                    "senha": senhaI,
+                    "men": men
+                },
+                success: (data) => {
+                    $("#resultD").val(data)
+                },
+                error: (XMLHttpRequest, status, error) => {
+                    $("#resultD").val("{{!!!chave errada!!!}}")
+                }
+            })
+            
+        }
+    </script>
+</html>

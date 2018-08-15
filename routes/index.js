@@ -1,10 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var cryp = require("../cryp");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+
+
+router.post('/testCry', (req, res) => {
+	res.send( cryp.crypter(req.body.men, req.body.senha));
+});
+
+router.post('/testdCry', (req, res) => {
+	res.send(cryp.dCrypter(req.body.men, req.body.senha));
+});
+
+
 
 
 
