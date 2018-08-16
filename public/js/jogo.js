@@ -101,9 +101,7 @@ $("#recomecarBtn").click(function() {
 function initGame(indexxer) {
 
   indexUser = indexxer;
-  
-	//coloca a barra do lado
-	$('.sidenav').sidenav();
+
 	//fecha o login
 	$("#loginModal").modal("close");
 	//mostra a tela do jogo

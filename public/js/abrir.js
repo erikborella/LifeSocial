@@ -1,3 +1,20 @@
+$("#beg").click(function(){
+  $("#titulo").html("Início");
+});
+$("#esc").click(function(){
+  $("#titulo").html("Escola");
+});
+$("#traba").click(function(){
+  $("#titulo").html("Trabalho");
+});
+$("#merc").click(function(){
+  $("#titulo").html("Mercado");
+});
+$("#op").click(function(){
+  $("#titulo").html("Opções");
+});
+
+
 function esconderInicio() {
     $("#inicio").hide();
     
@@ -103,39 +120,39 @@ $("#iniciob").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
-    $("#inicio").show(500);   
+    $("#inicio").show(250);   
   });
 $("#trabb").click(function() {
     esconderInicio();
     esconderEscola();
     esconderMercado();
-    $("#trab").show(500);   
+    $("#trab").show(250);   
   });
 $("#schoolb").click(function() {
     esconderTrabalho();
     esconderInicio();
     esconderMercado();
-    $("#school").show(500);   
+    $("#school").show(250);   
   });
 $("#mercadob").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderInicio();
-    $("#mercado").show(500);   
+    $("#mercado").show(250);   
   });
 $("#comidab").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
-    $("#saude").hide(500);
-    $("#comida").show(500);   
+    $("#saude").hide(250);
+    $("#comida").show(250);   
   });
 $("#saudeb").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
-    $("#comida").hide(500);
-    $("#saude").show(500);   
+    $("#comida").hide(250);
+    $("#saude").show(250);   
   });
 $("#lixob").click(function() {
     $("#hotdog").hide(); 
@@ -143,7 +160,7 @@ $("#lixob").click(function() {
     $("#casacomer").hide();
     $("#restaurante").hide();  
     $("#chef").hide(); 
-    $("#lixo").show(500); 
+    $("#lixo").show(250); 
   });
 $("#fastfoodb").click(function() {  
     $("#hotdog").hide(); 
@@ -151,7 +168,7 @@ $("#fastfoodb").click(function() {
     $("#casacomer").hide();
     $("#restaurante").hide(); 
     $("#chef").hide();  
-    $("#fastfood").show(500);    
+    $("#fastfood").show(250);    
   });
 $("#hotdogb").click(function() {
     $("#lixo").hide(); 
@@ -159,7 +176,7 @@ $("#hotdogb").click(function() {
     $("#fastfood").hide();
     $("#restaurante").hide();
     $("#chef").hide();   
-    $("#hotdog").show(500);   
+    $("#hotdog").show(250);   
   });
 $("#ccasab").click(function() {
     $("#hotdog").hide(); 
@@ -167,7 +184,7 @@ $("#ccasab").click(function() {
     $("#fastfood").hide();
     $("#restaurante").hide(); 
     $("#chef").hide();  
-    $("#casacomer").show(500);   
+    $("#casacomer").show(250);   
   });
 $("#restauranteb").click(function() {
     $("#hotdog").hide(); 
@@ -175,7 +192,7 @@ $("#restauranteb").click(function() {
     $("#casacomer").hide();
     $("#fastfood").hide();
     $("#chef").hide(); 
-    $("#restaurante").show(500);   
+    $("#restaurante").show(250);   
   });
 $("#chefb").click(function() {
     $("#hotdog").hide(); 
@@ -183,7 +200,7 @@ $("#chefb").click(function() {
     $("#casacomer").hide();
     $("#fastfood").hide();
     $("#restaurante").hide(); 
-    $("#chef").show(500);   
+    $("#chef").show(250);   
   });
 $("#rlixob").click(function() {
     $("#casarem").hide(); 
@@ -191,7 +208,7 @@ $("#rlixob").click(function() {
     $("#clinica").hide();
     $("#medic").hide();
     $("#hospital").hide(); 
-    $("#lixorem").show(500);   
+    $("#lixorem").show(250);   
   });
 $("#rcasab").click(function() {
     $("#lixorem").hide(); 
@@ -199,7 +216,7 @@ $("#rcasab").click(function() {
     $("#clinica").hide();
     $("#medic").hide();
     $("#hospital").hide(); 
-    $("#casarem").show(500);   
+    $("#casarem").show(250);   
   });
 $("#prontosocorrob").click(function() {
     $("#casarem").hide(); 
@@ -207,7 +224,7 @@ $("#prontosocorrob").click(function() {
     $("#clinica").hide();
     $("#medic").hide();
     $("#hospital").hide(); 
-    $("#apronto").show(500);   
+    $("#apronto").show(250);   
   });
 $("#clinicab").click(function() {
     $("#lixorem").hide(); 
@@ -215,7 +232,7 @@ $("#clinicab").click(function() {
     $("#casarem").hide();
     $("#medic").hide();
     $("#hospital").hide(); 
-    $("#clinica").show(500);   
+    $("#clinica").show(250);   
   });
 $("#medicab").click(function() {
     $("#lixorem").hide(); 
@@ -223,7 +240,7 @@ $("#medicab").click(function() {
     $("#clinica").hide();
     $("#casarem").hide();
     $("#hospital").hide(); 
-    $("#medic").show(500);   
+    $("#medic").show(250);   
   });
 $("#hospitalb").click(function() {
     $("#lixorem").hide(); 
@@ -231,21 +248,21 @@ $("#hospitalb").click(function() {
     $("#clinica").hide();
     $("#medic").hide();
     $("#casarem").hide(); 
-    $("#hospital").show(500);   
+    $("#hospital").show(250);   
   });
 $("#honestob").click(function() {
     esconderInicio();
     esconderEscola();
     esconderMercado();
-    $("#desonesto").hide(500);
-    $("#honesto").show(500);   
+    $("#desonesto").hide(250);
+    $("#honesto").show(250);   
   });
 $("#desonestob").click(function() {
     esconderInicio();
     esconderEscola();
     esconderMercado();
-    $("#honesto").hide(500);
-    $("#desonesto").show(500);   
+    $("#honesto").hide(250);
+    $("#desonesto").show(250);   
   });
 $("#rdinheirob").click(function() {
     $("#rjoias").hide(); 
@@ -253,7 +270,7 @@ $("#rdinheirob").click(function() {
     $("#rcelular").hide();
     $("#banco").hide();
     $("#politico").hide(); 
-    $("#rdinheiro").show(500);   
+    $("#rdinheiro").show(250);   
   });
 $("#rjoiasb").click(function() {
     $("#rdinheiro").hide(); 
@@ -261,7 +278,7 @@ $("#rjoiasb").click(function() {
     $("#rcelular").hide();
     $("#banco").hide();
     $("#politico").hide(); 
-    $("#rjoias").show(500);   
+    $("#rjoias").show(250);   
   });
 $("#rroupasb").click(function() {
     $("#rjoias").hide(); 
@@ -269,7 +286,7 @@ $("#rroupasb").click(function() {
     $("#rcelular").hide();
     $("#banco").hide();
     $("#politico").hide(); 
-    $("#rroupas").show(500);   
+    $("#rroupas").show(250);   
   });
 $("#rcelularb").click(function() {
     $("#rjoias").hide(); 
@@ -277,7 +294,7 @@ $("#rcelularb").click(function() {
     $("#rroupas").hide();
     $("#banco").hide();
     $("#politico").hide(); 
-    $("#rcelular").show(500);   
+    $("#rcelular").show(250);   
 });
 $("#bancob").click(function() {
     $("#rjoias").hide(); 
@@ -285,7 +302,7 @@ $("#bancob").click(function() {
     $("#rroupas").hide();
     $("#rcelular").hide();
     $("#politico").hide(); 
-    $("#banco").show(500);   
+    $("#banco").show(250);   
 });
 $("#politicob").click(function() {
     $("#rjoias").hide(); 
@@ -293,5 +310,53 @@ $("#politicob").click(function() {
     $("#rroupas").hide();
     $("#rcelular").hide();
     $("#banco").hide(); 
-    $("#politico").show(500);   
+    $("#politico").show(250);   
+});
+$("#caridadeb").click(function() {
+  $("#comunitario").hide();
+  $("#empacotador").hide();
+  $("#professor").hide();
+  $("#programador").hide();
+  $("#sociologo").hide();
+  $("#caridade").show(250);
+}); 
+$("#comub").click(function() {
+  $("#caridade").hide();
+  $("#empacotador").hide();
+  $("#professor").hide();
+  $("#programador").hide();
+  $("#sociologo").hide();
+  $("#comunitario").show(250);
+});
+$("#empacob").click(function() {
+  $("#caridade").hide();
+  $("#comunitario").hide();
+  $("#professor").hide();
+  $("#programador").hide();
+  $("#sociologo").hide();
+  $("#empacotador").show(250);
+});
+$("#profb").click(function() {
+  $("#caridade").hide();
+  $("#comunitario").hide();
+  $("#empacotador").hide();
+  $("#programador").hide();
+  $("#sociologo").hide();
+  $("#professor").show(250);
+});
+$("#progb").click(function() {
+  $("#caridade").hide();
+  $("#comunitario").hide();
+  $("#empacotador").hide();
+  $("#professor").hide();
+  $("#sociologo").hide();
+  $("#programador").show(250);
+});
+$("#sociologob").click(function() {
+  $("#caridade").hide();
+  $("#comunitario").hide();
+  $("#empacotador").hide();
+  $("#programador").hide();
+  $("#professor").hide();
+  $("#sociologo").show(250);
 });
