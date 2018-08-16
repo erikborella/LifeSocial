@@ -27,28 +27,46 @@
        
         <nav class="nav-extended">
             <div class="nav-wrapper">
-                <div id="titulo" class="brand-logo">Início</div>             
+                <div id="titulo" class="brand-logo">Início</div>
+                <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>     
             </div>
+
             <div class="nav-content">
                 <ul class="tabs tabs-transparent tabs-fixed-width">
                     <li id="beg" class="tab"><a href="#test1">Início</a></li>
                     <li id="esc" class="tab"><a href="#test2">Escola</a></li>
                     <li id="traba" class="tab"><a href="#test3">Trabalho</a></li>
                     <li id="merc" class="tab"><a href="#test4">Mercado</a></li>
-                    <li id="op"class="tab"><a href="#test5">Opções</a></li>
                 </ul>
             </div>
+
+            
+            <ul id="slide-out" class="side-nav"> 
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="images/img_1.jpg">
+                        </div>
+                        <a href="#!user"><img class="circle" src="img/iconDefault.png"></a>
+                        <a id="nomePrincipal" href="#"><span class="white-text name"></span></a>
+                        <a id="emailS" href="#"><span class="white-text email"></span></a>
+                    </div>
+                </li>
+                <li><a id="money"></li></a>
+                <li><a id="anos"></li></a>
+                <li><a id="vivo"></li></a>
+                <li><div class="divider"></div></li>
+                <li><a class="subheader">Opções</a></li>
+                <li id="recomecarBtn"><a>Recomeçar</a></li>
+			    <li id="sairBtn"><a>Sair</a></li>
+            </ul>
         </nav>
+
 
             <div id="test1" class="col s12">
                 <div class="row">
-
-                        <div class="col s2">
-         
-                         </div>
-
-                        <div class="col s10" style="padding-left: 0px;padding-right: 0px;">
-                            <div class="row">
+                        <div class="col s12">
+                            <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
                                 Fome
                                 <div class="progress col s12">
                                     <div id="fomeBar" class="determinate"></div>
@@ -64,10 +82,53 @@
                 </div>
             </div>
 
-            <div id="test2" class="col s12">Test 2</div>
-            <div id="test3" class="col s12">Test 3</div>
-            <div id="test4" class="col s12">Test 4</div>
-            <div id="test5" class="col s12">Test 5</div>
+
+            <div id="test2" class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
+                            Inteligência
+                            <div class="progress col s12">
+                                <div id="intBar" class="determinate"></div>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="test3" class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
+                            Honestidade
+                            <div class="progress col s12">
+                                <div id="honestidadeBar" class="determinate"></div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                Desonestidade
+                                <div class="progress col s12">
+                                    <div id="desonestidadeBar" class="determinate"></div>
+                                </div>
+                            </div>                                 
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="test4" class="col s12">
+                <div class="row">
+                    <div class="col s12">
+                        <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
+                            Imposto
+                            <div class="progress col s12">
+                                <div id="impostoBar" class="determinate"></div>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>
+            </div>
 
     <modals>
         <div class="modal full" id="loginModal">

@@ -1,17 +1,17 @@
 $("#beg").click(function(){
-  $("#titulo").html("Início");
+  $("#titulo").html('Início');
 });
 $("#esc").click(function(){
-  $("#titulo").html("Escola");
+  $("#titulo").html('Escola');
 });
 $("#traba").click(function(){
-  $("#titulo").html("Trabalho");
+  $("#titulo").html('Trabalho');
 });
 $("#merc").click(function(){
-  $("#titulo").html("Mercado");
+  $("#titulo").html('Mercado');
 });
-$("#op").click(function(){
-  $("#titulo").html("Opções");
+$('.button-collapse').sideNav({
+  menuWidth: 325,
 });
 
 

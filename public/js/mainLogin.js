@@ -56,7 +56,7 @@ function login() {
 				if (userName[i].user == login && userName[i].password == senha) {
 					iziToast.success({
 						title: "Bem vindo " + userName[i].user,
-						position: "topRight"
+						position: "bottomRight"
 					})
 					acessou = true;
 					userIndex = i;

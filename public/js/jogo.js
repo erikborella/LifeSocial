@@ -24,7 +24,7 @@ $("#fotoDiv").click(function() {
 //botão de sair
 $("#sairBtn").click(function() {
 	iziToast.show({
-		title : "Tem certeza?",
+		title : "Tem certeza que quer sair?",
 		position: "center",
 		theme: "dark",
 		displayMode: 0,
@@ -65,7 +65,7 @@ $("#sairBtn").click(function() {
 
 $("#recomecarBtn").click(function() {
 	iziToast.show({
-		title : "Tem certeza?",
+		title : "Realmente quer recomeçar?",
 		position: "center",
 		theme: "dark",
 		displayMode: 0,
@@ -123,9 +123,10 @@ function initGame(indexxer) {
 
 		//coloca os dados na tela do jogo
 		$("#nomePrincipal").html(data[indexUser].dados.nome + " "+ data[indexUser].dados.sobrenome);
-		$("#anos").html("Anos vividos: "+ idade);
-		$("#vivo").html("Dias vividos: "+ diasVividos);
+		$("#anos").html("Anos: "+ idade);
+		$("#vivo").html("Dias: "+ diasVividos);
 		$("#money").html("Dinheiro: " + money);
+		$("#emailS").html(data[indexUser].dados.email);
 
 		//faz os dias passarem
 		passDay();
@@ -138,8 +139,8 @@ function initGame(indexxer) {
 //função que faz os dias passarem
 function passDay() {
 	function refreshData() {
-		$("#anos").html("Anos vividos: "+ idade);
-		$("#vivo").html("Dias vividos: "+ diasVividos);
+		$("#anos").html("Anos: "+ idade);
+		$("#vivo").html("Dias: "+ diasVividos);
 		$("#money").html("Dinheiro: " + money);
 	}
 

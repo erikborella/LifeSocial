@@ -14,7 +14,6 @@ $(document).ready(function(){
 
         }
 
-        console.log(diasvivos);
         
         $("#totaljg").attr("data-to",jogadores);
         $("#totaldias").attr("data-to",diasvivos);
