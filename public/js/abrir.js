@@ -1,14 +1,18 @@
 $("#beg").click(function(){
+  esconderTudo();
   $("#titulo").html('Início');
 });
 $("#esc").click(function(){
   $("#titulo").html('Escola');
+  esconderTudo();
 });
 $("#traba").click(function(){
   $("#titulo").html('Trabalho');
+  esconderTudo();
 });
 $("#merc").click(function(){
   $("#titulo").html('Mercado');
+  esconderTudo();
 });
 $('.button-collapse').sideNav({
   menuWidth: 325,
@@ -107,6 +111,72 @@ function esconderMercado() {
     $("#escrivaninha").hide();
     $("#tv").hide();
 }
+function esconderGifs(){
+  $("#ccomida").hide();
+  $("#cremedio").hide();
+
+  $("#quitinete").hide();
+  $("#apartamento").hide();
+  $("#casapq").hide();
+  $("#casamd").hide();
+  $("#casagd").hide();
+  $("#mansao").hide();
+
+  $("#antigo").hide();
+  $("#seminovo").hide();
+  $("#popular").hide();
+  $("#esportivo").hide();
+  $("#altaclasse").hide();
+
+  $("#mobilia").hide();
+  $("#cubo").hide();
+  $("#computador").hide();
+  $("#livros").hide();
+  $("#escrivaninha").hide();
+  $("#tv").hide();
+
+  $("#sociologia").hide();
+    
+    $("#exclusao").hide();
+    $("#filan").hide();
+    $("#publicpolitic").hide();
+    $("#edusocial").hide();
+    $("#ambientesocial").hide();
+
+    $("#phd").hide();
+    $("#sociotec").hide();
+    $("#cienciassociais").hide();
+    $("#socioeco").hide();
+    $("#socioind").hide();
+
+    $("#rdinheiro").hide();
+    $("#rjoias").hide();
+    $("#rroupas").hide();
+    $("#rcelular").hide();
+    $("#banco").hide();
+    $("#politico").hide();
+
+    $("#caridade").hide();
+    $("#comunitario").hide();
+    $("#empacotador").hide();
+    $("#professor").hide();
+    $("#programador").hide();
+    $("#sociologo").hide();
+
+    $("#lixo").hide();
+    $("#fastfood").hide();
+    $("#hotdog").hide();
+    $("#casacomer").hide();
+    $("#restaurante").hide();
+    $("#chef").hide();
+
+    $("#lixorem").hide();
+    $("#casarem").hide();
+    $("#apronto").hide();
+    $("#clinica").hide();
+    $("#medic").hide();
+    $("#hospital").hide();
+}
 function esconderTudo() {
     esconderInicio();
     esconderTrabalho();
@@ -120,39 +190,61 @@ $("#iniciob").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
+    esconderGifs();
     $("#inicio").show(250);   
   });
 $("#trabb").click(function() {
     esconderInicio();
     esconderEscola();
     esconderMercado();
+    esconderGifs();
     $("#trab").show(250);   
   });
 $("#schoolb").click(function() {
     esconderTrabalho();
     esconderInicio();
     esconderMercado();
+    esconderGifs();
     $("#school").show(250);   
   });
 $("#mercadob").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderInicio();
+    esconderGifs();
     $("#mercado").show(250);   
   });
 $("#comidab").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
-    $("#saude").hide(250);
+    esconderGifs();
+    $("#saude").hide();
     $("#comida").show(250);   
   });
 $("#saudeb").click(function() {
     esconderTrabalho();
     esconderEscola();
     esconderMercado();
-    $("#comida").hide(250);
+    esconderGifs();
+    $("#comida").hide();
     $("#saude").show(250);   
+  });
+  $("#honestob").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#desonesto").hide();
+    $("#honesto").show(250);   
+  });
+$("#desonestob").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#honesto").hide();
+    $("#desonesto").show(250);   
   });
 $("#lixob").click(function() {
     $("#hotdog").hide(); 
@@ -249,20 +341,6 @@ $("#hospitalb").click(function() {
     $("#medic").hide();
     $("#casarem").hide(); 
     $("#hospital").show(250);   
-  });
-$("#honestob").click(function() {
-    esconderInicio();
-    esconderEscola();
-    esconderMercado();
-    $("#desonesto").hide(250);
-    $("#honesto").show(250);   
-  });
-$("#desonestob").click(function() {
-    esconderInicio();
-    esconderEscola();
-    esconderMercado();
-    $("#honesto").hide(250);
-    $("#desonesto").show(250);   
   });
 $("#rdinheirob").click(function() {
     $("#rjoias").hide(); 

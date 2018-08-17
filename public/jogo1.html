@@ -10,24 +10,23 @@
     }
 </style>
 
-  <head>
+<head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link rel="stylesheet" type="text/css" href="css/jogocss.css">
     <link rel="stylesheet" type="text/css" href="css/iziToast.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Life</title>
     <link rel="icon" href="img/logo2.png">
     <meta charset="utf-8">
-  </head>
+</head>
 
   <body>
-       
-        <nav class="nav-extended">
+ 
+        <nav class="nav-extended teal darken-1">
             <div class="nav-wrapper">
-                <div id="titulo" class="brand-logo">Início</div>
+                <div id="titulo" class="center brand-logo">Início</div>
                 <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>     
             </div>
 
@@ -39,15 +38,14 @@
                     <li id="merc" class="tab"><a href="#test4">Mercado</a></li>
                 </ul>
             </div>
-
             
-            <ul id="slide-out" class="side-nav"> 
+            <ul id="slide-out" class="side-nav"> <!-- SideNav -->
                 <li>
                     <div class="user-view">
                         <div class="background">
                             <img src="images/img_1.jpg">
                         </div>
-                        <a href="#!user"><img class="circle" src="img/iconDefault.png"></a>
+                        <a href="#"><img class="circle" src="img/iconDefault.png"></a>
                         <a id="nomePrincipal" href="#"><span class="white-text name"></span></a>
                         <a id="emailS" href="#"><span class="white-text email"></span></a>
                     </div>
@@ -62,75 +60,237 @@
             </ul>
         </nav>
 
-
-            <div id="test1" class="col s12">
-                <div class="row">
-                        <div class="col s12">
-                            <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
-                                Fome
-                                <div class="progress col s12">
-                                    <div id="fomeBar" class="determinate"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                Saúde
-                                <div class="progress col s12">
-                                    <div id="saudeBar" class="determinate"></div>
-                                </div>
-                            </div>                                 
-                        </div>
-                </div>
-            </div>
-
-
-            <div id="test2" class="col s12">
+            <!-- Início -->
+            <div id="test1" class="col s12"> 
                 <div class="row">
                     <div class="col s12">
-                        <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
-                            Inteligência
+
+                        <div class="row" style="margin-bottom: 0px; margin-top: 10px;">
+                            <strong>Fome </strong>-<small> Se chegar ao final sua Saúde irá acabar mais rapidamente</small>
                             <div class="progress col s12">
-                                <div id="intBar" class="determinate"></div>
+                                <div id="fomeBar" class="determinate"></div>
                             </div>
-                        </div>                               
+                        </div> <!-- Fome progress bar -->
+
+                        <div class="row" style="border-bottom: 1px solid grey; margin-bottom: 0px;">
+                            <strong>Saúde </strong>-<small> Se chegar a final você morrerá</small>
+                            <div class="progress col s12" style="margin-bottom: 25px;">
+                                <div id="saudeBar" class="determinate"></div>
+                            </div>
+                        </div> <!-- saude progress bar -->
+
                     </div>
+                </div>
+
+                <!-- Desktop -->
+                <div class="hide-on-med-and-down"> 
+                    <div class="row">
+                        <div class="col s3"> <!-- Opções primárias -->
+                            <p><a style="width: 100%;" id="comidab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comida</strong></a>
+                            <p><a style="width: 100%;" id="saudeb"class="z-depth-0 black-text white waves-effect btn-large"><strong>Saúde</strong></a>
+                        </div> <!--  -->
+                        <div id="comida"> <!-- Opções secundárias -->
+                            <div class="col s3" style="border-left:1px solid grey; border-right:1px solid grey;">
+                                <p><a style="width: 100%;" id="ccasab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer em casa</strong><small class="right">0</small></a></p>
+                                <p><a style="width: 100%;" id="lixob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer lixo</strong><small class="right">R$0</small></a></p>
+                                <p><a style="width: 100%;" id="fastfoodb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer fastfood</strong><small class="right">R$10</small></a></p>
+                                <p><a style="width: 100%;" id="restauranteb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Restaurante</strong><small class="right">R$40</small></a></p>
+                                <p><a style="width: 100%;" id="chefb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Chef privado</strong><small class="right">R$100</small></a></p>
+                            </div>
+                        </div> <!--  -->
+
+                        <!-- Gifs -->
+                        <div id="casacomer">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+
+                        <div id="lixo">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+
+                        <div id="fastfood">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+
+                        <div id="restaurante">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+
+                        <div id="chef">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+                        <!-- Fim dos Gifs -->
+
+                        <div id="saude"> <!-- Opções secundárias -->
+                            <div class="col s3" style="border-left:1px solid grey; border-right:1px solid grey;">
+                                <p><a style="width: 100%;" id="rcasab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Remédio de casa</strong><small class="right">0</small></a></p>
+                                <p><a style="width: 100%;" id="rlixob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Remédio do lixo</strong><small class="right">R$0</small></a></p>
+                                <p><a style="width: 100%;" id="prontosocorrob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Pronto socorro</strong><small class="right">R$10</small></a></p>
+                                <p><a style="width: 100%;" id="medicab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Médico</strong><small class="right">R$150</small></a></p>
+                                <p><a style="width: 100%;" id="hospitalb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Hospital</strong><small class="right">R$300</small></a></p>
+                            </div>
+                        </div> <!--  -->
+
+                         <!-- Gifs -->
+                        <div id="casarem">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+    
+                        <div id="lixorem">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+    
+                        <div id="apronto">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+    
+                        <div id="medic">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+    
+                        <div id="hospital">
+                            <div class="col s6 center">
+                                <img src="" style="height: 50%; width: 50%;">
+                            </div>
+                        </div>
+                        <!-- Fim dos Gifs -->
+
+                        <!--  -->
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="hide-on-large-only">
+                    <div class="row">
+
+                        <div class="col s12">
+                            <p><a style="width: 100%; margin-top: -36px" id="comidab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comida</strong></a>
+                            <p><a style="width: 100%; border-bottom: 1px solid black;" id="comidab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Saúde</strong></a>
+                        </div>
+                        <div class="col s12">
+                            <div id="comida"> <!-- Opções secundárias -->
+                                <div class="col s12">
+                                    <p><a style="width: 100%;" id="ccasab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer em casa</strong><small class="right">0</small></a></p>
+                                    <p><a style="width: 100%;" id="lixob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer lixo</strong><small class="right">R$0</small></a></p>
+                                    <p><a style="width: 100%;" id="fastfoodb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer fastfood</strong><small class="right">R$10</small></a></p>
+                                    <p><a style="width: 100%;" id="restauranteb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Restaurante</strong><small class="right">R$40</small></a></p>
+                                    <p><a style="width: 100%;" id="chefb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Chef privado</strong><small class="right">R$100</small></a></p>
+                                </div>
+                            </div> <!--  -->
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+                
+            <!-- Escola -->
+            <div id="test2" class="col s12">
+
+                <div class="row">
+                    <div class="col s12">
+                        <div style="margin-bottom: 0px; margin-top: 10px;">
+                            <div style="border-bottom: 1px solid grey;" class="row">
+                                <strong>Inteligência </strong>-<small> Quanto mais Inteligência maior a variedade de Trabalhos</small>
+                                <div class="progress col s12" style="margin-bottom: 25px;">
+                                    <div id="intBar" class="determinate"></div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="hide-on-med-and-down"> 
+                    
+                    <div class="row">
+                        <div class="col s3"> <!-- Opções primárias -->
+                            <p><a style="width: 100%;" id="faculb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Faculdade</strong></a>
+                            <p><a style="width: 100%;" id="mestb"class="z-depth-0 black-text white waves-effect btn-large"><strong>Mestrado</strong></a>
+                            <p><a style="width: 100%;" id="doutb"class="z-depth-0 black-text white waves-effect btn-large"><strong>Doutorado</strong></a>
+                        </div> <!--  -->
+                        <div id="faculdade"> <!-- Opções secundárias -->
+                            <div class="col s3" style="border-left:1px solid grey; border-right:1px solid grey;">
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sociologia</strong><small class="right">5</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ciências Sociais</strong><small class="right">5</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Serviço Social</strong><small class="right">5</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Antropologia</strong><small class="right">5</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Filosofia</strong><small class="right">5</small></a></p>
+                            </div>
+                        </div> <!--  -->
+                        <div id="mestrado"> <!-- Opções secundárias -->
+                            <div class="col s3" style="border-left:1px solid grey; border-right:1px solid grey;">
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Exclusão Social</strong><small class="right">20</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Filantropia</strong><small class="right">20</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Políticas Públicas</strong><small class="right">20</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Educação Social</strong><small class="right">20</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ambiente Social</strong><small class="right">20</small></a></p>
+                            </div>
+                        </div> <!--  -->
+                        <div id="doutorado"> <!-- Opções secundárias -->
+                            <div class="col s3" style="border-left:1px solid grey; border-right:1px solid grey;">
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">PhD Sociologia</strong><small class="right">50</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sócio Técnico</strong><small class="right">50</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ciências Políticas</strong><small class="right">50</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Socio. Econômica</strong><small class="right">50</small></a></p>
+                                <p><a style="width: 100%;" id="" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Socio. Industrial</strong><small class="right">50</small></a></p>
+                            </div>
+                        </div> <!--  -->
+                    </div>
+
                 </div>
             </div>
 
-
+            <!-- Trabalho -->
             <div id="test3" class="col s12">
                 <div class="row">
                     <div class="col s12">
-                        <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
-                            Honestidade
-                            <div class="progress col s12">
-                                <div id="honestidadeBar" class="determinate"></div>
-                            </div>
-                        </div>
-                            <div class="row">
-                                Desonestidade
-                                <div class="progress col s12">
-                                    <div id="desonestidadeBar" class="determinate"></div>
+                        <div style="margin-bottom: 0px; margin-top: 10px;">
+                            <div style="border-bottom: 1px solid grey;" class="row">
+                                <strong>Honestidade </strong>-<small> Quanto mais Honesto maior a variedade de Trabalhos, quanto menos mais fácil roubar</small>
+                                <div class="progress col s12" style="margin-bottom: 25px;">
+                                    <div id="intBar" class="determinate"></div>
                                 </div>
-                            </div>                                 
+                            </div> 
+                        </div>                              
                     </div>
                 </div>
             </div>
 
-
+            <!-- Mercado -->
             <div id="test4" class="col s12">
                 <div class="row">
                     <div class="col s12">
-                        <div style="margin-bottom: 0px; margin-top: 10px;" class="row">
-                            Imposto
-                            <div class="progress col s12">
-                                <div id="impostoBar" class="determinate"></div>
-                            </div>
-                        </div>                               
+                        <div style="margin-bottom: 0px; margin-top: 10px;">
+                            <div style="border-bottom: 1px solid grey;" class="row">
+                                <strong>Imposto </strong>-<small> O Imposto fica variando, aumentando e diminuindo o preço dos produtos</small>
+                                <div class="progress col s12" style="margin-bottom: 25px;">
+                                    <div id="impostoBar" class="determinate"></div>
+                                </div>
+                            </div>                               
+                        </div>
                     </div>
                 </div>
             </div>
 
-    <modals>
+    <modals> <!-- Tela de Login -->
         <div class="modal full" id="loginModal">
             <div class="modal-content">
                 <div class="container">
