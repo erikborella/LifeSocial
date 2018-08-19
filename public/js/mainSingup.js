@@ -1,326 +1,208 @@
-$(document).ready(function() {
+// realiza o cadastro e verifica por erros
+$("#singup").click(function() {
+	var data = $("#inputVals").serializeArray();
 	
-	//Global vars
-	
-
-	var check = false;
-	var userName;
-
-	//Events
-
-	$("#termosdeuso").click(function() {
-
-		window.open("TermoDeUso.html");
-
-	});
-
-	$("#singupbotao").click(function() {
-
-		$.get("/getUserdata", function(data, status) {
-			userName = data;
-
-			var name = $("#logininput").val();
-			var surname = $("#surnameinput").val();
-			var password = $("#senhainput").val();
-			var password2 = $("#senhainput2").val();
-			var email = $("#email").val();
-
-			if (!name) {
-				iziToast.error({
-					title: "Digite o seu Username",
-					position: "topRight"
-				})
-			}
-			else if (!password) {
-				iziToast.error({
-					title: "Digite a Senha",
-					position: "topRight"
-				})
-			}
-			else if (!password2) {
-				iziToast.error({
-					title: "Confirme a senha",
-					position: "topRight"
-				})
-			}
-			else if (!surname) {
-				iziToast.error({
-					title: "Digite o seu sobrenome!",
-					position: "topRight"
-				})
-			}
-			else if (!email) {
-				iziToast.error({
-					title: "Digite o email!",
-					position: "topRight"
-				});
-			}
-			else if (password != password2) {
-				iziToast.error({
-					title: "As senhas digitadas são diferentes",
-					position: "topRight"
-				})
-			}
-
-			else if (passwordCheck(password, true) != true) {}
-
-			else if ($("#email").hasClass("invalid")) {
-				iziToast.error({
-					title: "Email invalido",
-					position: "topRight"
-				});
-			}
-
-			else if (!check) {
-				iziToast.error({
-					title: "Voce não concordou com os termos de uso",
-					position: "topRight"
-				})
-			}
-			else {
-
-				var userExist = false;
-				var emailExist = false;
-
-				for (var i = 0; i < userName.length; i++) {
-					if (userName[i].user == name) {
-						iziToast.error({
-							title: "Esse nome de usuario já existe",
-							position: "topRight"
-						})
-						userExist = true;
-					}
-				}
-
-				for (var i = 0; i < userName.length; i++) {
-					if (userName[i].dados.email == email) {
-						iziToast.error({
-							title: "Esse endereço de email ja existe",
-							position: "topRight"
-						});
-						emailExist = true;
-					}
-				}
-
-				if (!userExist && !emailExist) {
-					iziToast.success({
-						title: "Cadastro realizado com sucesso",
-						position: "topRight"
-					})
-					
-					var dataUsers = $("#cad").serializeArray();
-					
-					$.post("/confirmSingup",
-						{
-							name : dataUsers[0].value,
-							sobrenome : dataUsers[1].value,
-							password : dataUsers[2].value,
-							email: dataUsers[4].value
-						},
-
-						(data, status) => {
-							$("#logininput").val("").removeClass("validate valid invalid");
-							$("#surnameinput").val("").removeClass("validate valid invalid");
-							$("#senhainput").val("").removeClass("validate valid invalid");
-							$("#senhainput2").val("").removeClass("validate valid invalid");
-							$("#email").val("").removeClass("validate valid invalid");
-							M.updateTextFields();
-
-							$("#loginBack").show();
-						}
-
-					);
-				}
-			}
-		});
-	});
-
-	$("#checkFoda").click(function() {
-		check = !check;
-	});
-
-	$("#loginBack").click(function() {
-		window.location.replace("jogo.html");
-	});
-
-	$("#senhainput").change(function() {
-		setTimeout(function() {
-			var Pcheck = passwordCheck($("#senhainput").val(), false);
-
-			if (Pcheck == true) {
-				$("#senhainput").removeClass("valid");
-				$("#senhainput").addClass("valid");
-			}
-			else {
-				$("#senhainput").removeClass("valid");
-				$("#senhainput").addClass("invalid");
-				$("#passwordError").attr("data-error", Pcheck);
-			}
-		}, 10);
-		
-	});
-
-	$("#senhainput2").change(function() {
-		setTimeout(function() {
-			if( $("#senhainput2").val() != $("#senhainput").val() ) {
-
-				$("#senhainput2").removeClass("valid");
-				$("#senhainput2").addClass("invalid");
-				$("#password2Error").attr("data-error", "As senhas digitadas são diferentes");
-
-			}
-			else {
-
-				$("#senhainput2").removeClass("valid");
-				$("#senhainput2").addClass("valid");
-
-			}
-		}, 10);
-
-	});
-
-	$("#logininput").change(function() {
-		setTimeout(function() {
+	if (!validate(data)) {
+		$.get("getUsernames", (database, status) => {			
 			var exist = false;
-			$.get("/getUserdata", (data, status) => {
-				for (var i = 0; i < data.length; i++) {
-					if($("#logininput").val() == data[i].user) {
-						$("#logininput").removeClass("valid");
-						$("#logininput").addClass("invalid");
-						$("#userError").attr("data-error", "Esse nome de usuario já existe");
-						exist = true;
-					}
-				}
-
-				if (!exist) {
-					$("#logininput").removeClass("invalid");
-					$("#logininput").addClass("valid");
-				}
- 				
-			});
-		}, 10);
-	});
-
-	$("#email").change(function() {
-		setTimeout(() => {
-			var exist = false;
-			$.get("/getUserdata", (data, status) => {
-				for (var i = 0; i < data.length; i++) {
-					if ($("#email").val() == data[i].dados.email) {
-						$("#email").removeClass("valid");
-						$("#email").addClass("invalid");
-						$("#emailError").attr("data-error", "Esse endereço de email já existe");
-						exist = true;
-					}
-				}
-				if (!exist) {
-					$("#email").removeClass("invalid");
-					$("#email").addClass("valid");
-					$("#emailError").attr("data-error", "Email invalido");
-				}
-			});
-		}, 10);
-	})
-
-
-	//Functions
-
-	function passwordCheck(password, showError) {
-		var passOkay = false;
-		if (!lengthCheck(password, 4)) {
-			if (showError) {
-				iziToast.error({
-					title: "A senha deve ser maior ou igual a 4",
-					position: "topRight"
-				});
+			for (var i = 0; i < database.length; i++) {
+				if (database[i].username == data[2].value) {
+					exist = true;
+				} 
 			}
-			return "A senha deve ser maior ou igual a 4";
-		}
-		else if (!uperCaseCheck(password)) {
-			if (showError) {
-				iziToast.error({
-					title: "Sua senha deve ter uma letra em maiusculo",
-					position: "topRight"
-				});
+			
+			if (exist) {
+				showErrorMsg(["Nome de usuario já existente"]);
 			}
-			return "Sua senha deve ter uma letra em maiusculo";
-		}
-		else if (!lowCaseCheck(password)) {
-			if (showError) {
-				iziToast.error({
-					title: "Sua senha deve ter no minino uma letra em minusculo",
-					position: "topRight"
-				});
-			}
-			return "Sua senha deve ter no minimo uma letra em minisculo";
-		}
-		else if (!numberCheck(password)) {
-			if (showError) {
-				iziToast.error({
-					title: "Sua senha deve ter no minimo um numero",
-					position: "topRight"
-				});
-			}
-			return "Sua senha deve ter no minimo um numero";
-		}
-		else {
-			return true;
-		}
-	}
+			else {
+				iziToast.success({
+					title: "Cadastro realizado com sucesso"
+				})
+				$.post("/singupData", data, (info, sss) => {
 
-	function lengthCheck(text, len) {
-		if (text.length < len) {
-			return false;
-		}
-		else {
-			return true;
-		}
-	}
-
-	function uperCaseCheck(text) {
-		var prop = false;
-		var leter = ['A', 'B', 'C', 'D', 'E', 'F', 'J', 'K', 'L','M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'Y','X', 'Z'];
-		for (var i = 0; i < text.length; i++) {
-			for (var j = 0; j < leter.length; j++) {
-				if (text.charAt(i) == leter[j]) {
-					prop = true;
-				}
+				})
 			}
-		}
-		return prop;
+
+			
+			
+		})
 	}
 	
-	function lowCaseCheck(text) {
-		var prop = false;
-		var leter = ['a', 'b', 'c', 'd', 'e', 'f', 'j', 'k', 'l','m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'y','x', 'z'];
-		for (var i = 0; i < text.length; i++) {
-			for (var j = 0; j < leter.length; j++) {
-				if (text.charAt(i) == leter[j]) {
-					prop = true;
-				}
-			}
-		}
-		return prop;
-	}
-
-	function numberCheck(text) {
-		var prop = false;
-		var leter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-		for (var i = 0; i < text.length; i++) {
-			for (var j = 0; j < leter.length; j++) {
-				if (text.charAt(i) == leter[j]) {
-					prop = true;
-				}
-			}
-		}
-		return prop;
-	}
-
-
-
-
-
 });
 
+// da uma recomendação do username
+$("#surnameInput").change(function() {
+	if (!$("#usernameInput").val()) {
 
+		putUsername(($("#nameInput").val()+"."+$("#surnameInput").val()).toLowerCase(), 0);
+		//  $("#usernameInput").val(($("#nameInput").val()+"."+$("#surnameInput").val()).toLowerCase());
+	}
+})
+
+//verifica se o username já existe
+$("#usernameInput").change(function() {
+	$.get("/getUsernames", (database, status) => {
+		var exist = false;
+		for (var i = 0; i < database.length; i++) {
+			if (database[i].username == $("#usernameInput").val()) {
+				exist = true;
+			} 
+		}
+
+		if (exist) {
+			$("#usernameInput").removeClass("valid");
+			$("#usernameInput").addClass("invalid");
+		}
+		else {
+			$("#usernameInput").removeClass("invalid");
+			$("#usernameInput").addClass("valid");
+		}
+
+	})
+})
+
+//verifica se as duas senhas digitadas estão iguais
+$("#password2Input").change(function() {
+
+	if ($(this).val() != $("#passwordInput").val() && $("#passwordInput").val()) {
+		setTimeout(function() {
+			$("#passwordInput").addClass("invalid");
+			$("#password2Input").addClass("invalid");
+
+			$("#passwordInput").removeClass("valid");
+			$("#password2Input").removeClass("valid");
+		}, 0)
+	}
+	else {
+		$("#passwordInput").removeClass("invalid");
+		$("#password2Input").removeClass("invalid");
+
+		$("#passwordInput").addClass("valid");
+		$("#password2Input").addClass("valid");
+	}
+	
+	
+})
+$("#passwordInput").change(function() {
+
+	if ($(this).val() != $("#passwordInput").val() && $("#passwordInput").val()) {
+		setTimeout(function() {
+			$("#passwordInput").addClass("invalid");
+			$("#password2Input").addClass("invalid");
+
+			$("#passwordInput").removeClass("valid");
+			$("#password2Input").removeClass("valid");
+		}, 0)
+	}
+	else {
+		$("#passwordInput").removeClass("invalid");
+		$("#password2Input").removeClass("invalid");
+
+		$("#passwordInput").addClass("valid");
+		$("#password2Input").addClass("valid");
+	}
+	
+	
+})
+
+//abre os termos de uso
+$("#useTerms").click(function() {
+	window.open("./TermoDeUso.html");
+})
+
+// verificação dos dados
+function validate(data) {
+	var isError = false;
+	var errorMesagem = [];
+
+	if (data.length == 6) {
+		isError = true;
+		errorMesagem.push("Você não concordou com os termos de uso");
+	}
+
+	if (!data[0].value) {
+		isError = true;
+		errorMesagem.push("Digite o seu Nome");
+	}
+
+	if (!data[1].value) {
+		isError = true;
+		errorMesagem.push("Digite o seu Sobrenome");
+	}
+
+	if (!data[2].value) {
+		isError = true;
+		errorMesagem.push("Digite o seu nome de Login");
+	}
+
+	if (!data[3].value) {
+		isError = true;
+		errorMesagem.push("Digite a sua senha");
+	}
+
+	if (!data[4].value) {
+		isError = true;
+		errorMesagem.push("Confirme a sua senha");
+	}
+
+	if (!data[5].value) {
+		isError = true;
+		errorMesagem.push("digite o seu email");
+	}
+
+	if (data[3].value != data[4].value) {
+		isError = true;
+		errorMesagem.push("Senhas digitadas são diferentes");
+		
+	}
+
+
+	if (isError) {
+		showErrorMsg(errorMesagem);
+	}
+
+	return isError;
+
+}
+
+// mostra as mensagem de erros
+function showErrorMsg(data) {
+	var errors = [];
+	for (var i = 0; i < data.length; i++) {
+		errors += "*"+data[i]+"<br>"
+	}
+
+	iziToast.error({
+		title: "Erros encontrados:",
+		message: errors
+	});
+	
+}
+
+//recomendador de usernames
+function putUsername(preName, preCont) {
+	console.log(preName);
+	
+	$.get("/getUsernames", (database, status) => {
+		var exist = false;
+		for (var i = 0; i < database.length; i++) {
+			if (database[i].username == preName) {
+				exist = true;
+			} 
+		}
+
+		if (exist) {
+			putUsername(preName+(preCont+1), preCont+1);
+		}
+		else {
+			if (preCont == 0) {
+				$("#usernameInput").val(($("#nameInput").val()+"."+$("#surnameInput").val()).toLowerCase());
+			}
+			else {
+				$("#usernameInput").val(($("#nameInput").val()+"."+$("#surnameInput").val()+""+preCont).toLowerCase());
+			}
+		}
+
+	})
+}
 

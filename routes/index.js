@@ -7,118 +7,60 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
-
 router.post('/testCry', (req, res) => {
-	res.send( cryp.crypter(req.body.men, req.body.senha));
+	var cr = cryp.crypter(req.body.men, req.body.senha);
+	res.send(cr);
+})
+
+router.post("/testdCry", (req, res) => {
+	var dr = cryp.dCrypter(req.body.men, req.body.senha);
+	res.send(dr);
+})
+
+router.get("/getUsernames", (req, res) => {
+	global.db.getUsernames((e, docs) => {
+		res.send(docs);
+	})
 });
 
-router.post('/testdCry', (req, res) => {
-	res.send(cryp.dCrypter(req.body.men, req.body.senha));
-});
+
+router.post("/singupData", (req, res) => {
+	var password = req.body.passwordInput;
 
 
-
-
-
-router.post('/confirmSingup', function(req, res) {
-	var user = req.body.name;
-	var sobrenome = req.body.sobrenome;
-	var password = req.body.password;
-	var email = req.body.email;
-
-	console.log("ok!");
-	console.log(req.body);
-	res.send("");
-
-	global.db.insert({
-		"user" : user,
-		"password" : password,
+	var json = {
+		"user" : cryp.crypter(req.body.usernameInput , password),
+		"password": cryp.crypter(req.body.passwordInput , password),
 		"dados" : {
-			"nome" : user,
-			"sobrenome" : sobrenome,
-			"email" : email
+			"nome" : cryp.crypter(req.body.nameInput , password),
+			"sobrenome" : cryp.crypter(req.body.surnameInput , password),
+			"email" : cryp.crypter(req.body.emailInput , password)
 		},
 		"gameValues" : {
 			"idade" : 0,
 			"diasVividos" : 0,
 			"money" : 10,
-			"fomebarL": 100,
-			"saudebarL": 100,
-			"honestidadeBarL": 0,
-			"desonestidadeBarL": 0
+			"fome" : 100,
+			"saude" : 100,
+			"inteligencia" : 1,
+			"imposto" : 0,
+			"honestidade" : 50
 		}
-	}, (err, result) => {
-		if (err) { return console.log(err);}
-	})
-});
+	}
 
-router.get('/getUserdata', function(req, res) {
-	global.db.findAll((e, docs) => {
-		if(e) {return console.log(e);}
-		res.send(docs);
-	})
-});
-
-router.post('/findPassword', (req, res) => {
-	var email = req.body.email;
-
-	global.db.findAll((e, docs) => {
-		if (e) {return console.log(e);}
-
-		var exist = false;
-		var index;
-
-		for (var i = 0; i < docs.length; i++) {
-			if (docs[i].dados.email == email) {
-				exist = true
-				index = i;
-			};
-		}
-
-		if (!exist) {
-			res.send("false");
-		}
-		else {
-			var username = docs[index].user;
-			var password = docs[index].password;
-			global.mailSender.sendMail(email, username, password);
-			res.send("true");
-		}
-
+	global.db.insertUserData(json, (e, data) => {
+		if (e) console.log(e);
 	})
 
-});
-
-router.post("/zuero", (req, res) => {
-	var email = req.body.email;
-	var user = req.body.user;
-	var msg = req.body.mensagem;
-
-	global.mailSender.MailZuero(email, user, msg);
-	res.send("true");
-})
-
-router.post("/updateData", (req, res) => {
-
-	
-	var queryy = req.body.querry;
-
-	var data = {
-		"idade" : req.body.idade,
-		"diasVividos" : req.body.diasVividos,
-		"money" : req.body.money,
-		"fomebarL": req.body.fomebarL,
-		"saudebarL": req.body.saudebarL
-	};
-
-	global.db.update(queryy, data, (e, data) => {
+	global.db.insertUsernames({"username" : req.body.usernameInput}, (e, data) => {
 		if (e) console.log(e);
 	})
 	
-	
 })
+
 
 
 
 module.exports = router;
+
+// ajk451714wxdw1215717_

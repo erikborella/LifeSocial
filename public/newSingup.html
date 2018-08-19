@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/iziToast.min.css">
+        <link rel="icon" href="img/logo2.png">
+        <meta charset="utf-8">
+        <title>Life Social: Cadastro</title>
+    </head>
+
+    <body>
+
+        <br><br>
+        <div class="container">
+            <div class="center-align">
+                <img class="responsive-img" src="img/logo.png">
+            </div>
+
+            
+
+            <form id="inputVals" class="">
+
+                <div class="row">
+                    <!-- name Input -->
+                    <div class="input-field col m12 l4">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="nameInput" type="text" class="validate" name="nameInput">
+                        <label for="nameInput">Nome</label>
+                    </div>
+                    <!-- surname Input -->
+                    <div class="input-field col m12 l4">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="surnameInput" type="text" class="validate" name="surnameInput">
+                        <label for="surnameInput">Sobrenome</label>
+                    </div>
+                    <!-- username Input -->
+                    <div class="input-field col m12 l4">
+                        <i class="material-icons prefix">account_balance_wallet</i>
+                        <input id="usernameInput" type="text" class="validate" name="usernameInput">
+                        <label for="usernameInput" data-error="Username já existe">Username</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- password Input -->
+                    <div class="input-field col m12 l6">
+                        <i class="material-icons prefix">lock</i>
+                        <input id="passwordInput" type="password" class="validate" name="passwordInput">
+                        <label for="passwordInput" data-error="Senhas digitadas diferentes">Senha</label>
+                    </div>
+                    <!-- password2 input -->
+                    <div class="input-field col m12 l6">
+                        <i class="material-icons prefix">lock</i>
+                        <input id="password2Input" type="password" class="validate" name="password2Input">
+                        <label for="password2Input" data-error="Senhas digitadas diferentes">Confirme a senha</label>
+                    </div>
+                </div>
+                
+
+                <div class="row">
+                    <!-- email input -->
+                    <div class="input-field col m12">
+                        <i class="material-icons prefix">alternate_email</i>
+                        <input id="emailInput" type="text" class="validate" name="emailInput">
+                        <label for="emailInput">Email de Recuperação</label>
+                    </div>
+                    <div class="center-align">
+                            <input type="checkbox" name="userTermsCheck" id="userTermsCheck">
+                            <label for="userTermsCheck">Eu concordo com os <a href="#" id="useTerms">termos de Uso</a></label>
+                    </div>
+                    <br>
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn blue darken-4" id="singup">Continuar</a>
+                    </div>
+                </div>
+
+            </form>
+
+
+            
+
+        </div>
+        
+        <div>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="js/materialize.min.js"></script>
+            <script type="text/javascript" src="js/iziToast.min.js"></script>
+            <script type="text/javascript" src="js/mainSingup.js"></script>
+            
+        </div>
+    </body>
+</html> 
