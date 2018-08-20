@@ -23,6 +23,72 @@ router.get("/getUsernames", (req, res) => {
 	})
 });
 
+router.post("/login", (req, res) => {
+	var username = req.body.username;
+	var password = req.body.password;
+
+	var key = cryp.crypter(username, password);
+
+	global.db.getUserData((e, docs) => {
+
+		if (e) return console.log(e);
+
+		var index = -1;
+
+		for (var i = 0; i < docs.length; i++) {
+			if (key == docs[i].user) {
+				index = i;
+				break;
+			}
+		}
+
+		if (index == -1) {
+			res.send(false);
+			
+		}
+		else {
+
+			var user = cryp.dCrypter(docs[index].user, password)
+			var pass = cryp.dCrypter(docs[index].password , password)
+			var nome = cryp.dCrypter(docs[index].dados.nome, password)
+			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome , password)
+			var email = cryp.dCrypter(docs[index].dados.email , password)
+
+
+
+			var json = {
+				"user" : user.toString(),
+				"password": pass.toString(),
+				"dados" : {
+					"nome" : nome.toString(),
+					"sobrenome" : sobrenome.toString(),
+					"email" : email.toString()
+				},
+				"gameValues" : {
+					"idade" : docs[index].gameValues.idade,
+					"diasVividos" : docs[index].gameValues.diasVividos,
+					"money" : docs[index].gameValues.money,
+					"fome" : docs[index].gameValues.fome,
+					"saude" : docs[index].gameValues.saude,
+					"inteligencia" : docs[index].gameValues.inteligencia,
+					"imposto" : docs[index].gameValues.imposto,
+					"honestidade" : docs[index].gameValues.honestidade
+				}
+			}
+
+			res.send(json)
+			
+			
+			
+		}
+		
+		
+		
+	})
+	
+	
+})
+
 
 router.post("/singupData", (req, res) => {
 	var password = req.body.passwordInput;
