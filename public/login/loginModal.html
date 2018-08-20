@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+<link rel="stylesheet" type="text/css" href="../css/iziToast.min.css">
+<link rel="icon" href="../img/logo2.png">
+
+<style>
+    .modal.full {
+        width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        top: 0 !important;
+    }
+</style>
+
+
+<div id="loginModal" class="modal full">
+
+    <!-- <div class="modal-content teal darken-1">
+        <div class="center-align">
+            <h4 class="white-text">Login</h4>
+        </div>
+    </div> -->
+
+    <div class="modal-content">
+
+
+        <div class="container">
+
+            <div class="center-align">
+                <img src="../img/logo.png" class="responsive-img">
+            </div>
+
+            <br>
+
+            <form id="loginForm">
+                <div class="row">
+                    <div class="col s12 m7 offset-m2 input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="usernameInput" name="usernameInput" type="text">
+                        <label for="usernameInput">Username</label>
+                    </div>
+                    <div class="col s12 m7 offset-m2 input-field">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="text" name="passwordInput" id="passwordInput">
+                        <label for="passwordInput">Senha</label>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        
+        
+    </div>
+    
+
+    <div class="modal-footer">
+        <div class="center-align">
+                <a class="waves-effect teal darken-1 waves-light btn" id="loginBtn">Logar</a>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/iziToast.min.js"></script>
+<script src="login.js"></script>
+

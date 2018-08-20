@@ -186,21 +186,16 @@ function putUsername(preName, preCont) {
 	$.get("/getUsernames", (database, status) => {
 		var exist = false;
 		for (var i = 0; i < database.length; i++) {
-			if (database[i].username == preName) {
+			if (database[i].username == preName+""+preCont) {
 				exist = true;
 			} 
 		}
 
 		if (exist) {
-			putUsername(preName+(preCont+1), preCont+1);
+			putUsername(preName, preCont+1);
 		}
 		else {
-			if (preCont == 0) {
-				$("#usernameInput").val(($("#nameInput").val()+"."+$("#surnameInput").val()).toLowerCase());
-			}
-			else {
-				$("#usernameInput").val(($("#nameInput").val()+"."+$("#surnameInput").val()+""+preCont).toLowerCase());
-			}
+			$("#usernameInput").val(($("#nameInput").val()+"."+$("#surnameInput").val()+""+preCont).toLowerCase());
 		}
 
 	})
