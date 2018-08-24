@@ -78,16 +78,10 @@ router.post("/login", (req, res) => {
 
 			res.send(json)
 			
-			
-			
 		}
-		
-		
-		
 	})
-	
-	
 })
+
 
 
 router.post("/singupData", (req, res) => {
