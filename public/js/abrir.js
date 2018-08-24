@@ -1,16 +1,20 @@
 $("#beg").click(function(){
   esconderTudo();
+  $("#welcome").hide();
   $("#titulo").html('Início');
 });
 $("#esc").click(function(){
+  $("#welcome").hide();
   $("#titulo").html('Escola');
   esconderTudo();
 });
 $("#traba").click(function(){
+  $("#welcome").hide();
   $("#titulo").html('Trabalho');
   esconderTudo();
 });
 $("#merc").click(function(){
+  $("#welcome").hide();
   $("#titulo").html('Mercado');
   esconderTudo();
 });
@@ -245,6 +249,73 @@ $("#desonestob").click(function() {
     esconderGifs();
     $("#honesto").hide();
     $("#desonesto").show(250);   
+  });
+  $("#faculdadeb").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#mestrado").hide();
+    $("#doutorado").hide();
+    $("#faculdade").show(250);   
+  });
+  $("#mestb").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#faculdade").hide();
+    $("#doutorado").hide();
+    $("#mestrado").show(250);   
+  });
+  $("#doutb").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#faculdade").hide();
+    $("#mestrado").hide();
+    $("#doutorado").show(250);   
+  });
+  $("#supermercadob").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#casa").hide();
+    $("#carro").hide();
+    $("#utencilios").hide();
+    $("#supermercado").show(250);   
+  });
+  $("#casab").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#supermercado").hide();
+    $("#carro").hide();
+    $("#utencilios").hide();
+    $("#casa").show(250);   
+  });
+  $("#carrob").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#supermercado").hide();
+    $("#casa").hide();
+    $("#utencilios").hide();
+    $("#carro").show(250);   
+  });
+  $("#utenciliosb").click(function() {
+    esconderInicio();
+    esconderEscola();
+    esconderMercado();
+    esconderGifs();
+    $("#supermercado").hide();
+    $("#casa").hide();
+    $("#carro").hide();
+    $("#utencilios").show(250);   
   });
 $("#lixob").click(function() {
     $("#hotdog").hide(); 

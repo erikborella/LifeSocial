@@ -78,3 +78,5 @@ startServer.bat
 *.wt
 data/WiredTiger
 *.bson
+*.wt
+*.wt
