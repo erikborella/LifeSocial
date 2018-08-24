@@ -53,8 +53,8 @@ function esconderTrabalho() {
     $("#politico").hide();
 
     $("#caridade").hide();
-    $("#comunitario").hide();
-    $("#empacotador").hide();
+    $("#pedreiro").hide();
+    $("#gari").hide();
     $("#professor").hide();
     $("#programador").hide();
     $("#sociologo").hide();
@@ -157,8 +157,8 @@ function esconderGifs(){
     $("#politico").hide();
 
     $("#caridade").hide();
-    $("#comunitario").hide();
-    $("#empacotador").hide();
+    $("#pedreiro").hide();
+    $("#gari").hide();
     $("#professor").hide();
     $("#programador").hide();
     $("#sociologo").hide();
@@ -391,49 +391,49 @@ $("#politicob").click(function() {
     $("#politico").show(250);   
 });
 $("#caridadeb").click(function() {
-  $("#comunitario").hide();
-  $("#empacotador").hide();
+  $("#pedreiro").hide();
+  $("#gari").hide();
   $("#professor").hide();
   $("#programador").hide();
   $("#sociologo").hide();
   $("#caridade").show(250);
 }); 
-$("#comub").click(function() {
+$("#pedreirob").click(function() {
   $("#caridade").hide();
-  $("#empacotador").hide();
+  $("#gari").hide();
   $("#professor").hide();
   $("#programador").hide();
   $("#sociologo").hide();
-  $("#comunitario").show(250);
+  $("#pedreiro").show(250);
 });
-$("#empacob").click(function() {
+$("#garib").click(function() {
   $("#caridade").hide();
-  $("#comunitario").hide();
+  $("#pedreiro").hide();
   $("#professor").hide();
   $("#programador").hide();
   $("#sociologo").hide();
-  $("#empacotador").show(250);
+  $("#gari").show(250);
 });
 $("#profb").click(function() {
   $("#caridade").hide();
-  $("#comunitario").hide();
-  $("#empacotador").hide();
+  $("#pedreiro").hide();
+  $("#gari").hide();
   $("#programador").hide();
   $("#sociologo").hide();
   $("#professor").show(250);
 });
 $("#progb").click(function() {
   $("#caridade").hide();
-  $("#comunitario").hide();
-  $("#empacotador").hide();
+  $("#pedreiro").hide();
+  $("#gari").hide();
   $("#professor").hide();
   $("#sociologo").hide();
   $("#programador").show(250);
 });
 $("#sociologob").click(function() {
   $("#caridade").hide();
-  $("#comunitario").hide();
-  $("#empacotador").hide();
+  $("#pedreiro").hide();
+  $("#gari").hide();
   $("#programador").hide();
   $("#professor").hide();
   $("#sociologo").show(250);

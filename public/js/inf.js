@@ -11,9 +11,7 @@ $(document).ready(function(){
              if(lista[i].gameValues.diasVividos > record){
                 record = lista[i].gameValues.diasVividos;
              }
-
         }
-
         
         $("#totaljg").attr("data-to",jogadores);
         $("#totaldias").attr("data-to",diasvivos);
@@ -30,7 +28,6 @@ $("#botaomuitofoda").click(function(){
     Obrigado pela compreensão<br>
     Equipe Life Social.`
     $.post("/zuero",{'email':email,'user':nome, 'msg':msg},(data,status) => {
-        console.log(status);
         
     });
 });
