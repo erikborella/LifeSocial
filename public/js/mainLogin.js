@@ -77,3 +77,6 @@ function login() {
 		}
 	});	
 }
+$('.button-collapse').sideNav({
+	menuWidth: 325,
+  }); //nnnnnn mexer

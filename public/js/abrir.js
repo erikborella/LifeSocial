@@ -18,11 +18,6 @@ $("#merc").click(function(){
   $("#titulo").html('Mercado');
   esconderTudo();
 });
-$('.button-collapse').sideNav({
-  menuWidth: 325,
-});
-
-
 function esconderInicio() {
     $("#inicio").hide();
     
