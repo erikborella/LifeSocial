@@ -83,6 +83,7 @@ $("#password2Input").change(function() {
 	
 	
 })
+
 $("#passwordInput").change(function() {
 
 	if ($(this).val() != $("#passwordInput").val() && $("#passwordInput").val()) {
@@ -114,11 +115,6 @@ $("#useTerms").click(function() {
 function validate(data) {
 	var isError = false;
 	var errorMesagem = [];
-
-	if (data.length == 6) {
-		isError = true;
-		errorMesagem.push("Você não concordou com os termos de uso");
-	}
 
 	if (!data[0].value) {
 		isError = true;
@@ -153,8 +149,18 @@ function validate(data) {
 	if (data[3].value != data[4].value) {
 		isError = true;
 		errorMesagem.push("Senhas digitadas são diferentes");
-		
 	}
+
+	if (data.length == 7) {
+		isError = true;
+		errorMesagem.push("Você não concordou com os termos de uso");
+	}
+
+	if (!data[6].value) {
+		isError = true;
+		errorMesagem.push("Confirme que você é humano");
+	}
+	
 
 
 	if (isError) {
