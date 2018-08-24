@@ -1,34 +1,12 @@
-// realiza o cadastro e verifica por erros
+//botão de cadastro
 $("#singup").click(function() {
-	var data = $("#inputVals").serializeArray();
-	
-	if (!validate(data)) {
-		$.get("getUsernames", (database, status) => {			
-			var exist = false;
-			for (var i = 0; i < database.length; i++) {
-				if (database[i].username == data[2].value) {
-					exist = true;
-				} 
-			}
-			
-			if (exist) {
-				showErrorMsg(["Nome de usuario já existente"]);
-			}
-			else {
-				iziToast.success({
-					title: "Cadastro realizado com sucesso"
-				})
-				$.post("/singupData", data, (info, sss) => {
+	makeSingUp();
+})
 
-				})
-			}
-
-			
-			
-		})
-	}
-	
-});
+//reazlizar cadastro quando pressionada enter
+$("#inputVals").keypress(function(key) {
+	if (key.keyCode == 13) makeSingUp();
+})
 
 // da uma recomendação do username
 $("#surnameInput").change(function() {
@@ -110,6 +88,38 @@ $("#passwordInput").change(function() {
 $("#useTerms").click(function() {
 	window.open("./TermoDeUso.html");
 })
+
+// realiza o cadastro e verifica por erros
+function makeSingUp() {
+	var data = $("#inputVals").serializeArray();
+	
+	if (!validate(data)) {
+		$.get("getUsernames", (database, status) => {			
+			var exist = false;
+			for (var i = 0; i < database.length; i++) {
+				if (database[i].username == data[2].value) {
+					exist = true;
+				} 
+			}
+			
+			if (exist) {
+				showErrorMsg(["Nome de usuario já existente"]);
+			}
+			else {
+				iziToast.success({
+					title: "Cadastro realizado com sucesso"
+				})
+				$.post("/singupData", data, (info, sss) => {
+
+				})
+			}
+
+			
+			
+		})
+	}
+	
+}
 
 // verificação dos dados
 function validate(data) {

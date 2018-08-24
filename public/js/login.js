@@ -1,9 +1,28 @@
-$(document).ready(function(){
-    $('.modal').modal();
-    $("#loginModal").modal("open");
+//botão de login
+$("#loginBtn").click(function() {
+    makeLogin();
 });
 
-$("#loginBtn").click(function() {
+//fazer login com enter
+$("#loginForm").keypress(function(key) {
+    if (key.keyCode == 13) makeLogin();
+})
+
+//Transitor de slides
+$(document).ready(function() {
+    var cont = 2;
+    setInterval(function() {
+        
+        $("#cardImage").attr("src", "imagesCard/card-image"+cont+".jpg");
+        cont ++;
+        if (cont == 11) {
+            cont = 1;
+        }
+    }, 30000)
+});
+
+//faz login
+function makeLogin() {
     var login = $("#loginForm").serializeArray();
     
     var username = login[0].value;
@@ -38,20 +57,5 @@ $("#loginBtn").click(function() {
             
         });
     }
-
-    
-});
-
-$(document).ready(function() {
-    var cont = 1;
-    setInterval(function() {
-        console.log("sads");
-        
-        $("#cardImage").attr("src", "imagesCard/card-image"+cont+".jpg");
-        cont ++;
-        if (cont == 11) {
-            cont = 1;
-        }
-    }, 30000)
-});
+}
 
