@@ -1,0 +1,86 @@
+inicio iniciob
+
+-comida comidab
+-saude saudeb
+--lixo libo
+--fastfood fastfoodb
+--hotdog hotdogb
+--casacomer ccasab
+--restaurante restauranteb
+--chef chefb
+
+--lixorem rlixob
+--casarem rcasab
+--apronto prontosocorrob
+--clinica clinicab
+--medic medicab
+--hospital hospitalb
+=================== 
+trab trabb
+
+-desonesto desonestob
+-honesto 
+
+--rdinheiro rdinheirob
+--rjoias rjoiasb
+--rroupas rdinheirosb
+--rcelular rcelularb
+--banco bancob
+--politico politicob
+
+--gari garib
+--pedreiro pedreirob
+--professor profb
+--programador progb
+--sociologo sociologob
+==================
+school schoolb
+-faculdade faculb
+-mestrado mestb
+-doutorado doutb
+
+--sociologia sociologiab
+--cienciassociais cienciassociaisb 
+--servicossociais servicossociaisb
+--antropologia antropologiab
+--filosofia filosofiab
+
+--exclusaosocial exclusaosocialb
+--filantropia filantropiab
+--politicassocias politicassociasb
+--educacaosocial educacaosocialb
+--ambientesocial ambientesocialb
+
+--phdsociologia phdsociologiab
+--phdfilantropia phd filantropiab
+--sociotec sociotecb
+--pesqapl pesqaplb
+--multinvl multinvlb
+==================
+mercado mercadob
+
+-supermercado supermercadob
+-casa casab
+-carro carrob
+-utencilios utenciliosb
+
+--ccomida ccomidab
+--cremedio cremediob
+
+--quitinete quitineteb
+--apartamento apartamentob
+--casapq casapqb
+--casamd casamd
+--casagd mansao
+
+--antigo antigob
+--seminovo seminovob
+--popular popularb
+--esportivo esportivob
+--altaclasse altaclasseb
+
+--yoyo yoyob
+--cubo cubob
+--computador computadorb
+--livros livrosb
+--tv tvb
