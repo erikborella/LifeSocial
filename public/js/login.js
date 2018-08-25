@@ -48,11 +48,20 @@ function makeLogin() {
                 })
             }
             else {
-                iziToast.success ({
-                    title: "Bem vindo "+data.dados.nome
-                })
-    
-                localStorage.setItem("sla", JSON.stringify(data));
+                // iziToast.success ({
+                //     title: "Bem vindo "+data.dados.nome
+                // })
+                localStorage.setItem("data", JSON.stringify(data));
+                
+                var md = new MobileDetect(window.navigator.userAgent);
+
+                if (md.mobile()) {
+                    window.location.replace("Mobile.html")
+                }
+                else {
+                    window.location.replace("Desktop.html")
+                }
+
             }
             
         });
