@@ -118,6 +118,24 @@ router.post("/singupData", (req, res) => {
 	
 })
 
+router.get("/gameData", (req, res) => {
+	
+	global.db.getUserData((e, docs) => {
+
+		var data = [];
+		
+		for (var i = 0; i < docs.length; i++) {
+			data.push(docs[i].gameValues);
+		}
+
+		res.send(data);
+		
+		
+	})
+
+	
+})
+
 
 
 
