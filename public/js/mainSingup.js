@@ -106,12 +106,36 @@ function makeSingUp() {
 				showErrorMsg(["Nome de usuario já existente"]);
 			}
 			else {
+				
 				iziToast.success({
-					title: "Cadastro realizado com sucesso"
+					title: "Cadastro realizado com sucesso",
+					message: "Voce será levado para o jogo dentro de alguns segundos"
 				})
+
 				$.post("/singupData", data, (info, sss) => {
+	
+				})
+
+				$.post("/login", {"username" : data[2].value , "password" : data[3].value}, (db, status) => {
+
+					localStorage.removeItem("data");
+					localStorage.setItem("data", JSON.stringify(db));
+
+					setTimeout(function() {
+					
+						var md = new MobileDetect(window.navigator.userAgent);
+		
+						if (md.mobile()) {
+							window.location.replace("Mobile.html")
+						}
+						else {
+							window.location.replace("Desktop.html")
+						}
+						
+					}, 5000)
 
 				})
+
 			}
 
 			

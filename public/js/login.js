@@ -10,6 +10,8 @@ $("#loginForm").keypress(function(key) {
 
 //Transitor de slides
 $(document).ready(function() {
+    var random = (Math.floor(Math.random() * 10)) + 1;
+    $("#cardImage").attr("src", "imagesCard/card-image"+random+".jpg");
     var cont = 2;
     setInterval(function() {
         
@@ -37,8 +39,6 @@ function makeLogin() {
     }
     else {
         $.post("/login", {"username" : username, "password" : password}, (data, status) => {
-        
-            console.log(data);
             
             if (!data) {
                 iziToast.error({
@@ -51,6 +51,8 @@ function makeLogin() {
                 // iziToast.success ({
                 //     title: "Bem vindo "+data.dados.nome
                 // })
+                
+                localStorage.removeItem("data");
                 localStorage.setItem("data", JSON.stringify(data));
                 
                 var md = new MobileDetect(window.navigator.userAgent);
