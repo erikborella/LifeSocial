@@ -72,7 +72,9 @@ router.post("/login", (req, res) => {
 					"saude" : docs[index].gameValues.saude,
 					"inteligencia" : docs[index].gameValues.inteligencia,
 					"imposto" : docs[index].gameValues.imposto,
-					"honestidade" : docs[index].gameValues.honestidade
+					"honestidade" : docs[index].gameValues.honestidade,
+					"comida" : docs[index].gameValues.comida,
+					"remedios" : docs[index].gameValues.remedios
 				}
 			}
 
@@ -104,7 +106,9 @@ router.post("/singupData", (req, res) => {
 			"saude" : 100,
 			"inteligencia" : 1,
 			"imposto" : 0,
-			"honestidade" : 50
+			"honestidade" : 50,
+			"comida" : 5,
+			"remedios" : 5
 		}
 	}
 
