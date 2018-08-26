@@ -13,7 +13,7 @@
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
+    <link rel="stylesheet" href="css/iziModal.min.css">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="css/iziToast.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +27,7 @@
     <nav class="nav-extended teal darken-2">
         <div class="nav-wrapper">
             <div id="titulo" class="center brand-logo">Início</div>
-            <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>     
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>     
         </div>
 
         <div class="nav-content">
@@ -141,7 +141,7 @@
                     <div class="col s12">
                         <div id="faculdade"> <!-- Opções secundárias -->
                             <div class="col s12">
-                                <p><a style="width: 100%;" id="sociologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sociolgia</strong><small class="right">5 int</small></a></p>
+                                <p><a style="width: 100%;" id="sociologiab" class="modal1 z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sociologia</strong><small class="right">5 int</small></a></p>
                                 <p><a style="width: 100%;" id="cienciassociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ciências Sociais</strong><small class="right">5 int</small></a></p>
                                 <p><a style="width: 100%;" id="servicossociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Serviços Sociais</strong><small class="right">5 int</small></a></p>
                                 <p><a style="width: 100%;" id="antropologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Antropologia</strong><small class="right">5 int</small></a></p>
@@ -278,15 +278,131 @@
 
             </div>
 
-            <modals> <!-- Tela de Login -->
-             
+            <modals> 
+                <div id="modal1" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
+                    <br>
+                    <div class="container">
+                        <flow class="flow-text">O grupo “Legião Urbana, na música “Pais e Filhos”, canta “Eu moro na rua, não tenho ninguém, eu moro em qualquer lugar, já morei em tanta casa que nem me lembro mais, eu moro com meus pais”. 
+                        <p>A partir dessa afirmativa e a respeito dos estudos sociológicos sobre família, é verdadeiro o que se afirma em: </flow>
+                        <form action="#">
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta1" id="resposta1">
+                                <label for="resposta1">A família exerce dois tipos de socialização — primária e secundária —, sendo a segunda a mais importante.</label>
+                            </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta2" id="resposta2">
+                                <label for="resposta2">A socialização é uma das mais importantes funções da família por preparar o ingresso da criança na sociedade.</label>
+                           </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta3" id="resposta3">
+                                <label for="resposta3">A família conjugal é típica de sociedades tradicionais e consiste em um grande número de parentes que habitam juntos e nutrem sentimento de lealdade.</label>
+                           </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta4" id="resposta4">
+                                <label for="resposta4">A monogamia é uma característica geral da instituição familiar.></label>
+                           </label>
+                           <label>
+                                <input type="radio" class="with-gap" name="resposta4a" id="resposta4a">
+                                <label for="resposta4a">A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.</label>
+                           </label>
+                        </form>
+                        <br>
+                        <div class="row">
+                            <div class="col s12">
+                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal2">Próxima</button>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+
+                <div id="modal2" data-izimodal-group="group1" data-izimodal-title="Pergunta 2" data-izimodal-subtitle="Faculdade - Sociologia">
+                    <br>
+                    <div class="container">
+                        <flow class="flow-text">A respeito das análises que Karl Marx fez sobre o capitalismo, é correto afirmar:</flow>
+                        <br>
+                        <form action="#">
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta5" id="resposta5">
+                                <label for="resposta5">Essas análises diferem da dos positivistas, ao considerar que apenas as sociedades modernas e industriais eram científicas, em contraposição às militares e teológicas.</label>
+                            </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta6" id="resposta6">
+                                <label for="resposta6">A afirmação “a história da humanidade é a história das lutas de classes” expressa uma ideia de cooperação entre as diferentes camadas sociais.</label>
+                           </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta7" id="resposta7">
+                                <label for="resposta7">As classes sociais definem-se, sobretudo, pelas relações de cooperação que se desenvolvem entre os diversos grupos envolvidos socialmente.</label>
+                           </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta8" id="resposta8">
+                                <label for="resposta8">Uma classe social deve ser definida a partir do seu status social e de seu poder de compra na sociedade</label>
+                           </label>
+                           <label>
+                                <input type="radio" class="with-gap" name="resposta8a" id="resposta8a">
+                                <label for="resposta8a">Os conflitos existentes na relação entre os operários e os empresários constituem o fato mais importante das sociedades modernas.</label>
+                           </label>
+                        </form>
+                        <br>
+                        <div class="row">
+                            <div class="col s6">
+                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal-options">Anterior</button>
+                            </div>
+                            <div class="col s6">
+                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal3">Próxima</button> 
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <div id="modal3" data-izimodal-group="group1" data-izimodal-title="Pergunta 3" data-izimodal-subtitle="Faculdade - Sociologia">
+                    <br>
+                    <div class="container">
+                        <flow class="flow-text">(ENEM) A política, foi inicialmente, a arte das pessoas se ocuparem do que lhes diz respeito. Posteriormente, passou a ser a arte de compelir as pessoas a decidirem sobre aquilo de que nada entendem. VALÉRY, P. Cadernos. Apud BENEVIDES, M.V.M. A cidadania ativa. São Paulo: Ática, 1996. Nesta definição o autor entende que a história da política está dividida em dois momentos principais: um primeiro, marcado pelo autoritarismo excludente, e um segundo caracterizado por uma democracia incompleta. Considerando o texto, qual é o elemento comum a esses dois momentos da história política?</flow>
+                        <form action="#">
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta9" id="resposta9">
+                                <label for="resposta9">A distribuição equilibrada do poder.</label>
+                            </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta10" id="resposta10">
+                                <label for="resposta10">A valorização das opiniões mais competentes.</label>
+                           </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta11" id="resposta11">
+                                <label for="resposta11">O impedimento da participação popular.</label>
+                           </label>
+                            <label>
+                                <input type="radio" class="with-gap" name="resposta12" id="resposta12">
+                                <label for="resposta12">O controle das decisões por uma minoria.</label>
+                           </label>
+                           <label>
+                                <input type="radio" class="with-gap" name="resposta12a" id="resposta12a">
+                                <label for="resposta12a">A sistematização dos processos decisórios.</label>
+                           </label>
+                        </form>
+                        <br>
+                        <div class="row">
+                            <div class="col s6">
+                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal-options">Anterior</button>
+                            </div>
+                            <div class="col s6">
+                                <button style="width: 100%;" class="teal btn waves-effect waves-light" type="submit" name="action">Enviar
+                                    <i class="material-icons right">send</i>
+                                </button>                                
+                            </div>
+                        </div>
+
+                    </div>        
+                </div>
             </modals>
 
             <!--JavaScript at end of body for optimized loading-->
             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
             <script type="text/javascript" src="js/materialize.min.js"></script>
             <script src="js/iziToast.min.js" type="text/javascript"></script>
+            <script src="js/iziModal.min.js" type="text/javascript"></script>
             <script type="text/javascript" src="js/jogo.js"></script>
+            <script type="text/javascript" src="js/ezmodal.js"></script>
             <script type="text/javascript" src="js/abrir.js"></script>
         </body>
         </html>
