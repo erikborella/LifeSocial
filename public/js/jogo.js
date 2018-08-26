@@ -1,56 +1,106 @@
-$(document).ready(function() {
+var gameTime;
+var dayTime;
 
-// 	data = JSON.parse(localStorage.getItem("data"));
+var fome;
+var saude;
 
-// 	if (!data) {
-// 		window.location.replace("login.html")
-// 	}
-// 	else {
+var inteligencia;
+
+var honestidade;
+
+var imposto;
+
+var money;
+var diasVividos;
+var idade;
+
+$(document).ready(function () {
+
+	data = JSON.parse(localStorage.getItem("data"));
+
+	if (!data) {
+		window.location.replace("login.html")
+	}
+	else {
 
 		iziToast.success({
-			title : "Bem vindo " + data.dados.nome
+			title: "Bem vindo " + data.dados.nome
 		})
 
 		startGame(data);
-		
-// 	}
-// })
+
+	}
+})
 
 
 function startGame(data) {
-	var fome = data.gameValues.fome;
-	var saude = data.gameValues.saude;
 
-	var inteligencia = data.gameValues.inteligencia;
-	
-	var honestidade = data.gameValues.honestidade;
+	fome = data.gameValues.fome;
+	saude = data.gameValues.saude;
 
-	var imposto = data.gameValues.imposto;
+	inteligencia = data.gameValues.inteligencia;
 
-	var money = data.gameValues.money;
-	var diasVividos = data.gameValues.diasVividos;
-	var idade = data.gameValues.idade;
+	honestidade = data.gameValues.honestidade;
+
+	imposto = data.gameValues.imposto;
+
+	money = data.gameValues.money;
+	diasVividos = data.gameValues.diasVividos;
+	idade = data.gameValues.idade;
 
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
 	$("#vivo").html("Dias vivos : " + diasVividos);
 
-	var gameTime = setInterval(function() {
+	gameTime = setInterval(passDay, dayTime);
 
-
-		diasVividos++;
-
-		if (diasVividos % 365 == 0) {
-			idade++;
-		}
-
-
-		$("#money").html("Dinheiro : " + money);
-		$("#anos").html("Anos : " + idade);
-		$("#vivo").html("Dias vivos : " + diasVividos);
-	}, 30);
+	
 }
 
-$(window).bind("beforeunload", function() {
+function passDay() {
+	diasVividos++;
+
+	if (diasVividos % 365 == 0) {
+		idade++;
+	}
+
+
+	$("#money").html("Dinheiro : " + money);
+	$("#anos").html("Anos : " + idade);
+	$("#vivo").html("Dias vivos : " + diasVividos);
+}
+
+
+
+// Para evitar voltar para a tela de login, comente esse evento abaixo
+$(window).bind("beforeunload", function () {
 	localStorage.removeItem("data");
+})
+
+$("#sairBtn").click(function () {
+	clearInterval(gameTime);
+	iziToast.show({
+		title: "Tem certeza que deseja sair?",
+		theme: "dark",
+		progressBar: false,
+		timeout: 999999,
+		position: "center",
+		overlay: true,
+		onClosing: (istance, toast) => {
+			gameTime = setInterval(passDay, dayTime);
+		},
+		buttons: [
+			["<button>Sim</button>", (instace, toast) => {
+
+				clearInterval(gameTime);
+				localStorage.removeItem("data");
+				window.location.replace("login.html");
+
+			}],
+			["<button>Não</button>", (instance, toast) => {
+				instance.hide({ transitionOut: 'fadeOutUp' }, toast);
+				gameTime = setInterval(passDay, dayTime);
+			}]
+		]
+	})
 })
