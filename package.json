@@ -12,10 +12,9 @@
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
-    "izimodal": "^1.5.1",
     "mongodb": "^3.1.0-beta4",
     "morgan": "~1.9.0",
     "nodemailer": "^4.6.5",
-    "npm": "^6.2.0"
+    "npm": "^6.4.0"
   }
 }
