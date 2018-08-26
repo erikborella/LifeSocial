@@ -2,19 +2,19 @@
 <html lang="pt-br">
 
 <style>
-.modal.full {
-    width: 100vw;
-    max-height: 100vh;
-    height: 100vh;
-    top: 0 !important
-}
+    .modal.full {
+        width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        top: 0 !important
+    }
 </style>
 
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/iziModal.min.css">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="css/iziToast.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Life</title>
@@ -23,11 +23,11 @@
 </head>
 
 <body>
-   
+
     <nav class="nav-extended teal darken-2">
         <div class="nav-wrapper">
             <div id="titulo" class="center brand-logo">Início</div>
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>     
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
 
         <div class="nav-content">
@@ -38,8 +38,9 @@
                 <li id="merc" class="tab"><a href="#mercado2">Mercado</a></li>
             </ul>
         </div>
-        
-        <ul id="slide-out" class="side-nav"> <!-- SideNav -->
+
+        <ul id="slide-out" class="side-nav">
+            <!-- SideNav -->
             <li>
                 <div class="user-view">
                     <div class="background">
@@ -53,19 +54,21 @@
             <li><a id="money"></li></a>
             <li><a id="anos"></li></a>
             <li><a id="vivo"></li></a>
-            <li><div class="divider"></div></li>
+            <li>
+                <div class="divider"></div>
+            </li>
             <li><a class="subheader">Opções</a></li>
             <li id="recomecarBtn"><a>Recomeçar</a></li>
             <li id="sairBtn"><a>Sair</a></li>
         </ul>
     </nav>
 
-        <div id="welcome">
-            <img class="responsive-img" src="img/img_1.jpg" alt="foda">
-        </div>
-        
+    <div id="welcome">
+        <img class="responsive-img" src="img/img_1.jpg" alt="foda">
+    </div>
+
     <!-- Início -->
-    <div id="inicio" class="col s12"> 
+    <div id="inicio" class="col s12">
         <div class="row">
             <div class="col s12">
 
@@ -90,322 +93,547 @@
         <div class="row">
             <div class="col s12">
                 <p><a style="width: 100%; margin-top: -36px" id="comidab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Comida</strong></a>
-                <p><a style="width: 100%; border-bottom: 1px solid black;" id="saudeb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Saúde</strong></a>
+                    <p><a style="width: 100%; border-bottom: 1px solid black;" id="saudeb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Saúde</strong></a>
             </div>
-                    
+
             <div class="col s12">
-                <div id="comida"> <!-- Opções secundárias -->
+                <div id="comida">
+                    <!-- Opções secundárias -->
                     <div class="col s12">
-                        <p><a style="width: 100%;" id="ccasab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer em casa</strong><small class="right">0</small></a></p>
-                        <p><a style="width: 100%;" id="lixob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer lixo</strong><small class="right">R$0</small></a></p>
-                        <p><a style="width: 100%;" id="fastfoodb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comer fastfood</strong><small class="right">R$10</small></a></p>
-                        <p><a style="width: 100%;" id="restauranteb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Restaurante</strong><small class="right">R$40</small></a></p>
-                        <p><a style="width: 100%;" id="chefb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Chef privado</strong><small class="right">R$100</small></a></p>
+                        <p><a style="width: 100%;" id="ccasab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comer em casa</strong><small class="right">0</small></a></p>
+                        <p><a style="width: 100%;" id="lixob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comer lixo</strong><small class="right">R$0</small></a></p>
+                        <p><a style="width: 100%;" id="fastfoodb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comer fastfood</strong><small class="right">R$10</small></a></p>
+                        <p><a style="width: 100%;" id="restauranteb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Restaurante</strong><small class="right">R$40</small></a></p>
+                        <p><a style="width: 100%;" id="chefb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Chef privado</strong><small class="right">R$100</small></a></p>
                     </div>
                 </div> <!--  -->
-                <div id="saude"> <!-- Opções secundárias -->
+                <div id="saude">
+                    <!-- Opções secundárias -->
                     <div class="col s12">
-                        <p><a style="width: 100%;" id="rcasab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Remédio de casa</strong><small class="right">0</small></a></p>
-                        <p><a style="width: 100%;" id="rlixob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Remédio do lixo</strong><small class="right">R$0</small></a></p>
-                         <p><a style="width: 100%;" id="prontosocorrob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Pronto socorro</strong><small class="right">R$10</small></a></p>
-                        <p><a style="width: 100%;" id="medicab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Médico</strong><small class="right">R$150</small></a></p>
-                        <p><a style="width: 100%;" id="hospitalb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Hospital</strong><small class="right">R$300</small></a></p>
+                        <p><a style="width: 100%;" id="rcasab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Remédio de casa</strong><small class="right">0</small></a></p>
+                        <p><a style="width: 100%;" id="rlixob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Remédio do lixo</strong><small class="right">R$0</small></a></p>
+                        <p><a style="width: 100%;" id="prontosocorrob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Pronto socorro</strong><small class="right">R$10</small></a></p>
+                        <p><a style="width: 100%;" id="medicab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Médico</strong><small class="right">R$150</small></a></p>
+                        <p><a style="width: 100%;" id="hospitalb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Hospital</strong><small class="right">R$300</small></a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-            
-            <!-- Escola2 -->
-            <div id="escola2" class="col s12">
 
-                <div class="row">
-                    <div class="col s12">
-                        <div style="margin-bottom: 0px; margin-top: 10px;">
-                            <div style="border-bottom: 1px solid grey;" class="row">
-                                <strong>Inteligência(INT) </strong>-<small> Quanto mais Inteligência maior a variedade de Trabalhos</small>
-                                <div class="progress col s12" style="margin-bottom: 25px;">
-                                    <div id="intBar" class="determinate"></div>
-                                </div>
-                            </div> 
+    <!-- Escola2 -->
+    <div id="escola2" class="col s12">
+
+        <div class="row">
+            <div class="col s12">
+                <div style="margin-bottom: 0px; margin-top: 10px;">
+                    <div style="border-bottom: 1px solid grey;" class="row">
+                        <strong>Inteligência(INT) </strong>-<small> Quanto mais Inteligência maior a variedade de Trabalhos</small>
+                        <div class="progress col s12" style="margin-bottom: 25px;">
+                            <div id="intBar" class="determinate"></div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12">
-                        <p><a style="width: 100%; margin-top: -76px;" id="faculdadeb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Faculdade</strong></a>
-                        <p><a style="width: 100%; margin-top: -22px;;" id="mestb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Mestrado</strong></a>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p><a style="width: 100%; margin-top: -76px;" id="faculdadeb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Faculdade</strong></a>
+                    <p><a style="width: 100%; margin-top: -22px;;" id="mestb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Mestrado</strong></a>
                         <p><a style="width: 100%; border-bottom: 1px solid black;" id="doutb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Doutorado</strong></a>
-                    </div>
-                            
-                    <div class="col s12">
-                        <div id="faculdade"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="sociologiab" class="modal1 z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sociologia</strong><small class="right">5 int</small></a></p>
-                                <p><a style="width: 100%;" id="cienciassociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ciências Sociais</strong><small class="right">5 int</small></a></p>
-                                <p><a style="width: 100%;" id="servicossociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Serviços Sociais</strong><small class="right">5 int</small></a></p>
-                                <p><a style="width: 100%;" id="antropologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Antropologia</strong><small class="right">5 int</small></a></p>
-                                <p><a style="width: 100%;" id="filosofiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Filosofia</strong><small class="right">5 int</small></a></p>
-                            </div>
-                        </div> <!--  -->
-                        <div id="mestrado"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="exclusaosocialb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Exclusão Social</strong><small class="right">25 int</small></a></p>
-                                <p><a style="width: 100%;" id="filantropiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Filantropia</strong><small class="right">25 int</small></a></p>
-                                 <p><a style="width: 100%;" id="politicassociasb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Politicas Sociais</strong><small class="right">25 int</small></a></p>
-                                <p><a style="width: 100%;" id="educacaosocialb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Educação Social</strong><small class="right">25 int</small></a></p>
-                                <p><a style="width: 100%;" id="ambientesocialb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ambiente Social</strong><small class="right">25 int</small></a></p>
-                            </div>
-                        </div>
-                        <div id="doutorado"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="phdsociologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Phd Sociologia</strong><small class="right">50 int</small></a></p>
-                                <p><a style="width: 100%;" id="sociotecb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sistema Socio. Tec.</strong><small class="right">50 int</small></a></p>
-                                 <p><a style="width: 100%;"id="phdfilantropiab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Phd Filantropia</strong><small class="right">50 int</small></a></p>
-                                <p><a style="width: 100%;" id="pesqaplb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Pesquisa Social Aplicada</strong><small class="right">50 int</small></a></p>
-                                <p><a style="width: 100%;" id="multinvlb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Governança Multinível</strong><small class="right">50 int</small></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
 
-            <!-- Trabalho2 -->
-            <div id="trabalho2" class="col s12">
-                <div class="row">
+            <div class="col s12">
+                <div id="faculdade">
+                    <!-- Opções secundárias -->
                     <div class="col s12">
-                        <div style="margin-bottom: 0px; margin-top: 10px;">
-                            <div style="border-bottom: 1px solid grey;" class="row">
-                                <strong>Honestidade(H) </strong>-<small> Quanto mais Honesto maior a variedade de Trabalhos, quanto menos mais fácil roubar</small>
-                                <div class="progress col s12" style="margin-bottom: 25px;">
-                                    <div id="intBar" class="determinate"></div>
-                                </div>
-                            </div> 
-                        </div>                              
+                        <p><a style="width: 100%;" id="sociologiab" class="modal1 z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Sociologia</strong><small class="right">5 int</small></a></p>
+                        <p><a style="width: 100%;" id="cienciassociaisb" class="modal4 z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Ciências Sociais</strong><small class="right">5 int</small></a></p>
+                        <p><a style="width: 100%;" id="servicossociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Serviços Sociais</strong><small class="right">5 int</small></a></p>
+                        <p><a style="width: 100%;" id="antropologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Antropologia</strong><small class="right">5 int</small></a></p>
+                        <p><a style="width: 100%;" id="filosofiab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Filosofia</strong><small class="right">5 int</small></a></p>
+                    </div>
+                </div> <!--  -->
+                <div id="mestrado">
+                    <!-- Opções secundárias -->
+                    <div class="col s12">
+                        <p><a style="width: 100%;" id="exclusaosocialb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Exclusão Social</strong><small class="right">25 int</small></a></p>
+                        <p><a style="width: 100%;" id="filantropiab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Filantropia</strong><small class="right">25 int</small></a></p>
+                        <p><a style="width: 100%;" id="politicassociasb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Politicas Sociais</strong><small class="right">25 int</small></a></p>
+                        <p><a style="width: 100%;" id="educacaosocialb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Educação Social</strong><small class="right">25 int</small></a></p>
+                        <p><a style="width: 100%;" id="ambientesocialb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Ambiente Social</strong><small class="right">25 int</small></a></p>
                     </div>
                 </div>
-
-                <div class="row">
+                <div id="doutorado">
+                    <!-- Opções secundárias -->
                     <div class="col s12">
-                        <p><a style="width: 100%; margin-top: -76px" id="honestob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Honesto</strong></a>
-                        <p><a style="width: 100%; margin-top: -22px; border-bottom: 1px solid black;" id="desonestob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Desonesto</strong></a>
+                        <p><a style="width: 100%;" id="phdsociologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Phd Sociologia</strong><small class="right">50 int</small></a></p>
+                        <p><a style="width: 100%;" id="sociotecb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Sistema Socio. Tec.</strong><small class="right">50 int</small></a></p>
+                        <p><a style="width: 100%;" id="phdfilantropiab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Phd Filantropia</strong><small class="right">50 int</small></a></p>
+                        <p><a style="width: 100%;" id="pesqaplb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Pesquisa Social Aplicada</strong><small class="right">50 int</small></a></p>
+                        <p><a style="width: 100%;" id="multinvlb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Governança Multinível</strong><small class="right">50 int</small></a></p>
                     </div>
-                            
-                    <div class="col s12">
-                        <div id="honesto"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="garib" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Gari</strong><small class="right">+ 1h</small></a></p>
-                                <p><a style="width: 100%;" id="pedreirob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Pedreiro</strong><small class="right">+ 1h</small></a></p>
-                                <p><a style="width: 100%;" id="progb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Programador</strong><small class="right">+ 2h</small></a></p>
-                                <p><a style="width: 100%;" id="profb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Professor</strong><small class="right">+ 2h</small></a></p>
-                                <p><a style="width: 100%;" id="sociologob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Sociólogo</strong><small class="right">+ 5h</small></a></p>
-                            </div>
-                        </div> <!--  -->
-                        <div id="desonesto"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="rdinheirob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Roubar Dinheiro</strong><small class="right">- 1h</small></a></p>
-                                <p><a style="width: 100%;" id="rjoiasb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Roubar joias</strong><small class="right">- 5h</small></a></p>
-                                <p><a style="width: 100%;" id="rdinheirosb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Roubar celular</strong><small class="right">- 7h</small></a></p>
-                                <p><a style="width: 100%;" id="bancob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Roubar Banco</strong><small class="right">- 20h</small></a></p>
-                                <p><a style="width: 100%;" id="politicob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Ser Político</strong><small class="right">- 50h</small></a></p>
-                            </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Trabalho2 -->
+    <div id="trabalho2" class="col s12">
+        <div class="row">
+            <div class="col s12">
+                <div style="margin-bottom: 0px; margin-top: 10px;">
+                    <div style="border-bottom: 1px solid grey;" class="row">
+                        <strong>Honestidade(H) </strong>-<small> Quanto mais Honesto maior a variedade de Trabalhos, quanto
+                            menos mais fácil roubar</small>
+                        <div class="progress col s12" style="margin-bottom: 25px;">
+                            <div id="intBar" class="determinate"></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Mercado2 -->
-            <div id="mercado2" class="col s12">
-                <div class="row">
+        <div class="row">
+            <div class="col s12">
+                <p><a style="width: 100%; margin-top: -76px" id="honestob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Honesto</strong></a>
+                    <p><a style="width: 100%; margin-top: -22px; border-bottom: 1px solid black;" id="desonestob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Desonesto</strong></a>
+            </div>
+
+            <div class="col s12">
+                <div id="honesto">
+                    <!-- Opções secundárias -->
                     <div class="col s12">
-                        <div style="margin-bottom: 0px; margin-top: 10px;">
-                            <div style="border-bottom: 1px solid grey;" class="row">
-                                <strong>Imposto </strong>-<small> O Imposto fica variando, aumentando e diminuindo o preço dos produtos</small>
-                                <div class="progress col s12" style="margin-bottom: 25px;">
-                                    <div id="impostoBar" class="determinate"></div>
-                                </div>
-                            </div>                               
+                        <p><a style="width: 100%;" id="garib" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Gari</strong><small class="right">+ 1h</small></a></p>
+                        <p><a style="width: 100%;" id="pedreirob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Pedreiro</strong><small class="right">+ 1h</small></a></p>
+                        <p><a style="width: 100%;" id="progb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Programador</strong><small class="right">+ 2h</small></a></p>
+                        <p><a style="width: 100%;" id="profb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Professor</strong><small class="right">+ 2h</small></a></p>
+                        <p><a style="width: 100%;" id="sociologob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Sociólogo</strong><small class="right">+ 5h</small></a></p>
+                    </div>
+                </div> <!--  -->
+                <div id="desonesto">
+                    <!-- Opções secundárias -->
+                    <div class="col s12">
+                        <p><a style="width: 100%;" id="rdinheirob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Roubar Dinheiro</strong><small class="right">- 1h</small></a></p>
+                        <p><a style="width: 100%;" id="rjoiasb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Roubar joias</strong><small class="right">- 5h</small></a></p>
+                        <p><a style="width: 100%;" id="rdinheirosb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Roubar celular</strong><small class="right">- 7h</small></a></p>
+                        <p><a style="width: 100%;" id="bancob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Roubar Banco</strong><small class="right">- 20h</small></a></p>
+                        <p><a style="width: 100%;" id="politicob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Ser Político</strong><small class="right">- 50h</small></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mercado2 -->
+    <div id="mercado2" class="col s12">
+        <div class="row">
+            <div class="col s12">
+                <div style="margin-bottom: 0px; margin-top: 10px;">
+                    <div style="border-bottom: 1px solid grey;" class="row">
+                        <strong>Imposto </strong>-<small> O Imposto fica variando, aumentando e diminuindo o preço dos produtos</small>
+                        <div class="progress col s12" style="margin-bottom: 25px;">
+                            <div id="impostoBar" class="determinate"></div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col s12">
+                <p><a style="width: 100%; margin-top: -76px;" id="supermercadob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Supermercado</strong></a>
+                    <p><a style="width: 100%; margin-top: -22px;;" id="casab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Casa</strong></a>
+                        <p><a style="width: 100%;" id="carrob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Carro</strong></a>
+                            <p><a style="width: 100%; border-bottom: 1px solid black;" id="utenciliosb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Utensílios</strong></a>
+            </div>
+
+            <div class="col s12">
+                <div id="supermercado">
+                    <!-- Opções secundárias -->
+                    <div class="col s12">
+                        <p><a style="width: 100%;" id="ccomidab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar comida</strong><small class="right">R$7</small></a></p>
+                        <p><a style="width: 100%;" id="cremediob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar remédio</strong><small class="right">R$7</small></a></p>
+                    </div>
+                </div> <!--  -->
+                <div id="casa">
+                    <!-- Opções secundárias -->
+                    <div class="col s12">
+                        <p><a style="width: 100%;" id="quitineteb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Alugar Quitinete</strong><small class="right">R$200/mês</small></a></p>
+                        <p><a style="width: 100%;" id="apartamentob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Apartamento</strong><small class="right">R$20.000</small></a></p>
+                        <p><a style="width: 100%;" id="casapqb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Casa Pequena</strong><small class="right">R$30.000</small></a></p>
+                        <p><a style="width: 100%;" id="casamdb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Casa Média</strong><small class="right">R$45.000</small></a></p>
+                        <p><a style="width: 100%;" id="mansaob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Mansão</strong><small class="right">R$60.000</small></a></p>
+                    </div>
+                </div>
+                <div id="carro">
+                    <!-- Opções secundárias -->
+                    <div class="col s12">
+                        <p><a style="width: 100%;" id="antigob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Carro Antigo</strong><small class="right">R$2.000</small></a></p>
+                        <p><a style="width: 100%;" id="seminovob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Carro Semi-novo</strong><small class="right">R$10.000</small></a></p>
+                        <p><a style="width: 100%;" id="popularb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Carro Popular</strong><small class="right">R$15.000</small></a></p>
+                        <p><a style="width: 100%;" id="esportivob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Carro esportivo</strong><small class="right">R$25.000</small></a></p>
+                        <p><a style="width: 100%;" id="altaclasseb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Carro de Alta Classe</strong><small class="right">R$50.000</small></a></p>
+                    </div>
+                </div>
+                <div id="utencilios">
+                    <!-- Opções secundárias -->
+                    <div class="col s12">
+                        <p><a style="width: 100%;" id="livrosb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar livros</strong><small class="right">R$300</small></a></p>
+                        <p><a style="width: 100%;" id="yoyob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar Yoyo</strong><small class="right">R$500</small></a></p>
+                        <p><a style="width: 100%;" id="cubob" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar cubo mágico</strong><small class="right">R$500</small></a></p>
+                        <p><a style="width: 100%;" id="tvb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar tv</strong><small class="right">R$1.500</small></a></p>
+                        <p><a style="width: 100%;" id="computadorb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                    class="left">Comprar computador</strong><small class="right">R$2.500</small></a></p>
+                    </div>
+                </div> <!--  -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <modals>
+
+        <div id="modal1" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
+            <br>
+            <div class="container">
+                <flow class="flow-text">
+                    (UFU-MG) Para Weber, um tipo de dominação é estabelecido, pois “obedece-se não à pessoa em virtude de seu direito próprio,
+                    mas à regra estatuída, que estabelece ao mesmo tempo a quem e em que medida se deve obedecer.” COHN,
+                    Gabriel (Org.). Weber: Sociologia. 5.ed. São Paulo: Ática, 1991. p. 129. Coleção Grandes Cientistas Sociais.
+                    Com base na análise weberiana, assinale a alternativa que indica o tipo de dominação a que essa descrição
+                    está relacionada.
+                </flow>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1" id="resposta1">
+                        <label for="resposta1">
+                            Dominação Legal.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1" id="resposta2">
+                        <label for="resposta2">
+                            Dominação Carismática.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1" id="resposta3">
+                        <label for="resposta3">
+                            Dominação Tradicional.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1" id="resposta4">
+                        <label for="resposta4">
+                            A monogamia é uma característica geral da instituição familiar.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1" id="resposta4a">
+                        <label for="resposta4a">
+                            A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.
+                        </label>
+                    </label>
+                </form>
+                <br>
                 <div class="row">
                     <div class="col s12">
-                        <p><a style="width: 100%; margin-top: -76px;" id="supermercadob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Supermercado</strong></a>
-                        <p><a style="width: 100%; margin-top: -22px;;" id="casab" class="z-depth-0 black-text white waves-effect btn-large"><strong>Casa</strong></a> 
-                        <p><a style="width: 100%;" id="carrob" class="z-depth-0 black-text white waves-effect btn-large"><strong>Carro</strong></a>        
-                        <p><a style="width: 100%; border-bottom: 1px solid black;" id="utenciliosb" class="z-depth-0 black-text white waves-effect btn-large"><strong>Utensílios</strong></a>
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal2">Próxima</button>
                     </div>
-                            
+                </div>
+            </div>
+        </div>
+        <div id="modal2" data-izimodal-group="group1" data-izimodal-title="Pergunta 2" data-izimodal-subtitle="Faculdade - Sociologia">
+            <br>
+            <div class="container">
+                <flow class="flow-text">
+                    No Brasil, assim como em vários outros países, os modernos movimentos LGBT representam um desafio ás formas de condenação
+                    e perseguição social contra desejos e comportamentos sexuais anticonvencionais associados á vergonha,
+                    imoralidade, pecado, degeneração, doença. Falar no movimento LGBT implica, portanto, chamar a atenção
+                    a sexualidade como fonte de estigmas, intolerância, opressão. O movimento social abordado justifica-se
+                    pela defesa do direito de:
+                </flow>
+                <br>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta2" id="resposta5">
+                        <label for="resposta5">Organização sindical.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta2" id="resposta6">
+                        <label for="resposta6">Participação partidária.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta2" id="resposta7">
+                        <label for="resposta7">Manifestação religiosa.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta2" id="resposta8">
+                        <label for="resposta8">Formação profissional.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta2" id="resposta8a">
+                        <label for="resposta8a">Afirmação identitária.</label>
+                    </label>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal1">Anterior</button>
+                    </div>
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal3">Próxima</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal3" data-izimodal-group="group1" data-izimodal-title="Pergunta 3" data-izimodal-subtitle="Faculdade - Sociologia">
+            <br>
+            <div class="container">
+                <flow class="flow-text">
+                    (UEMA) Segundo Karl Marx: “o modo de produção da vida material condiciona o desenvolvimento da vida social, política e intelectual
+                    em geral.” Essa tese resume a sua teoria da história, também denominada de:
+                </flow>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta3" id="resposta9">
+                        <label for="resposta9">Fenomenologia do espírito.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta3" id="resposta10">
+                        <label for="resposta10">Racionalismo cartesiano.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta3" id="resposta11">
+                        <label for="resposta11">Socialismo científico.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta3" id="resposta12">
+                        <label for="resposta12">Individualismo metodológico.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta3" id="resposta12a">
+                        <label for="resposta12a">Materialismo histórico.</label>
+                    </label>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal2">Anterior</button>
+                    </div>
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal btn waves-effect waves-light" type="submit" name="action">Enviar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal4" data-izimodal-group="group2" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Ciências Sociais">
+            <br>
+            <div class="container">
+                <flow class="flow-text">O grupo “Legião Urbana, na música “Pais e Filhos”, canta “Eu moro na rua, não tenho
+                    ninguém, eu moro em qualquer lugar, já morei em tanta casa que nem me lembro mais, eu moro com meus pais”.
+                    <p>A partir dessa afirmativa e a respeito dos estudos sociológicos sobre família, é verdadeiro o que
+                        se afirma em:
+                </flow>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta4" id="resposta1">
+                        <label for="resposta1">A família exerce dois tipos de socialização — primária e secundária —, sendo
+                            a segunda a mais importante.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta4" id="resposta2">
+                        <label for="resposta2">A socialização é uma das mais importantes funções da família por preparar
+                            o ingresso da criança na sociedade.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta4" id="resposta3">
+                        <label for="resposta3">A família conjugal é típica de sociedades tradicionais e consiste em um grande
+                            número de parentes que habitam juntos e nutrem sentimento de lealdade.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta4" id="resposta4">
+                        <label for="resposta4">A monogamia é uma característica geral da instituição familiar.></label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta4" id="resposta4a">
+                        <label for="resposta4a">A proteção, a autoridade e o afeto são características que ocorrem apenas
+                            nas sociedades capitalistas.</label>
+                    </label>
+                </form>
+                <br>
+                <div class="row">
                     <div class="col s12">
-                        <div id="supermercado"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="ccomidab" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar comida</strong><small class="right">R$7</small></a></p>
-                                <p><a style="width: 100%;" id="cremediob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar remédio</strong><small class="right">R$7</small></a></p>
-                            </div>
-                        </div> <!--  -->
-                        <div id="casa"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="quitineteb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Alugar Quitinete</strong><small class="right">R$200/mês</small></a></p>
-                                <p><a style="width: 100%;" id="apartamentob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Apartamento</strong><small class="right">R$20.000</small></a></p>
-                                <p><a style="width: 100%;" id="casapqb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Casa Pequena</strong><small class="right">R$30.000</small></a></p>
-                                <p><a style="width: 100%;" id="casamdb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Casa Média</strong><small class="right">R$45.000</small></a></p>
-                                <p><a style="width: 100%;" id="mansaob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Mansão</strong><small class="right">R$60.000</small></a></p>
-                            </div>
-                        </div>
-                        <div id="carro"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="antigob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Carro Antigo</strong><small class="right">R$2.000</small></a></p>
-                                <p><a style="width: 100%;" id="seminovob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Carro Semi-novo</strong><small class="right">R$10.000</small></a></p>
-                                 <p><a style="width: 100%;"id="popularb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Carro Popular</strong><small class="right">R$15.000</small></a></p>
-                                <p><a style="width: 100%;" id="esportivob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Carro esportivo</strong><small class="right">R$25.000</small></a></p>
-                                <p><a style="width: 100%;" id="altaclasseb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Carro de Alta Classe</strong><small class="right">R$50.000</small></a></p>
-                            </div>
-                        </div>
-                        <div id="utencilios"> <!-- Opções secundárias -->
-                            <div class="col s12">
-                                <p><a style="width: 100%;" id="livrosb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar livros</strong><small class="right">R$300</small></a></p>
-                                <p><a style="width: 100%;" id="yoyob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar Yoyo</strong><small class="right">R$500</small></a></p>
-                                <p><a style="width: 100%;" id="cubob" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar cubo mágico</strong><small class="right">R$500</small></a></p>
-                                <p><a style="width: 100%;" id="tvb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar tv</strong><small class="right">R$1.500</small></a></p>
-                                <p><a style="width: 100%;" id="computadorb" class="z-depth-0 black-text white waves-effect btn-large"><strong class="left">Comprar computador</strong><small class="right">R$2.500</small></a></p>
-                            </div>
-                        </div> <!--  -->
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal5">Próxima</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal5" data-izimodal-group="group2" data-izimodal-title="Pergunta 2" data-izimodal-subtitle="Faculdade - Ciências Sociais">
+            <br>
+            <div class="container">
+                <flow class="flow-text">A respeito das análises que Karl Marx fez sobre o capitalismo, é correto afirmar:</flow>
+                <br>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta5" id="resposta5">
+                        <label for="resposta5">Essas análises diferem da dos positivistas, ao considerar que apenas as sociedades
+                            modernas e industriais eram científicas, em contraposição às militares e teológicas.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta5" id="resposta6">
+                        <label for="resposta6">A afirmação “a história da humanidade é a história das lutas de classes” expressa
+                            uma ideia de cooperação entre as diferentes camadas sociais.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta5" id="resposta7">
+                        <label for="resposta7">As classes sociais definem-se, sobretudo, pelas relações de cooperação que
+                            se desenvolvem entre os diversos grupos envolvidos socialmente.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta5" id="resposta8">
+                        <label for="resposta8">Uma classe social deve ser definida a partir do seu status social e de seu
+                            poder de compra na sociedade</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta5" id="resposta8a">
+                        <label for="resposta8a">Os conflitos existentes na relação entre os operários e os empresários constituem
+                            o fato mais importante das sociedades modernas.</label>
+                    </label>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal4">Anterior</button>
+                    </div>
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal6">Próxima</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal6" data-izimodal-group="group2" data-izimodal-title="Pergunta 3" data-izimodal-subtitle="Faculdade - Ciências Sociais">
+            <br>
+            <div class="container">
+                <flow class="flow-text">(ENEM) A política, foi inicialmente, a arte das pessoas se ocuparem do que lhes diz
+                    respeito. Posteriormente, passou a ser a arte de compelir as pessoas a decidirem sobre aquilo de que
+                    nada entendem. VALÉRY, P. Cadernos. Apud BENEVIDES, M.V.M. A cidadania ativa. São Paulo: Ática, 1996.
+                    Nesta definição o autor entende que a história da política está dividida em dois momentos principais:
+                    um primeiro, marcado pelo autoritarismo excludente, e um segundo caracterizado por uma democracia incompleta.
+                    Considerando o texto, qual é o elemento comum a esses dois momentos da história política?</flow>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta6" id="resposta9">
+                        <label for="resposta9">A distribuição equilibrada do poder.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta6" id="resposta10">
+                        <label for="resposta10">A valorização das opiniões mais competentes.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta6" id="resposta11">
+                        <label for="resposta11">O impedimento da participação popular.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta6" id="resposta12">
+                        <label for="resposta12">O controle das decisões por uma minoria.</label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta6" id="resposta12a">
+                        <label for="resposta12a">A sistematização dos processos decisórios.</label>
+                    </label>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal5">Anterior</button>
+                    </div>
+                    <div class="col s6">
+                        <button style="width: 100%;" class="teal btn waves-effect waves-light" type="submit" name="action">Enviar
+                            <i class="material-icons right">send</i>
+                        </button>
                     </div>
                 </div>
 
             </div>
+        </div>
 
-            <modals> 
-                <div id="modal1" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
-                    <br>
-                    <div class="container">
-                        <flow class="flow-text">O grupo “Legião Urbana, na música “Pais e Filhos”, canta “Eu moro na rua, não tenho ninguém, eu moro em qualquer lugar, já morei em tanta casa que nem me lembro mais, eu moro com meus pais”. 
-                        <p>A partir dessa afirmativa e a respeito dos estudos sociológicos sobre família, é verdadeiro o que se afirma em: </flow>
-                        <form action="#">
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta1" id="resposta1">
-                                <label for="resposta1">A família exerce dois tipos de socialização — primária e secundária —, sendo a segunda a mais importante.</label>
-                            </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta2" id="resposta2">
-                                <label for="resposta2">A socialização é uma das mais importantes funções da família por preparar o ingresso da criança na sociedade.</label>
-                           </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta3" id="resposta3">
-                                <label for="resposta3">A família conjugal é típica de sociedades tradicionais e consiste em um grande número de parentes que habitam juntos e nutrem sentimento de lealdade.</label>
-                           </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta4" id="resposta4">
-                                <label for="resposta4">A monogamia é uma característica geral da instituição familiar.></label>
-                           </label>
-                           <label>
-                                <input type="radio" class="with-gap" name="resposta4a" id="resposta4a">
-                                <label for="resposta4a">A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.</label>
-                           </label>
-                        </form>
-                        <br>
-                        <div class="row">
-                            <div class="col s12">
-                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal2">Próxima</button>
-                            </div>
-                        </div>
-                    </div>        
-                </div>
+    </modals>
 
-                <div id="modal2" data-izimodal-group="group1" data-izimodal-title="Pergunta 2" data-izimodal-subtitle="Faculdade - Sociologia">
-                    <br>
-                    <div class="container">
-                        <flow class="flow-text">A respeito das análises que Karl Marx fez sobre o capitalismo, é correto afirmar:</flow>
-                        <br>
-                        <form action="#">
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta5" id="resposta5">
-                                <label for="resposta5">Essas análises diferem da dos positivistas, ao considerar que apenas as sociedades modernas e industriais eram científicas, em contraposição às militares e teológicas.</label>
-                            </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta6" id="resposta6">
-                                <label for="resposta6">A afirmação “a história da humanidade é a história das lutas de classes” expressa uma ideia de cooperação entre as diferentes camadas sociais.</label>
-                           </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta7" id="resposta7">
-                                <label for="resposta7">As classes sociais definem-se, sobretudo, pelas relações de cooperação que se desenvolvem entre os diversos grupos envolvidos socialmente.</label>
-                           </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta8" id="resposta8">
-                                <label for="resposta8">Uma classe social deve ser definida a partir do seu status social e de seu poder de compra na sociedade</label>
-                           </label>
-                           <label>
-                                <input type="radio" class="with-gap" name="resposta8a" id="resposta8a">
-                                <label for="resposta8a">Os conflitos existentes na relação entre os operários e os empresários constituem o fato mais importante das sociedades modernas.</label>
-                           </label>
-                        </form>
-                        <br>
-                        <div class="row">
-                            <div class="col s6">
-                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal-options">Anterior</button>
-                            </div>
-                            <div class="col s6">
-                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal3">Próxima</button> 
-                            </div>
-                        </div>
-                    </div> 
-                </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/iziToast.min.js" type="text/javascript"></script>
+    <script src="js/iziModal.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jogo.js"></script>
+    <script type="text/javascript" src="js/ezmodal.js"></script>
+    <script type="text/javascript" src="js/abrir.js"></script>
+    <script type="text/javascript">
+        $(".button-collapse").sideNav();
+    </script>
+</body>
 
-                <div id="modal3" data-izimodal-group="group1" data-izimodal-title="Pergunta 3" data-izimodal-subtitle="Faculdade - Sociologia">
-                    <br>
-                    <div class="container">
-                        <flow class="flow-text">(ENEM) A política, foi inicialmente, a arte das pessoas se ocuparem do que lhes diz respeito. Posteriormente, passou a ser a arte de compelir as pessoas a decidirem sobre aquilo de que nada entendem. VALÉRY, P. Cadernos. Apud BENEVIDES, M.V.M. A cidadania ativa. São Paulo: Ática, 1996. Nesta definição o autor entende que a história da política está dividida em dois momentos principais: um primeiro, marcado pelo autoritarismo excludente, e um segundo caracterizado por uma democracia incompleta. Considerando o texto, qual é o elemento comum a esses dois momentos da história política?</flow>
-                        <form action="#">
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta9" id="resposta9">
-                                <label for="resposta9">A distribuição equilibrada do poder.</label>
-                            </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta10" id="resposta10">
-                                <label for="resposta10">A valorização das opiniões mais competentes.</label>
-                           </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta11" id="resposta11">
-                                <label for="resposta11">O impedimento da participação popular.</label>
-                           </label>
-                            <label>
-                                <input type="radio" class="with-gap" name="resposta12" id="resposta12">
-                                <label for="resposta12">O controle das decisões por uma minoria.</label>
-                           </label>
-                           <label>
-                                <input type="radio" class="with-gap" name="resposta12a" id="resposta12a">
-                                <label for="resposta12a">A sistematização dos processos decisórios.</label>
-                           </label>
-                        </form>
-                        <br>
-                        <div class="row">
-                            <div class="col s6">
-                                <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal-options">Anterior</button>
-                            </div>
-                            <div class="col s6">
-                                <button style="width: 100%;" class="teal btn waves-effect waves-light" type="submit" name="action">Enviar
-                                    <i class="material-icons right">send</i>
-                                </button>                                
-                            </div>
-                        </div>
-
-                    </div>        
-                </div>
-            </modals>
-
-            <!--JavaScript at end of body for optimized loading-->
-            <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <script type="text/javascript" src="js/materialize.min.js"></script>
-            <script src="js/iziToast.min.js" type="text/javascript"></script>
-            <script src="js/iziModal.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="js/jogo.js"></script>
-            <script type="text/javascript" src="js/ezmodal.js"></script>
-            <script type="text/javascript" src="js/abrir.js"></script>
-            <script type="text/javascript">
-                $(".button-collapse").sideNav();
-            </script>
-        </body>
-        </html>
+</html>
