@@ -19,22 +19,6 @@ function insertUsernames(customer, callback) {
 	global.conn.collection("username").insert(customer, callback);
 }
 
-function updateUserData(querry, data, callback) {
-	var adress = { "user": querry };
-	var upd = {
-		$set: {
-			"gameValues": {
-				"idade": data.idade,
-				"diasVividos": data.diasVividos,
-				"money": data.money,
-				"fomebarL": data.fomebarL,
-				"saudebarL": data.saudebarL
-			}
-
-		}
-	}
-	global.conn.collection("userData").updateOne(adress, upd, callback);
-}
 
 function saveData(querry, data, callback) {
 	var adress = { "user": querry };
@@ -47,4 +31,4 @@ function saveData(querry, data, callback) {
 
 }
 
-module.exports = { getUserData, insertUserData, updateUserData, getUsernames, insertUsernames, saveData }
+module.exports = { getUserData, insertUserData, getUsernames, insertUsernames, saveData }
