@@ -191,10 +191,10 @@ function validate(data) {
 		errorMesagem.push("Você não concordou com os termos de uso");
 	}
 
-	if (!data[6].value) {
-		isError = true;
-		errorMesagem.push("Confirme que você é humano");
-	}
+	// if (!data[6].value) {
+	// 	isError = true;
+	// 	errorMesagem.push("Confirme que você é humano");
+	// }
 	
 
 

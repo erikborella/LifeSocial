@@ -1,6 +1,7 @@
 var gameTime;
-var autoSave;
 var dayTime = 1000;
+var autoSave;
+var autoSaveTime = dayTime*10;
 
 var user;
 var password;
@@ -83,7 +84,7 @@ function startGame(data) {
 			"position": "bottomLeft"
 		});
 		save();
-	}, (dayTime * 10));
+	}, (autoSaveTime));
 
 
 
@@ -136,6 +137,7 @@ $("#sairBtn").click(function () {
 	clearInterval(gameTime);
 	iziToast.show({
 		title: "Tem certeza que deseja sair?",
+		message: "Seus dados serão salvos antes",
 		theme: "dark",
 		progressBar: false,
 		timeout: 999999,
@@ -149,6 +151,7 @@ $("#sairBtn").click(function () {
 
 				clearInterval(gameTime);
 				localStorage.removeItem("data");
+				save();
 				window.location.replace("login.html");
 
 			}],
@@ -161,9 +164,9 @@ $("#sairBtn").click(function () {
 })
 
 //Botão de salvar
-$("#saveBtn").click(function () {
-	save();
-})
+// $("#saveBtn").click(function () {
+// 	save();
+// })
 
 // Para evitar voltar para a tela de login, comente esse evento abaixo
 $(window).bind("beforeunload", function () {

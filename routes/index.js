@@ -52,8 +52,8 @@ router.post("/login", (req, res) => {
 			var pass = cryp.dCrypter(docs[index].password, password)
 			var nome = cryp.dCrypter(docs[index].dados.nome, password)
 			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome, password)
-			var email = cryp.dCrypter(docs[index].dados.email, password)
-
+			console.log(docs[index].dados);
+			
 
 
 			var json = {
@@ -61,8 +61,7 @@ router.post("/login", (req, res) => {
 				"password": pass.toString(),
 				"dados": {
 					"nome": nome.toString(),
-					"sobrenome": sobrenome.toString(),
-					"email": email.toString()
+					"sobrenome": sobrenome.toString()
 				},
 				"gameValues": {
 					"idade": docs[index].gameValues.idade,
@@ -85,7 +84,6 @@ router.post("/login", (req, res) => {
 })
 
 
-
 router.post("/singupData", (req, res) => {
 	var password = req.body.passwordInput;
 
@@ -96,7 +94,7 @@ router.post("/singupData", (req, res) => {
 		"dados": {
 			"nome": cryp.crypter(req.body.nameInput, password),
 			"sobrenome": cryp.crypter(req.body.surnameInput, password),
-			"email": cryp.crypter(req.body.emailInput, password)
+			"email": req.body.emailInput
 		},
 		"gameValues": {
 			"idade": 0,
