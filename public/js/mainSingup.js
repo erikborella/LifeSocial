@@ -119,16 +119,17 @@ function makeSingUp() {
 				$.post("/login", {"username" : data[2].value , "password" : data[3].value}, (db, status) => {
 
 					localStorage.removeItem("data");
-					localStorage.setItem("data", JSON.stringify(db));
 
 					setTimeout(function() {
 					
 						var md = new MobileDetect(window.navigator.userAgent);
 		
 						if (md.mobile()) {
+							localStorage.setItem("data", JSON.stringify(db));
 							window.location.replace("Mobile.html")
 						}
 						else {
+							localStorage.setItem("data", JSON.stringify(db));
 							window.location.replace("Desktop.html")
 						}
 						

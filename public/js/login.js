@@ -10,6 +10,17 @@ $("#loginForm").keypress(function(key) {
 
 //Transitor de slides
 $(document).ready(function() {
+
+    if (localStorage.getItem("errorLogin")) {
+        localStorage.removeItem("errorLogin");
+        console.error
+        iziToast.info({
+            title: "Error de Login",
+            message: "Você precisa estar logado para acessar o jogo",
+            position: "bottomCenter"
+        })
+    }
+
     var random = (Math.floor(Math.random() * 10)) + 1;
     $("#cardImage").attr("src", "imagesCard/card-image"+random+".jpg");
     var cont = 2;

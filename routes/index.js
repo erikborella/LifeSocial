@@ -3,8 +3,8 @@ var router = express.Router();
 var cryp = require("../cryp");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (req, res, next) {
+	res.render('index', { title: 'Express' });
 });
 
 router.post('/testCry', (req, res) => {
@@ -44,42 +44,42 @@ router.post("/login", (req, res) => {
 
 		if (index == -1) {
 			res.send(false);
-			
+
 		}
 		else {
 
 			var user = cryp.dCrypter(docs[index].user, password)
-			var pass = cryp.dCrypter(docs[index].password , password)
+			var pass = cryp.dCrypter(docs[index].password, password)
 			var nome = cryp.dCrypter(docs[index].dados.nome, password)
-			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome , password)
-			var email = cryp.dCrypter(docs[index].dados.email , password)
+			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome, password)
+			var email = cryp.dCrypter(docs[index].dados.email, password)
 
 
 
 			var json = {
-				"user" : user.toString(),
+				"user": user.toString(),
 				"password": pass.toString(),
-				"dados" : {
-					"nome" : nome.toString(),
-					"sobrenome" : sobrenome.toString(),
-					"email" : email.toString()
+				"dados": {
+					"nome": nome.toString(),
+					"sobrenome": sobrenome.toString(),
+					"email": email.toString()
 				},
-				"gameValues" : {
-					"idade" : docs[index].gameValues.idade,
-					"diasVividos" : docs[index].gameValues.diasVividos,
-					"money" : docs[index].gameValues.money,
-					"fome" : docs[index].gameValues.fome,
-					"saude" : docs[index].gameValues.saude,
-					"inteligencia" : docs[index].gameValues.inteligencia,
-					"imposto" : docs[index].gameValues.imposto,
-					"honestidade" : docs[index].gameValues.honestidade,
-					"comida" : docs[index].gameValues.comida,
-					"remedios" : docs[index].gameValues.remedios
+				"gameValues": {
+					"idade": docs[index].gameValues.idade,
+					"diasVividos": docs[index].gameValues.diasVividos,
+					"money": docs[index].gameValues.money,
+					"fome": docs[index].gameValues.fome,
+					"saude": docs[index].gameValues.saude,
+					"inteligencia": docs[index].gameValues.inteligencia,
+					"imposto": docs[index].gameValues.imposto,
+					"honestidade": docs[index].gameValues.honestidade,
+					"comida": docs[index].gameValues.comida,
+					"remedios": docs[index].gameValues.remedios
 				}
 			}
 
 			res.send(json)
-			
+
 		}
 	})
 })
@@ -91,24 +91,24 @@ router.post("/singupData", (req, res) => {
 
 
 	var json = {
-		"user" : cryp.crypter(req.body.usernameInput , password),
-		"password": cryp.crypter(req.body.passwordInput , password),
-		"dados" : {
-			"nome" : cryp.crypter(req.body.nameInput , password),
-			"sobrenome" : cryp.crypter(req.body.surnameInput , password),
-			"email" : cryp.crypter(req.body.emailInput , password)
+		"user": cryp.crypter(req.body.usernameInput, password),
+		"password": cryp.crypter(req.body.passwordInput, password),
+		"dados": {
+			"nome": cryp.crypter(req.body.nameInput, password),
+			"sobrenome": cryp.crypter(req.body.surnameInput, password),
+			"email": cryp.crypter(req.body.emailInput, password)
 		},
-		"gameValues" : {
-			"idade" : 0,
-			"diasVividos" : 0,
-			"money" : 10,
-			"fome" : 100,
-			"saude" : 100,
-			"inteligencia" : 1,
-			"imposto" : 0,
-			"honestidade" : 50,
-			"comida" : 5,
-			"remedios" : 5
+		"gameValues": {
+			"idade": 0,
+			"diasVividos": 0,
+			"money": 10,
+			"fome": 100,
+			"saude": 100,
+			"inteligencia": 1,
+			"imposto": 0,
+			"honestidade": 50,
+			"comida": 5,
+			"remedios": 5
 		}
 	}
 
@@ -116,28 +116,53 @@ router.post("/singupData", (req, res) => {
 		if (e) console.log(e);
 	})
 
-	global.db.insertUsernames({"username" : req.body.usernameInput}, (e, data) => {
+	global.db.insertUsernames({ "username": req.body.usernameInput }, (e, data) => {
 		if (e) console.log(e);
 	})
-	
+
 })
 
 router.get("/gameData", (req, res) => {
-	
+
 	global.db.getUserData((e, docs) => {
 
 		var data = [];
-		
+
 		for (var i = 0; i < docs.length; i++) {
 			data.push(docs[i].gameValues);
 		}
 
 		res.send(data);
-		
+
+
+	})
+
+})
+
+router.post("/save", (req, res) => {
+
+	var querry = cryp.crypter(req.body.user, req.body.password);
+	
+	
+	var values = {
+		gameValues: {
+			"idade": req.body.idade,
+			"diasVividos": req.body.diasVividos,
+			"money": req.body.money,
+			"fome": req.body.fome,
+			"saude": req.body.saude,
+			"inteligencia": req.body.inteligencia,
+			"imposto": req.body.imposto,
+			"honestidade": req.body.honestidade,
+			"comida": req.body.comida,
+			"remedios": req.body.remedios
+		}
+	}
+
+	global.db.saveData(querry, values, (e, docs) => {
 		
 	})
 
-	
 })
 
 
