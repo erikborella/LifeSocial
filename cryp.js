@@ -1,16 +1,15 @@
-const crypto = require("crypto");
-
+const cryptJs = require("crypto-js");
 
 function crypter(valores, senha) {
-    var cipher = crypto.createCipher("aes256", senha);
-    cipher.update(valores);
-    return cipher.final("hex");
+    return cryptJs.AES.encrypt(valores, senha).toString();
 }
 
 function dCrypter(valores, senha) {
-    var dcipher = crypto.createDecipher("aes256", senha);
-    dcipher.update(valores, "hex");
-    return dcipher.final();
+    var bytes = cryptJs.AES.decrypt(valores, senha);
+    return bytes.toString(cryptJs.enc.Utf8);
 }
 
+
 module.exports = {crypter, dCrypter};
+
+//U2FsdGVkX1+/Sq6Hy1wkdjD/E95AYz7gsnS78I3d0ec=

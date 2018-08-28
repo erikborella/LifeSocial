@@ -8,14 +8,17 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/testCry', (req, res) => {
-	var cr = cryp.crypter(req.body.men, req.body.senha);
+	var cr = cryp.crypter(req.body.men, req.body.senha).toString();
+	console.log(cr);
 	res.send(cr);
 })
 
 router.post("/testdCry", (req, res) => {
 	var dr = cryp.dCrypter(req.body.men, req.body.senha);
+	console.log(dr);
 	res.send(dr);
 })
+
 
 router.get("/getUsernames", (req, res) => {
 	global.db.getUsernames((e, docs) => {
@@ -27,66 +30,75 @@ router.post("/login", (req, res) => {
 	var username = req.body.username;
 	var password = req.body.password;
 
-	var key = cryp.crypter(username, password);
-
 	global.db.getUserData((e, docs) => {
-
-		if (e) return console.log(e);
 
 		var index = -1;
 
 		for (var i = 0; i < docs.length; i++) {
-			if (key == docs[i].user) {
+			if (cryp.dCrypter(docs[i].user, password) == username) {
 				index = i;
 				break;
 			}
 		}
 
-		if (index == -1) {
-			res.send(false);
+		if (index != -1) {
 
-		}
-		else {
-
-			var user = cryp.dCrypter(docs[index].user, password)
-			var pass = cryp.dCrypter(docs[index].password, password)
-			var nome = cryp.dCrypter(docs[index].dados.nome, password)
-			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome, password)
-			console.log(docs[index].dados);
-			
-
+			var user = cryp.dCrypter(docs[index].user, password);
+			var pass = cryp.dCrypter(docs[index].password, password);
+			//dados
+			var nome = cryp.dCrypter(docs[index].dados.nome, password);
+			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome, password);
+			var email = cryp.dCrypter(docs[index].dados.email, password);
+			//gameValues
+			var idade = docs[index].gameValues.idade;
+			var diasVividos = docs[index].gameValues.diasVividos;
+			var money = docs[index].gameValues.money;
+			var fome = docs[index].gameValues.fome;
+			var saude = docs[index].gameValues.saude;
+			var inteligencia = docs[index].gameValues.inteligencia;
+			var imposto = docs[index].gameValues.imposto;
+			var honestidade = docs[index].gameValues.honestidade;
+			var comida = docs[index].gameValues.comida;
+			var remedios = docs[index].gameValues.remedios;
 
 			var json = {
-				"user": user.toString(),
-				"password": pass.toString(),
+				"user": user,
+				"password": pass,
 				"dados": {
-					"nome": nome.toString(),
-					"sobrenome": sobrenome.toString()
+					"nome": nome,
+					"sobrenome": sobrenome,
+					"email": email
 				},
 				"gameValues": {
-					"idade": docs[index].gameValues.idade,
-					"diasVividos": docs[index].gameValues.diasVividos,
-					"money": docs[index].gameValues.money,
-					"fome": docs[index].gameValues.fome,
-					"saude": docs[index].gameValues.saude,
-					"inteligencia": docs[index].gameValues.inteligencia,
-					"imposto": docs[index].gameValues.imposto,
-					"honestidade": docs[index].gameValues.honestidade,
-					"comida": docs[index].gameValues.comida,
-					"remedios": docs[index].gameValues.remedios
+					"idade": idade,
+					"diasVividos": diasVividos,
+					"money": money,
+					"fome": fome,
+					"saude": saude,
+					"inteligencia": inteligencia,
+					"imposto": imposto,
+					"honestidade": honestidade,
+					"comida": comida,
+					"remedios": remedios
 				}
 			}
 
-			res.send(json)
+			res.send(json);
 
 		}
+
+		else {
+			res.send(false);
+		}
 	})
+
+
 })
 
 
 router.post("/singupData", (req, res) => {
-	var password = req.body.passwordInput;
 
+	var password = req.body.passwordInput;
 
 	var json = {
 		"user": cryp.crypter(req.body.usernameInput, password),
@@ -94,7 +106,7 @@ router.post("/singupData", (req, res) => {
 		"dados": {
 			"nome": cryp.crypter(req.body.nameInput, password),
 			"sobrenome": cryp.crypter(req.body.surnameInput, password),
-			"email": req.body.emailInput
+			"email": cryp.crypter(req.body.emailInput, password)
 		},
 		"gameValues": {
 			"idade": 0,
@@ -110,11 +122,11 @@ router.post("/singupData", (req, res) => {
 		}
 	}
 
-	global.db.insertUserData(json, (e, data) => {
+	global.db.insertUsernames({ "username": req.body.usernameInput }, (e, data) => {
 		if (e) console.log(e);
 	})
 
-	global.db.insertUsernames({ "username": req.body.usernameInput }, (e, data) => {
+	global.db.insertUserData(json, (e, data) => {
 		if (e) console.log(e);
 	})
 
@@ -139,30 +151,42 @@ router.get("/gameData", (req, res) => {
 
 router.post("/save", (req, res) => {
 
-	var querry = cryp.crypter(req.body.user, req.body.password);
-	
-	
-	var values = {
-		gameValues: {
-			"idade": req.body.idade,
-			"diasVividos": req.body.diasVividos,
-			"money": req.body.money,
-			"fome": req.body.fome,
-			"saude": req.body.saude,
-			"inteligencia": req.body.inteligencia,
-			"imposto": req.body.imposto,
-			"honestidade": req.body.honestidade,
-			"comida": req.body.comida,
-			"remedios": req.body.remedios
+	global.db.getUserData((e, docs) => {
+		var querry;
+		for (var i = 0; i < docs.length; i++) {
+			if (cryp.dCrypter(docs[i].user, req.body.password) == req.body.user) {
+				querry = docs[i].user
+				break;
+			}
 		}
-	}
 
-	global.db.saveData(querry, values, (e, docs) => {
-		
+		var values = {
+			gameValues: {
+				"idade": req.body.idade,
+				"diasVividos": req.body.diasVividos,
+				"money": req.body.money,
+				"fome": req.body.fome,
+				"saude": req.body.saude,
+				"inteligencia": req.body.inteligencia,
+				"imposto": req.body.imposto,
+				"honestidade": req.body.honestidade,
+				"comida": req.body.comida,
+				"remedios": req.body.remedios
+			}
+		}
+
+		global.db.saveData(querry, values, (e, docs) => {
+
+		})
+
 	})
 
-})
 
+
+
+
+
+})
 
 
 

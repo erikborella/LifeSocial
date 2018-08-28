@@ -3,7 +3,7 @@ $(document).ready(function(){
     $.get("/gameData", (data, status) => {
         var totalDias = 0;
         var idade = 0;
-        var record = -999;
+        var record = -1;
 
         for (var i = 0; i < data.length; i++) {
             totalDias += data[i].diasVividos;

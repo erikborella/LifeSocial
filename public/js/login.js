@@ -1,15 +1,15 @@
 //botão de login
-$("#loginBtn").click(function() {
+$("#loginBtn").click(function () {
     makeLogin();
 });
 
 //fazer login com enter
-$("#loginForm").keypress(function(key) {
+$("#loginForm").keypress(function (key) {
     if (key.keyCode == 13) makeLogin();
 })
 
 //Transitor de slides
-$(document).ready(function() {
+$(document).ready(function () {
 
     if (localStorage.getItem("errorLogin")) {
         localStorage.removeItem("errorLogin");
@@ -22,12 +22,12 @@ $(document).ready(function() {
     }
 
     var random = (Math.floor(Math.random() * 10)) + 1;
-    $("#cardImage").attr("src", "imagesCard/card-image"+random+".jpg");
+    $("#cardImage").attr("src", "imagesCard/card-image" + random + ".jpg");
     var cont = 2;
-    setInterval(function() {
-        
-        $("#cardImage").attr("src", "imagesCard/card-image"+cont+".jpg");
-        cont ++;
+    setInterval(function () {
+
+        $("#cardImage").attr("src", "imagesCard/card-image" + cont + ".jpg");
+        cont++;
         if (cont == 11) {
             cont = 1;
         }
@@ -37,7 +37,7 @@ $(document).ready(function() {
 //faz login
 function makeLogin() {
     var login = $("#loginForm").serializeArray();
-    
+
     var username = login[0].value;
     var password = login[1].value;
 
@@ -49,8 +49,8 @@ function makeLogin() {
         })
     }
     else {
-        $.post("/login", {"username" : username, "password" : password}, (data, status) => {
-            
+        $.post("/login", { "username": username, "password": password }, (data, status) => {
+
             if (!data) {
                 iziToast.error({
                     title: "Usuario ou senha incorretos",
@@ -59,13 +59,13 @@ function makeLogin() {
                 })
             }
             else {
-                // iziToast.success ({
-                //     title: "Bem vindo "+data.dados.nome
-                // })
-                
+                iziToast.success ({
+                    title: "Bem vindo "+data.dados.nome
+                })
+
                 localStorage.removeItem("data");
                 localStorage.setItem("data", JSON.stringify(data));
-                
+
                 var md = new MobileDetect(window.navigator.userAgent);
 
                 if (md.mobile()) {
@@ -76,7 +76,7 @@ function makeLogin() {
                 }
 
             }
-            
+
         });
     }
 }
