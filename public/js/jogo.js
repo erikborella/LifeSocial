@@ -76,6 +76,8 @@ function startGame(data) {
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
 	$("#vivo").html("Dias vivos : " + diasVividos);
+	$("#nomePrincipal").html(nome);
+	$("#emailS").html(email);
 
 	gameTime = setInterval(passDay, dayTime);
 	autoSave = setInterval(function () {
