@@ -7,33 +7,39 @@ router.get('/', function (req, res, next) {
 	res.render('index', { title: 'Express' });
 });
 
+
+//test de criptografia
 router.post('/testCry', (req, res) => {
 	var cr = cryp.crypter(req.body.men, req.body.senha).toString();
 	console.log(cr);
 	res.send(cr);
 })
 
+//teste de descriptografia
 router.post("/testdCry", (req, res) => {
 	var dr = cryp.dCrypter(req.body.men, req.body.senha);
 	console.log(dr);
 	res.send(dr);
 })
 
-
+//retornar os nomes de usuarios
 router.get("/getUsernames", (req, res) => {
 	global.db.getUsernames((e, docs) => {
 		res.send(docs);
 	})
 });
 
+// manda as informações de login
 router.post("/login", (req, res) => {
 	var username = req.body.username;
 	var password = req.body.password;
 
+	//pega os dados do db criptografados
 	global.db.getUserData((e, docs) => {
 
 		var index = -1;
 
+		//procura pela posição do usuario
 		for (var i = 0; i < docs.length; i++) {
 			if (cryp.dCrypter(docs[i].user, password) == username) {
 				index = i;
@@ -41,7 +47,11 @@ router.post("/login", (req, res) => {
 			}
 		}
 
+
+		//só se ele existe
 		if (index != -1) {
+
+			//faz a descriptografia dos dados
 
 			var user = cryp.dCrypter(docs[index].user, password);
 			var pass = cryp.dCrypter(docs[index].password, password);
@@ -61,6 +71,8 @@ router.post("/login", (req, res) => {
 			var comida = docs[index].gameValues.comida;
 			var remedios = docs[index].gameValues.remedios;
 
+
+			//monta o json de retorno
 			var json = {
 				"user": user,
 				"password": pass,
@@ -83,9 +95,12 @@ router.post("/login", (req, res) => {
 				}
 			}
 
+			//manda o Json de volta
 			res.send(json);
 
 		}
+
+		//se a posição não exisir, retornar false
 
 		else {
 			res.send(false);
@@ -96,10 +111,14 @@ router.post("/login", (req, res) => {
 })
 
 
+
+//faz o cadastro
 router.post("/singupData", (req, res) => {
 
 	var password = req.body.passwordInput;
 
+
+	//criptografa tudo e monta o json
 	var json = {
 		"user": cryp.crypter(req.body.usernameInput, password),
 		"password": cryp.crypter(req.body.passwordInput, password),
@@ -122,16 +141,20 @@ router.post("/singupData", (req, res) => {
 		}
 	}
 
+
+	//coloca o username no db de usernames
 	global.db.insertUsernames({ "username": req.body.usernameInput }, (e, data) => {
 		if (e) console.log(e);
 	})
 
+	//coloca o json no db do json
 	global.db.insertUserData(json, (e, data) => {
 		if (e) console.log(e);
 	})
 
 })
 
+//retornar todos valores de game do db
 router.get("/gameData", (req, res) => {
 
 	global.db.getUserData((e, docs) => {
@@ -149,17 +172,22 @@ router.get("/gameData", (req, res) => {
 
 })
 
+
+//faz o save do jogo
 router.post("/save", (req, res) => {
 
+	//procura a posição no db
 	global.db.getUserData((e, docs) => {
 		var querry;
 		for (var i = 0; i < docs.length; i++) {
 			if (cryp.dCrypter(docs[i].user, req.body.password) == req.body.user) {
+				//acha a posição do querry
 				querry = docs[i].user
 				break;
 			}
 		}
 
+		//define  o json dos gameValues
 		var values = {
 			gameValues: {
 				"idade": req.body.idade,
@@ -175,6 +203,7 @@ router.post("/save", (req, res) => {
 			}
 		}
 
+		//manda salvar os dados novos
 		global.db.saveData(querry, values, (e, docs) => {
 
 		})

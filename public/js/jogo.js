@@ -1,8 +1,10 @@
+//variaveis de tempo de jogo
 var gameTime;
 var dayTime = 1000;
 var autoSave;
 var autoSaveTime = dayTime*10;
 
+//variaveis de dados de jogo
 var user;
 var password;
 
@@ -31,11 +33,12 @@ $(document).ready(function () {
 
 	data = JSON.parse(localStorage.getItem("data"));
 
-	if (!data) {
+
+	if (!data) { // se não tem data, ou seja, não logado volta para a tela de login e mostra a mensagem de erro
 		localStorage.setItem("errorLogin", "true");
 		window.location.replace("login.html")
 	}
-	else {
+	else { //caso esteja logado, iniciara a função startGame() que define as variaves de dados e os tempos de jogo
 
 		iziToast.success({
 			title: "Bem vindo " + data.dados.nome
@@ -46,10 +49,10 @@ $(document).ready(function () {
 	}
 })
 
-//Inicia os valores de jogo
-function startGame(data) {
-	console.log(data);
+//Define as variaves de dados e os tempos de jogo
 
+function startGame(data) {
+	// define as variaves
 	user = data.user;
 	password = data.password;
 
@@ -73,12 +76,14 @@ function startGame(data) {
 	comida = data.gameValues.comida;
 	remedios = data.gameValues.remedios;
 
+	//coloca os dados inicias na tela do jogo
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
 	$("#vivo").html("Dias vivos : " + diasVividos);
 	$("#nomePrincipal").html(nome);
 	$("#emailS").html(email);
 
+	//inicia os tempos de jogo
 	gameTime = setInterval(passDay, dayTime);
 	autoSave = setInterval(function () {
 		iziToast.info({
@@ -165,13 +170,7 @@ $("#sairBtn").click(function () {
 	})
 })
 
-//Botão de salvar
-// $("#saveBtn").click(function () {
-// 	save();
-// })
-
 // Para evitar voltar para a tela de login, comente esse evento abaixo
 $(window).bind("beforeunload", function () {
 	localStorage.removeItem("data");
 })
-
