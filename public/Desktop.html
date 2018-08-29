@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="css/iziToast.min.css">
+    <link rel="stylesheet" href="css/iziModal.min.css">
     <title>Social Life</title>
     <link rel="icon" href="img/logo2.png">
     <meta charset="utf-8">
@@ -45,7 +46,7 @@
                         <li id="esc" class="tab"><a href="#escola2">Escola</a></li>
                         <li id="traba" class="tab"><a href="#trabalho2">Trabalho</a></li>
                         <li id="merc" class="tab"><a href="#mercado2">Mercado</a></li>
-                        <li style="display: none" class="tab"><a class="active" href="#"></a></li>
+                        <li style="display: none" class="tab"><a class="active"></a></li>
                     </ul>
                 </div>
             </nav>
@@ -59,8 +60,8 @@
                         <img src="images/img_1.jpg">
                     </div>
                     <a href="#"><img class="circle" src="img/iconDefault.png"></a>
-                    <a id="nomePrincipal" href="#"><span class="white-text name"></span></a>
-                    <a id="emailS" href="#"><span class="white-text email"></span></a>
+                    <a id="nomePrincipal"><span class="white-text name"></span></a>
+                    <a id="emailS"><span class="white-text email"></span></a>
                 </div>
             </li>
             <li><a id="money"></li></a>
@@ -141,7 +142,8 @@
                         <div style="margin-bottom: 0px; margin-top: 10px;">
                             <div style="border-bottom: 1px solid grey;" class="row">
                                 <strong>Inteligência(INT) </strong>-<small> Quanto mais Inteligência maior a variedade de
-                                    Trabalhos</small>
+                                    Trabalhos
+                                </small>
                                 <div class="progress col s12" style="margin-bottom: 25px;">
                                     <div id="intBar" class="determinate"></div>
                                 </div>
@@ -159,9 +161,9 @@
                         <div id="faculdade">
                             <!-- Opções secundárias -->
                             <div class="col s9" style="border-left: 1px solid black;border-right: 1px solid black;">
-                                <p><a style="width: 100%;" id="sociologiab" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                <p><a style="width: 100%;" id="sociologiab" class="modal1d z-depth-0 black-text white waves-effect btn-large"><strong
                                             class="left">Sociolgia</strong><small class="right">5 int</small></a></p>
-                                <p><a style="width: 100%;" id="cienciassociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong
+                                <p><a style="width: 100%;" id="cienciassociaisb" class="modal4d z-depth-0 black-text white waves-effect btn-large"><strong
                                             class="left">Ciências Sociais</strong><small class="right">5 int</small></a></p>
                                 <p><a style="width: 100%;" id="servicossociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong
                                             class="left">Serviços Sociais</strong><small class="right">5 int</small></a></p>
@@ -213,7 +215,7 @@
                                 <strong>Honestidade(H) </strong>-<small> Quanto mais Honesto maior a variedade de Trabalhos,
                                     quanto menos mais fácil roubar</small>
                                 <div class="progress col s12" style="margin-bottom: 25px;">
-                                    <div id="intBar" class="determinate"></div>
+                                    <div id="honestidadeBar" class="determinate"></div>
                                 </div>
                             </div>
                         </div>
@@ -341,18 +343,71 @@
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
+
+
+    <modals>
+        <div id="modal1d" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
+            <br>
+            <div class="container">
+                <flow class="flow-text">
+                    (UFU-MG) Para Weber, um tipo de dominação é estabelecido, pois “obedece-se não à pessoa em virtude de seu direito próprio,
+                    mas à regra estatuída, que estabelece ao mesmo tempo a quem e em que medida se deve obedecer.” COHN,
+                    Gabriel (Org.). Weber: Sociologia. 5.ed. São Paulo: Ática, 1991. p. 129. Coleção Grandes Cientistas Sociais.
+                    <p>
+                        Com base na análise weberiana, assinale a alternativa que indica o tipo de dominação a que essa descrição está relacionada.
+                        <p>
+                </flow>
+                <form action="#">
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1d" id="resposta1d">
+                        <label for="resposta1d">
+                            Dominação Legal.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1d" id="resposta2d">
+                        <label for="resposta2d">
+                            Dominação Carismática.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1d" id="resposta3d">
+                        <label for="resposta3d">
+                            Dominação Tradicional.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1d" id="resposta4d">
+                        <label for="resposta4d">
+                            A monogamia é uma característica geral da instituição familiar.
+                        </label>
+                    </label>
+                    <label>
+                        <input type="radio" class="with-gap" name="resposta1d" id="resposta5d">
+                        <label for="resposta5d">
+                            A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.
+                        </label>
+                    </label>
+                </form>
+                <br>
+                <div class="row">
+                    <div class="col s12">
+                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="">Próxima</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </modals>
 
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/iziToast.min.js" type="text/javascript"></script>
-
+    <script src="js/iziModal.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jogo.js"></script>
     <script type="text/javascript" src="js/abrir.js"></script>
-
     <script src="js/mobile-detect.min.js"></script>
     <script type="text/javascript">
         var md = new MobileDetect(window.navigator.userAgent);

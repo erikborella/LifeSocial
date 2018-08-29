@@ -57,3 +57,17 @@ $('#modal6').iziModal({
 })
 
 
+//options
+$(document).on('click', '.modal1d', function (event) {
+  event.preventDefault();
+  $('#modal1d').iziModal('open');
+});
+
+$('#modal1d').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  Fullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+});
