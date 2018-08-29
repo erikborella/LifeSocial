@@ -2,7 +2,7 @@
 var gameTime;
 var dayTime = 1000;
 var autoSave;
-var autoSaveTime = dayTime*10;
+var autoSaveTime = dayTime*100;
 
 //variaveis de dados de jogo
 var user;
@@ -80,6 +80,9 @@ function startGame(data) {
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
 	$("#vivo").html("Dias vivos : " + diasVividos);
+
+
+
 	$("#nomePrincipal").html(nome);
 	$("#emailS").html(email);
 
@@ -99,17 +102,42 @@ function startGame(data) {
 
 //Calcula os dados quando passa o dia
 function passDay() {
-	diasVividos++;
 
 	if (diasVividos % 365 == 0) {
 		idade++;
+		inteligencia--;
+	}
+
+	diasVividos++;
+
+
+	if (fome <= 0) {
+		saude -= 3;
+	}
+	else {
+		fome--;
+		saude -= 0.3;
+	}
+
+	if (saude <= 0) {
+		console.log("morreu");
+		clearInterval(gameTime)
 	}
 
 
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
 	$("#vivo").html("Dias vivos : " + diasVividos);
+
+	$("#fomeBar").css("width", fome + "%");
+	$("#saudeBar").css("width", saude + "%")
+	$("#intBar").css("width", inteligencia + "%")
+
+
+
 }
+
+
 
 //salva o jogo
 function save() {

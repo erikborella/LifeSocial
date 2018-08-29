@@ -46,6 +46,9 @@ router.post("/login", (req, res) => {
 				break;
 			}
 		}
+		
+		console.log(index);
+		
 
 
 		//só se ele existe
@@ -133,11 +136,11 @@ router.post("/singupData", (req, res) => {
 			"money": 10,
 			"fome": 100,
 			"saude": 100,
-			"inteligencia": 1,
+			"inteligencia": 5,
 			"imposto": 0,
 			"honestidade": 50,
-			"comida": 5,
-			"remedios": 5
+			"comida": 0,
+			"remedios": 0
 		}
 	}
 
