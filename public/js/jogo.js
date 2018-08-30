@@ -2,7 +2,7 @@
 var gameTime;
 var dayTime = 1000;
 var autoSave;
-var autoSaveTime = dayTime*100;
+var autoSaveTime = dayTime*365;
 
 //variaveis de dados de jogo
 var user;
@@ -61,6 +61,7 @@ function startGame(data) {
 	email = data.dados.email;
 	nomeC = nome +" "+sobrenome;
 
+
 	fome = data.gameValues.fome;
 	saude = data.gameValues.saude;
 
@@ -81,20 +82,20 @@ function startGame(data) {
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
 	$("#vivo").html("Dias vivos : " + diasVividos);
-<<<<<<< HEAD
 
 
 
 	$("#nomePrincipal").html(nome);
-=======
 	$("#nomePrincipal").html(nomeC);
->>>>>>> 2efa8738ec8a0f581d1e6d2989db45683851716d
 	$("#emailS").html(email);
-	
 
 	//inicia os tempos de jogo
 	gameTime = setInterval(passDay, dayTime);
 	autoSave = setInterval(function () {
+		iziToast.info({
+			"message": "jogo salvo",
+			"position": "bottomLeft"
+		});
 		save();
 	}, (autoSaveTime));
 
