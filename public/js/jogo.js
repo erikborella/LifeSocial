@@ -135,6 +135,7 @@ function passDay() {
 	$("#fomeBar").css("width", fome + "%");
 	$("#saudeBar").css("width", saude + "%")
 	$("#intBar").css("width", inteligencia + "%")
+	$("#honestidadeBar").css("width", honestidade + "%");
 
 
 
