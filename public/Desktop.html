@@ -59,9 +59,9 @@
                     <div class="background">
                         <img src="images/img_1.jpg">
                     </div>
-                    <a href="#"><img class="circle" src="img/iconDefault.png"></a>
-                    <a id="nomePrincipal"><span class="white-text name"></span></a>
-                    <a id="emailS"><span class="white-text email"></span></a>
+                    <a><img class="circle" src="img/iconDefault.png"></a>
+                    <a><span id="nomePrincipal" class="white-text name"></span></a>
+                    <a><span id="emailS" class="white-text email"></span></a>
                 </div>
             </li>
             <li><a id="money"></li></a>
@@ -161,9 +161,9 @@
                         <div id="faculdade">
                             <!-- Opções secundárias -->
                             <div class="col s9" style="border-left: 1px solid black;border-right: 1px solid black;">
-                                <p><a style="width: 100%;" id="sociologiab" class="modal1d z-depth-0 black-text white waves-effect btn-large"><strong
+                                <p><a style="width: 100%;" id="sociologiab" class="modal1 z-depth-0 black-text white waves-effect btn-large"><strong
                                             class="left">Sociolgia</strong><small class="right">5 int</small></a></p>
-                                <p><a style="width: 100%;" id="cienciassociaisb" class="modal4d z-depth-0 black-text white waves-effect btn-large"><strong
+                                <p><a style="width: 100%;" id="cienciassociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong
                                             class="left">Ciências Sociais</strong><small class="right">5 int</small></a></p>
                                 <p><a style="width: 100%;" id="servicossociaisb" class="z-depth-0 black-text white waves-effect btn-large"><strong
                                             class="left">Serviços Sociais</strong><small class="right">5 int</small></a></p>
@@ -347,69 +347,161 @@
     </div>
 
 
-    <modals>
-        <div id="modal1d" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
-            <br>
-            <div class="container">
-                <flow class="flow-text">
-                    (UFU-MG) Para Weber, um tipo de dominação é estabelecido, pois “obedece-se não à pessoa em virtude de seu direito próprio,
-                    mas à regra estatuída, que estabelece ao mesmo tempo a quem e em que medida se deve obedecer.” COHN,
-                    Gabriel (Org.). Weber: Sociologia. 5.ed. São Paulo: Ática, 1991. p. 129. Coleção Grandes Cientistas Sociais.
+
+    <div id="modal1" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
+        <br>
+        <div class="container">
+            <span class="flow-text">
+                (UFU-MG) Para Weber, um tipo de dominação é estabelecido, pois “obedece-se não à pessoa em virtude de seu direito próprio,
+                mas à regra estatuída, que estabelece ao mesmo tempo a quem e em que medida se deve obedecer.” COHN, Gabriel
+                (Org.). Weber: Sociologia. 5.ed. São Paulo: Ática, 1991. p. 129. Coleção Grandes Cientistas Sociais.
+                <p>
+                    Com base na análise weberiana, assinale a alternativa que indica o tipo de dominação a que essa descrição está relacionada.
                     <p>
-                        Com base na análise weberiana, assinale a alternativa que indica o tipo de dominação a que essa descrição está relacionada.
-                        <p>
-                </flow>
-                <form action="#">
-                    <label>
-                        <input type="radio" class="with-gap" name="resposta1d" id="resposta1d">
-                        <label for="resposta1d">
-                            Dominação Legal.
-                        </label>
-                    </label>
-                    <label>
-                        <input type="radio" class="with-gap" name="resposta1d" id="resposta2d">
-                        <label for="resposta2d">
-                            Dominação Carismática.
-                        </label>
-                    </label>
-                    <label>
-                        <input type="radio" class="with-gap" name="resposta1d" id="resposta3d">
-                        <label for="resposta3d">
-                            Dominação Tradicional.
-                        </label>
-                    </label>
-                    <label>
-                        <input type="radio" class="with-gap" name="resposta1d" id="resposta4d">
-                        <label for="resposta4d">
-                            A monogamia é uma característica geral da instituição familiar.
-                        </label>
-                    </label>
-                    <label>
-                        <input type="radio" class="with-gap" name="resposta1d" id="resposta5d">
-                        <label for="resposta5d">
-                            A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.
-                        </label>
-                    </label>
-                </form>
-                <br>
+            </span>
+            <form action="#">
                 <div class="row">
                     <div class="col s12">
-                        <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="">Próxima</button>
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta1" id="resposta1">
+                            <label for="resposta1">
+                                Dominação Legal.
+                            </label>
+                        </label>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta1" id="resposta2">
+                            <label for="resposta2">
+                                Dominação Carismática.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta1" id="resposta3">
+                            <label for="resposta3">
+                                Dominação Tradicional.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta1" id="resposta4">
+                            <label for="resposta4">
+                                A monogamia é uma característica geral da instituição familiar.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta1" id="resposta5">
+                            <label for="resposta5">
+                                A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="row">
+                <div class="col s12">
+                    <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal2">Próxima</button>
                 </div>
             </div>
         </div>
-    </modals>
+    </div>
+    <div id="modal2" data-izimodal-group="group1" data-izimodal-title="Pergunta 1" data-izimodal-subtitle="Faculdade - Sociologia">
+        <br>
+        <div class="container">
+            <span class="flow-text">
+                (UFU-MG) Para Weber, um tipo de dominação é estabelecido, pois “obedece-se não à pessoa em virtude de seu direito próprio,
+                mas à regra estatuída, que estabelece ao mesmo tempo a quem e em que medida se deve obedecer.” COHN, Gabriel
+                (Org.). Weber: Sociologia. 5.ed. São Paulo: Ática, 1991. p. 129. Coleção Grandes Cientistas Sociais.
+                <p>
+                    Com base na análise weberiana, assinale a alternativa que indica o tipo de dominação a que essa descrição está relacionada.
+                    <p>
+            </span>
+            <form action="#">
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta2" id="resposta6">
+                            <label for="resposta6">
+                                Dominação Legal.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="resposta2" id="resposta6">
+                            <label for="resposta6">
+                                Dominação Carismática.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="respost2" id="resposta7">
+                            <label for="resposta7">
+                                Dominação Tradicional.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="respost2" id="resposta8">
+                            <label for="resposta8">
+                                A monogamia é uma característica geral da instituição familiar.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>
+                            <input type="radio" class="with-gap" name="respost2" id="resposta9">
+                            <label for="resposta9">
+                                A proteção, a autoridade e o afeto são características que ocorrem apenas nas sociedades capitalistas.
+                            </label>
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <div class="row">
+                <div class="col s6">
+                    <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-prev="modal1">Anterior</button>
+                </div>
+                <div class="col s6">
+                    <button style="width: 100%;" class="teal waves-effect waves-light btn" data-izimodal-next="modal3">Próxima</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!--JavaScript at end of body for optimized loading-->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/iziToast.min.js" type="text/javascript"></script>
-
     <script src="js/iziModal.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/abrir.js"></script>
     <script type="text/javascript" src="js/jogo.js"></script>
-
+    <script type="text/javascript" src="js/ezmodal7.js"></script>
     <script src="js/mobile-detect.min.js"></script>
     <script type="text/javascript">
         var md = new MobileDetect(window.navigator.userAgent);
