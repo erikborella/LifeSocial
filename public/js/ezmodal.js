@@ -7,6 +7,10 @@ $(document).on('click', '.modal4', function (event) {
   event.preventDefault();
   $('#modal4').iziModal('open');
 });
+$(document).on('click', '.modal7', function (event) {
+  event.preventDefault();
+  $('#modal7').iziModal('open');
+});
 
 $('#modal1').iziModal({
   headerColor: '#009688',
@@ -49,6 +53,30 @@ $('#modal5').iziModal({
   transitionOut: 'fadeOutDown'
 })
 $('#modal6').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  openFullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+})
+$('#modal7').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  openFullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+})
+$('#modal8').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  openFullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+})
+$('#modal9').iziModal({
   headerColor: '#009688',
   width: '50%',
   overlayColor: 'rgba(0, 0, 0, 0.5)',
