@@ -127,6 +127,14 @@ function passDay() {
 		clearInterval(gameTime)
 	}
 
+	if (fome > 100) {
+		fome = 100;
+	}
+
+	if (saude > 100) {
+		saude = 100;
+	}
+
 
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
@@ -137,7 +145,10 @@ function passDay() {
 	$("#intBar").css("width", inteligencia + "%")
 	$("#honestidadeBar").css("width", honestidade + "%");
 
+	$("#ccasab small").html(comida)
+	$("#rcasab small").html(remedios)
 
+	verrifyBtns();
 
 }
 
@@ -206,3 +217,83 @@ $("#sairBtn").click(function () {
 $(window).bind("beforeunload", function () {
 	localStorage.removeItem("data");
 })
+
+
+function verrifyBtns() {
+
+
+	function removeCC(elem) {
+		$(`#${elem}`).addClass("disabled");
+	}
+	function addCC(elem) {
+		$(`#${elem}`).removeClass("disabled");
+	}
+
+	//comer em casa
+	if (comida <= 0) {
+		removeCC("ccasab")
+	}
+	else {
+		addCC("ccasab")
+	}
+
+	//fast Food
+	if (money < 10) {
+		removeCC("fastfoodb");
+	}
+	else {
+		addCC("fastfoodb");
+	}
+
+	// restaurante
+	if (money < 40) {
+		removeCC("restauranteb");
+	}
+	else {
+		addCC("restauranteb");
+	}
+
+	//chef privado
+	if (money < 100) {
+		removeCC("chefb");
+	}
+	else {
+		addCC("chefb");
+	}
+
+	//remedios de casa
+
+	if (remedios <= 0) {
+		removeCC("rcasab")
+	}
+	else {
+		addCC("rcasab")
+	}
+
+
+	//pronto socorro
+	if (money < 10) {
+		removeCC("prontosocorrob");
+	}
+	else {
+		addCC("prontosocorrob");
+	}
+
+	//medico
+	if (money < 150) {
+		removeCC("medicab");
+	}
+	else {
+		addCC("medicab");
+	}
+
+
+	//hospital
+	if (money < 300) {
+		removeCC("hospitalb");
+	}
+	else {
+		addCC("hospitalb");
+	}
+
+}
