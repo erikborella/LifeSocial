@@ -178,7 +178,7 @@ function validate(data) {
 
 	if (!data[5].value) {
 		isError = true;
-		errorMesagem.push("digite o seu email");
+		errorMesagem.push("Digite o seu email");
 	}
 
 	if (data[3].value != data[4].value) {
