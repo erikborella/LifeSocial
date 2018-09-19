@@ -11,6 +11,10 @@ $(document).on('click', '.modal7', function (event) {
   event.preventDefault();
   $('#modal7').iziModal('open');
 });
+$(document).on('click', '.modal10', function (event) {
+  event.preventDefault();
+  $('#modal10').iziModal('open');
+});
 
 $('#modal1').iziModal({
   headerColor: '#009688',
@@ -51,7 +55,7 @@ $('#modal5').iziModal({
   openFullscreen: true,
   transitionIn: 'fadeInUp',
   transitionOut: 'fadeOutDown'
-})
+});
 $('#modal6').iziModal({
   headerColor: '#009688',
   width: '50%',
@@ -59,7 +63,7 @@ $('#modal6').iziModal({
   openFullscreen: true,
   transitionIn: 'fadeInUp',
   transitionOut: 'fadeOutDown'
-})
+});
 $('#modal7').iziModal({
   headerColor: '#009688',
   width: '50%',
@@ -67,7 +71,7 @@ $('#modal7').iziModal({
   openFullscreen: true,
   transitionIn: 'fadeInUp',
   transitionOut: 'fadeOutDown'
-})
+});
 $('#modal8').iziModal({
   headerColor: '#009688',
   width: '50%',
@@ -75,7 +79,7 @@ $('#modal8').iziModal({
   openFullscreen: true,
   transitionIn: 'fadeInUp',
   transitionOut: 'fadeOutDown'
-})
+});
 $('#modal9').iziModal({
   headerColor: '#009688',
   width: '50%',
@@ -83,4 +87,28 @@ $('#modal9').iziModal({
   openFullscreen: true,
   transitionIn: 'fadeInUp',
   transitionOut: 'fadeOutDown'
-})
+});
+$('#modal10').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  openFullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+});
+$('#modal11').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  openFullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+});
+$('#modal12').iziModal({
+  headerColor: '#009688',
+  width: '50%',
+  overlayColor: 'rgba(0, 0, 0, 0.5)',
+  openFullscreen: true,
+  transitionIn: 'fadeInUp',
+  transitionOut: 'fadeOutDown'
+});
