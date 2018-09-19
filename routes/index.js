@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var cryp = require("../cryp");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -10,14 +9,14 @@ router.get('/', function (req, res, next) {
 
 //test de criptografia
 router.post('/testCry', (req, res) => {
-	var cr = cryp.crypter(req.body.men, req.body.senha).toString();
+	var cr = (req.body.men, req.body.senha).toString();
 	console.log(cr);
 	res.send(cr);
 })
 
 //teste de descriptografia
 router.post("/testdCry", (req, res) => {
-	var dr = cryp.dCrypter(req.body.men, req.body.senha);
+	var dr = (req.body.men, req.body.senha);
 	console.log(dr);
 	res.send(dr);
 })
@@ -41,7 +40,7 @@ router.post("/login", (req, res) => {
 
 		//procura pela posição do usuario
 		for (var i = 0; i < docs.length; i++) {
-			if (cryp.dCrypter(docs[i].user, password) == username) {
+			if ((docs[i].user) == username) {
 				index = i;
 				break;
 			}
@@ -56,12 +55,12 @@ router.post("/login", (req, res) => {
 
 			//faz a descriptografia dos dados
 
-			var user = cryp.dCrypter(docs[index].user, password);
-			var pass = cryp.dCrypter(docs[index].password, password);
+			var user = (docs[index].user);
+			var pass = (docs[index].password);
 			//dados
-			var nome = cryp.dCrypter(docs[index].dados.nome, password);
-			var sobrenome = cryp.dCrypter(docs[index].dados.sobrenome, password);
-			var email = cryp.dCrypter(docs[index].dados.email, password);
+			var nome = (docs[index].dados.nome);
+			var sobrenome = (docs[index].dados.sobrenome);
+			var email = (docs[index].dados.email);
 			//gameValues
 			var idade = docs[index].gameValues.idade;
 			var diasVividos = docs[index].gameValues.diasVividos;
@@ -123,12 +122,12 @@ router.post("/singupData", (req, res) => {
 
 	//criptografa tudo e monta o json
 	var json = {
-		"user": cryp.crypter(req.body.usernameInput, password),
-		"password": cryp.crypter(req.body.passwordInput, password),
+		"user": (req.body.usernameInput),
+		"password": (req.body.passwordInput),
 		"dados": {
-			"nome": cryp.crypter(req.body.nameInput, password),
-			"sobrenome": cryp.crypter(req.body.surnameInput, password),
-			"email": cryp.crypter(req.body.emailInput, password)
+			"nome": (req.body.nameInput),
+			"sobrenome": (req.body.surnameInput),
+			"email": (req.body.emailInput)
 		},
 		"gameValues": {
 			"idade": 0,
@@ -183,7 +182,7 @@ router.post("/save", (req, res) => {
 	global.db.getUserData((e, docs) => {
 		var querry;
 		for (var i = 0; i < docs.length; i++) {
-			if (cryp.dCrypter(docs[i].user, req.body.password) == req.body.user) {
+			if ((docs[i].user, req.body.password) == req.body.user) {
 				//acha a posição do querry
 				querry = docs[i].user
 				break;
