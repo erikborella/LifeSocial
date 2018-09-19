@@ -135,6 +135,14 @@ function passDay() {
 		saude = 100;
 	}
 
+	if (honestidade > 100) {
+		honestidade = 100;
+	} 
+
+	if (honestidade < 0) {
+		honestidade = 0;
+	}
+
 
 	$("#money").html("Dinheiro : " + money);
 	$("#anos").html("Anos : " + idade);
@@ -295,5 +303,9 @@ function verrifyBtns() {
 	else {
 		addCC("hospitalb");
 	}
+
+	///trabalhar
+
+
 
 }

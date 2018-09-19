@@ -88,3 +88,9 @@ $("#hospitalb").click(function() {
         passDay();
     }
 })
+
+$("#garib").click(function() {
+    honestidade++;
+    money++;
+    passDay();
+})
