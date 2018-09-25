@@ -182,9 +182,9 @@ router.post("/save", (req, res) => {
 	global.db.getUserData((e, docs) => {
 		var querry;
 		for (var i = 0; i < docs.length; i++) {
-			if ((docs[i].user, req.body.password) == req.body.user) {
+			if (docs[i].user == req.body.user) {
 				//acha a posição do querry
-				querry = docs[i].user
+				querry = docs[i].user;
 				break;
 			}
 		}
@@ -207,7 +207,7 @@ router.post("/save", (req, res) => {
 
 		//manda salvar os dados novos
 		global.db.saveData(querry, values, (e, docs) => {
-
+			console.log(e);
 		})
 
 	})
