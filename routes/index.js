@@ -30,7 +30,6 @@ router.get("/getUsernames", (req, res) => {
 
 // manda as informações de login
 router.post("/login", (req, res) => {
-	var username = req.body.username;
 	var password = req.body.password;
 
 	//pega os dados do db criptografados
@@ -40,7 +39,7 @@ router.post("/login", (req, res) => {
 
 		//procura pela posição do usuario
 		for (var i = 0; i < docs.length; i++) {
-			if ((docs[i].user) == username) {
+			if ((docs[i].password) == password) {
 				index = i;
 				break;
 			}
