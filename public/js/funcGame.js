@@ -1,3 +1,4 @@
+
 //comer em casa
 $("#ccasab").click(function() {
     if (comida > 0) {
@@ -12,7 +13,7 @@ $("#lixob").click(function() {
     fome += 5;
     saude -= 5;
     passDay();
-})
+});
 
 //fast food
 $("#fastfoodb").click(function() {
@@ -92,5 +93,141 @@ $("#hospitalb").click(function() {
 $("#garib").click(function() {
     honestidade++;
     money++;
+    passDay();
+})
+
+$("#pedreirob").click(function() {
+    honestidade++;
+    money = Number(money + 2);
+    passDay();
+})
+
+$("#progb").click(function() {
+    honestidade += 2;
+    money = Number(money + 10);
+    passDay();
+})
+
+$("#profb").click(function() {
+    honestidade += 2;
+    money = Number(money + 15);
+    passDay();
+})
+
+$("#sociologob").click(function() {
+    honestidade += 5;
+    money = Number(money + 20);
+    passDay();
+})
+
+$("#rdinheirob").click(function() {
+    honestidade --;
+    money = Number(money + 5);
+    passDay();
+})
+
+$("#rjoiasb").click(function () {
+    honestidade -= 5;
+    money = Number(money + 15);
+    passDay();
+})
+
+$("#rdinheirosb").click(function() {
+    honestidade -= 7;
+    money = Number(money + 30);
+    passDay();
+})
+
+$("#bancob").click(function() {
+    honestidade -= 20;
+    money = Number(money + 300);
+    passDay();
+})
+
+$("#politicob").click(function() {
+    honestidade -= 50;
+    money = Number(money + 1000);
+    passDay();
+})
+
+$("#ccomidab").click(function() {
+    money -= 7;
+    comida++;
+    passDay();
+})
+
+$("#cremediob").click(function() {
+    money -= 7;
+    remedios++;
+    passDay();
+});
+
+$("#quitineteb").click(function() {
+    money -= 200;
+    passDay();
+})
+
+$("#apartamentob").click(function() {
+    money -= 20000;
+    passDay();
+})
+
+$("#casapqb").click(function() {
+    money -= 30000;
+    passDay();
+})
+
+$("#casamdb").click(function() {
+    money -= 45000;
+    passDay();
+})
+
+$("#mansaob").click(function() {
+    money -= 60000;
+    passDay();
+})
+
+
+$("#antigob").click(function() {
+    money -= 2000
+    passDay();
+})
+$("#seminovob").click(function() {
+    money -= 10000
+    passDay();
+})
+$("#popularb").click(function() {
+    money -= 15000
+    passDay();
+})
+$("#esportivob").click(function() {
+    money -= 25000
+    passDay();
+})
+
+$("#altaclasseb").click(function() {
+    money -= 50000
+    passDay();
+})
+
+$("#livrosb").click(function() {
+    money -= 300
+    passDay();
+})
+
+$("#yoyob").click(function() {
+    money -= 500
+    passDay();
+})
+$("#cubob").click(function() {
+    money -= 500
+    passDay();
+})
+$("#tvb").click(function() {
+    money -= 1500
+    passDay();
+})
+$("#computadorb").click(function() {
+    money -= 2500
     passDay();
 })

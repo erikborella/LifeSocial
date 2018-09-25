@@ -62,21 +62,21 @@ function startGame(data) {
 	nomeC = nome +" "+sobrenome;
 
 
-	fome = data.gameValues.fome;
-	saude = data.gameValues.saude;
+	fome = Number(data.gameValues.fome);
+	saude = Number(data.gameValues.saude);
 
 	inteligencia = data.gameValues.inteligencia;
 
-	honestidade = data.gameValues.honestidade;
+	honestidade = Number(data.gameValues.honestidade);
 
-	imposto = data.gameValues.imposto;
+	imposto = Number(data.gameValues.imposto);
 
-	money = data.gameValues.money;
-	diasVividos = data.gameValues.diasVividos;
-	idade = data.gameValues.idade;
+	money = Number(data.gameValues.money);
+	diasVividos = Number(data.gameValues.diasVividos);
+	idade = Number(data.gameValues.idade);
 
-	comida = data.gameValues.comida;
-	remedios = data.gameValues.remedios;
+	comida = Number(data.gameValues.comida);
+	remedios = Number(data.gameValues.remedios);
 
 	//coloca os dados inicias na tela do jogo
 	$("#money").html("Dinheiro : " + money);
@@ -88,6 +88,7 @@ function startGame(data) {
 	$("#nomePrincipal").html(nome);
 	$("#nomePrincipal").html(nomeC);
 	$("#emailS").html(email);
+
 
 	//inicia os tempos de jogo
 	gameTime = setInterval(passDay, dayTime);
@@ -305,6 +306,174 @@ function verrifyBtns() {
 	}
 
 	///trabalhar
+
+	//pedreito
+
+	if (honestidade < 10) {
+		removeCC("pedreirob")
+	}
+	else {
+		addCC("pedreirob");
+	}
+
+	//programador e professor
+
+	if (honestidade < 20) {
+		removeCC("progb");
+		removeCC("profb")
+	}
+	else {
+		addCC("progb");
+		addCC("profb")
+	}
+
+	//sociologo
+	
+	if (honestidade < 50) {
+		removeCC("sociologob");
+	}
+	else {
+		addCC("sociologob");
+	}
+
+	if (honestidade >= 80) {
+		removeCC("rjoiasb");
+	}
+	else {
+		addCC("rjoiasb");
+	}
+
+	if (honestidade >= 70) {
+		removeCC("rdinheirosb");
+	}
+	else {
+		addCC("rdinheirosb");
+	}
+
+	if (honestidade >= 60) {
+		removeCC("bancob");
+	}
+	else {
+		addCC("bancob");
+	}
+
+	if (honestidade >= 50) {
+		removeCC("politicob");
+	}
+	else {
+		addCC("politicob");
+	}
+
+	//mercado
+
+	if (money < 7) {
+		removeCC("ccomidab");
+		removeCC("cremediob");
+	}
+	else {
+		addCC("ccomidab");
+		addCC("cremediob");
+	}
+
+	if (money < 200) {
+		removeCC("quitineteb")
+	}
+	else {
+		addCC("quitineteb");
+	}
+
+	if (money < 20000) {
+		removeCC("apartamentob")
+	}
+	else {
+		addCC("apartamentob");
+	}
+
+	if (money < 30000) {
+		removeCC("casapqb")
+	}
+	else {
+		addCC("casapqb");
+	}
+
+	if (money < 45000) {
+		removeCC("casamdb");
+	}
+	else {
+		addCC("casamdb");
+	}
+
+	if (money < 60000) {
+		removeCC("mansaob");
+	}
+	else {
+		addCC("mansaob");
+	}
+
+	if (money < 2000) {
+		removeCC("antigob")
+	}
+	else {
+		addCC("antigob");
+	}
+
+	if (money < 10000) {
+		removeCC("seminovob")
+	}
+	else {
+		addCC("seminovob");
+	}
+
+	if (money < 15000) {
+		removeCC("popularb")
+	}
+	else {
+		addCC("popularb");
+	}
+
+	if (money < 25000) {
+		removeCC("esportivob")
+	}
+	else {
+		addCC("esportivob");
+	}
+
+	if (money < 50000) {
+		removeCC("altaclasseb")
+	}
+	else {
+		addCC("altaclasseb");
+	}
+
+	if (money < 300) {
+		removeCC("livrosb");
+	}
+	else {
+		addCC("livrosb");
+	}
+	if (money < 500) {
+		removeCC("yoyob");
+		removeCC("cubob");
+	}
+	else {
+		addCC("yoyob");
+		addCC("cubob");
+
+	}
+	
+	if (money < 1500) {
+		removeCC("tvb");
+	}
+	else {
+		addCC("tvb");
+	}
+	if (money < 2500) {
+		removeCC("computadorb");
+	}
+	else {
+		addCC("computadorb");
+	}
+
 
 
 
