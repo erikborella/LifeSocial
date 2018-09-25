@@ -1,6 +1,6 @@
 var mongoClient = require("mongodb").MongoClient;
 mongoClient.connect("mongodb://localhost/LifeSocial")
-	.then(conn => global.conn = conn.db("LifeSocial"))
+	.then(conn => global.conn = conn.db("LifeSocialNocry"))
 	.catch(err => console.log(err));
 
 function getUserData(callback) {
